@@ -3,13 +3,13 @@
 clear
 clear
 msg -bar
-rm -rf /etc/VPS-MX/demo-ssh 2>/dev/null
-mkdir /etc/VPS-MX/demo-ssh 2>/dev/null
-SCPdir="/etc/VPS-MX"
+rm -rf /etc/VPS-ARG/demo-ssh 2>/dev/null
+mkdir /etc/VPS-ARG/demo-ssh 2>/dev/null
+SCPdir="/etc/VPS-ARG"
 SCPusr="${SCPdir}/controlador"
 
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/VPS-ARG"
 SCPfrm="${SCPdir}/herramientas" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="${SCPdir}/protocolos" && [[ ! -d ${SCPinst} ]] && exit
 
@@ -72,11 +72,11 @@ chmod 777 /tmp/cmd
 echo "nohup /tmp/$name & >/dev/null" > /tmp/cmd
 /tmp/cmd 2>/dev/null 1>/dev/null
 rm -rf /tmp/cmd
-touch /etc/VPS-MX/demo-ssh/$name
-echo "senha: $pass" >> /etc/VPS-MX/demo-ssh/$name
-echo "data: ($tmp)Minutos" >> /etc/VPS-MX/demo-ssh/$name
+touch /etc/VPS-ARG/demo-ssh/$name
+echo "senha: $pass" >> /etc/VPS-ARG/demo-ssh/$name
+echo "data: ($tmp)Minutos" >> /etc/VPS-ARG/demo-ssh/$name
 msg -bar2
-echo -e "\033[1;93m ¡¡ USUARIO TEMPORAL x MINUTOS (VPS-MX By @Kalix1) !!\033[0m"
+echo -e "\033[1;93m ¡¡ USUARIO TEMPORAL x MINUTOS (VPS-ARG By AnonyProArg) !!\033[0m"
 msg -bar2
 echo -e "\033[1;36m  >> IP del Servidor: \033[0m$(meu_ip) " 
 echo -e "\033[1;36m  >> Usuario: \033[0m$name"
