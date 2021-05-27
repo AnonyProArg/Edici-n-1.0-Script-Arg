@@ -3,7 +3,7 @@ clear
 cd $HOME
 systemedia &> /dev/null
 rm $(pwd)/$0 &> /dev/null
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/VPS-ARG"
 SCPinstal="$HOME/install"
 SCPidioma="${SCPdir}/idioma"
 SCPusr="${SCPdir}/controlador"
@@ -266,9 +266,9 @@ clear
 msg -bar2
 msg -ama "               Finalizando Instalacion" && msg bar2
 #rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/IDT.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/tiemlim.log &>/dev/null
+[[ $(find /etc/VPS-ARG/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/nombre.log https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/nombre.log &>/dev/null
+[[ $(find /etc/VPS-ARG/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/IDT.log https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/IDT.log &>/dev/null
+[[ $(find /etc/VPS-ARG/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/tiemlim.log https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/tiemlim.log &>/dev/null
 
 wget -O /bin/rebootnb https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/rebootnb &> /dev/null
 chmod +x /bin/rebootnb 
