@@ -18,9 +18,9 @@ EstadoServicio () {
     else
         echo "<p>Estado del servicio $1 está || <span class='detenido'> DESACTIVADO | REINICIANDO</span>.</p>" >> $DIR/$ARCHIVO
 		service $1 restart &
-NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
+NOM=`less /etc/VPS-ARG/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
-IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
+IDB=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
 KEY="862633455:AAEgkSywlAHQQOMXzGHJ13gctV6wO1hm25Y"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
@@ -71,9 +71,9 @@ echo "<p>Estado del servicio badvpn está ||  $badvpn </span>.</p> " >> $DIR/$AR
 PIDVRF3="$(ps aux|grep badvpn |grep -v grep|awk '{print $2}')"
 if [[ -z $PIDVRF3 ]]; then
 screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
-NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
+NOM=`less /etc/VPS-ARG/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
-IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
+IDB=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
 KEY="862633455:AAEgkSywlAHQQOMXzGHJ13gctV6wO1hm25Y"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
@@ -88,14 +88,14 @@ done
 fi
 #SERVICE PYTHON DIREC
 ureset_python () {
-for port in $(cat /etc/VPS-MX/PortPD.log| grep -v "nobody" |cut -d' ' -f1)
+for port in $(cat /etc/VPS-ARG/PortPD.log| grep -v "nobody" |cut -d' ' -f1)
 do
 PIDVRF3="$(ps aux|grep pydic-"$port" |grep -v grep|awk '{print $2}')"
 if [[ -z $PIDVRF3 ]]; then
-screen -dmS pydic-"$port" python /etc/VPS-MX/protocolos/PDirect.py "$port"
-NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
+screen -dmS pydic-"$port" python /etc/VPS-ARG/protocolos/PDirect.py "$port"
+NOM=`less /etc/VPS-ARG/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
-IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
+IDB=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
 KEY="862633455:AAEgkSywlAHQQOMXzGHJ13gctV6wO1hm25Y"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
