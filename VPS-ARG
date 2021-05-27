@@ -54,7 +54,7 @@ updater () {
  if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT"
-    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/zzupdate-master/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
+    wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/zzupdate-master/zzupdate.default-si.conf -O /usr/local/vpsargup/vpsargup.default.conf  &> /dev/null
 else
 	echo ""
 fi
@@ -91,7 +91,7 @@ mkdir -p "/etc/vpsargup/" &> /dev/null
 if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT"
-    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/zzupdate-master/zzupdate.default.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
+    wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/zzupdate-master/zzupdate.default.conf -O /usr/local/vpsargup/vpsargup.default.conf  &> /dev/null
 else
 	echo ""
 fi
@@ -131,7 +131,7 @@ read -p " default (n)  [ s | n ]: " -e -i n passs
 
 ## VERIFICAR KEY AUTENTICA VS IP BOT
 cd
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/Install/sysactq -O /usr/bin/sysactq &> /dev/null
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/sysactq -O /usr/bin/sysactq &> /dev/null
 chmod +x /usr/bin/sysactq
 msg -bar2
 ## msg -bar2
