@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf /root/VPS-MX
+rm -rf /root/VPS-ARG
 clear
 clear
 rm $(pwd)/$0 &> /dev/null
@@ -80,12 +80,12 @@ msg -bar2
 msg -ama "               PREPARANDO INSTALACION"
 msg -bar2
 ## Script name
-SCRIPT_NAME=vpsmxup
+SCRIPT_NAME=vpsargup
 ## Install directory
 WORKING_DIR_ORIGINAL="$(pwd)"
-INSTALL_DIR_PARENT="/usr/local/vpsmxup/"
+INSTALL_DIR_PARENT="/usr/local/vpsargup/"
 INSTALL_DIR=${INSTALL_DIR_PARENT}${SCRIPT_NAME}/
-mkdir -p "/etc/vpsmxup/" &> /dev/null
+mkdir -p "/etc/vpsargup/" &> /dev/null
 ## ------ AUTO ACTULIZADOR
 
 if [ ! -d "$INSTALL_DIR" ]; then
