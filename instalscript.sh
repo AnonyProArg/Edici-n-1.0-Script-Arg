@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash 
+mkdir /etc/VPS-ARG
 rm -rf /root/instalscript.sh
 ### COLORES Y BARRA 
 msg () {
