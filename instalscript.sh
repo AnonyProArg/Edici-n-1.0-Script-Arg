@@ -22,7 +22,7 @@ clear
 	echo -e  "\033[1;97m              Copiando Instalador Interno "
 	echo "           --------------------------------"
 	sleep 2
-	rm -rf /root/VPS-MX
+	rm -rf /root/VPS-ARG
     wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/VPS-ARG -O /root/VPS-ARG &> /dev/null
 	chmod +x /root/VPS-ARG
 	msg -bar2
