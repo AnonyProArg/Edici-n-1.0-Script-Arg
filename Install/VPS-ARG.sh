@@ -37,11 +37,11 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 ### PAQUETES PRINCIPALES 
 msg -bar2
-msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg 🇦🇷\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
 echo -e "  \033[41m    --♕  ł₦₴₮₳Ⱡ₳₵łØ₦ ĐɆ ₱₳QɄɆ₮Ɇ₴ ₱₳Ɽ₳ V₱₴-₳Ɽ₲ ♕ --    \e[49m"
-echo -e "  \033[100m     PONER ATENCION  PARA SIGUIENTE PREGUNTA     "
+echo -e "  \033[100m    INSTALACION AUTOMATIZADA(RELAJATE Y DISFRUTA)    "
 echo -e "\033[97m"
 msg -bar
 
@@ -176,7 +176,7 @@ clear
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m  By AnonyProArg🇦🇷\033[1;33m ]"
 msg -bar2
 echo ""
 echo -e "\e[91mESCOJER PRIMERO #All locales# Y LUEGO #en_US.UTF-8# \e[0m" 
@@ -194,7 +194,7 @@ clear
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg 🇦🇷\033[1;33m ]"
 msg -bar2
 echo -e "\033[1;97m  ¿PRECENTO ALGUN ERROR ALGUN PAQUETE ANTERIOR?" 
 msg -bar2
@@ -402,7 +402,7 @@ chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
 msg -bar2
 msg -bar2
-msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg 🇦🇷 \033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 20 a 64 De Preferencia🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
