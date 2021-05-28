@@ -40,6 +40,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/utils.sh -O /etc/VPS-ARG/herramientas/utils.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh -O /etc/VPS-ARG/herramientas/blockBT.sh 
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/multissl.sh -O /etc/VPS-ARG/herramientas/multissl.sh
 chmod -R 777 /etc/VPS-ARG
 rm -rf /root/instalscript.sH
 ### COLORES Y BARRA 
