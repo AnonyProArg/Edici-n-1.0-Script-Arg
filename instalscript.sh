@@ -7,38 +7,38 @@ mkdir /etc/VPS-ARG/herramientas
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/usercodes -O /etc/VPS-ARG/controlador/usercodes 
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/C-SSR.sh  /etc/VPS-ARG/protocolos/C-SSR.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/sockspy.sh /etc/VPS-ARG/protocolos/sockspy.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh /etc/VPS-ARG/protocolos/ssl.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py /etc/VPS-ARG/protocolos/PDirect.py
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PGet.py /etc/VPS-ARG/protocolos/PGet.py
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/POpen.py /etc/VPS-ARG/protocolos/POpen.py
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PPriv.py /etc/VPS-ARG/protocolos/PPriv.py
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PPub.py /etc/VPS-ARG/protocolos/PPub.py
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/Shadowsocks-R.sh /etc/VPS-ARG/protocolos/Shadowsocks-R.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/Shadowsocks-libev.sh /etc/VPS-ARG/protocolos/Shadowsocks-libev.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/budp.sh /etc/VPS-ARG/protocolos/budp.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/dropbear.sh /etc/VPS-ARG/protocolos/dropbear.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/openvpn.sh /etc/VPS-ARG/protocolos/openvpn.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/shadowsocks.sh /etc/VPS-ARG/protocolos/shadowsocks.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/squid.sh /etc/VPS-ARG/protocolos/squid.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/v2ray.sh /etc/VPS-ARG/protocolos/v2ray.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ADMbot.sh /etc/VPS-ARG/herramientas/ADMbot.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/Unlock-Pass-VULTR.sh /etc/VPS-ARG/herramientas/ Unlock-Pass-VULTR.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/apacheon.sh /etc/VPS-ARG/herramientas/apacheon.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh /etc/VPS-ARG/herramientas/blockBT.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/dns-netflix.sh /etc/VPS-ARG/herramientas/dns-netflix.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/fai2ban.sh /etc/VPS-ARG/herramientas/fai2ban.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/gestor.sh /etc/VPS-ARG/herramientas/gestor.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/lista-arq /etc/VPS-ARG/herramientas/lista-arq
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/paysnd.sh /etc/VPS-ARG/herramientas/paysnd.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/speed.sh /etc/VPS-ARG/herramientas/speed.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/speedtest.py /etc/VPS-ARG/herramientas/speedtest.py
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh /etc/VPS-ARG/herramientas/ports.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/tcp.sh /etc/VPS-ARG/herramientas/tcp.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ultrahost /etc/VPS-ARG/herramientas/ultrahost
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/utils.sh /etc/VPS-ARG/herramientas/utils.sh
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh /etc/VPS-ARG/herramientas/ports.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/C-SSR.sh -O /etc/VPS-ARG/protocolos/C-SSR.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/sockspy.sh -O /etc/VPS-ARG/protocolos/sockspy.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh -O /etc/VPS-ARG/protocolos/ssl.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PGet.py -O /etc/VPS-ARG/protocolos/PGet.py
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/POpen.py -O /etc/VPS-ARG/protocolos/POpen.py
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PPriv.py -O /etc/VPS-ARG/protocolos/PPriv.py
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PPub.py -O /etc/VPS-ARG/protocolos/PPub.py
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/Shadowsocks-R.sh -O /etc/VPS-ARG/protocolos/Shadowsocks-R.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/Shadowsocks-libev.sh -O /etc/VPS-ARG/protocolos/Shadowsocks-libev.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/budp.sh -O /etc/VPS-ARG/protocolos/budp.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/dropbear.sh -O /etc/VPS-ARG/protocolos/dropbear.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/openvpn.sh -O /etc/VPS-ARG/protocolos/openvpn.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/shadowsocks.sh -O /etc/VPS-ARG/protocolos/shadowsocks.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/squid.sh -O /etc/VPS-ARG/protocolos/squid.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/v2ray.sh -O /etc/VPS-ARG/protocolos/v2ray.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ADMbot.sh -O /etc/VPS-ARG/herramientas/ADMbot.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/Unlock-Pass-VULTR.sh -O /etc/VPS-ARG/herramientas/ Unlock-Pass-VULTR.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/apacheon.sh -O /etc/VPS-ARG/herramientas/apacheon.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh -O /etc/VPS-ARG/herramientas/blockBT.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/dns-netflix.sh -O /etc/VPS-ARG/herramientas/dns-netflix.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/fai2ban.sh -O /etc/VPS-ARG/herramientas/fai2ban.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/gestor.sh -O /etc/VPS-ARG/herramientas/gestor.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/lista-arq -O /etc/VPS-ARG/herramientas/lista-arq
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/paysnd.sh -O /etc/VPS-ARG/herramientas/paysnd.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/speed.sh -O /etc/VPS-ARG/herramientas/speed.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/speedtest.py -O /etc/VPS-ARG/herramientas/speedtest.py
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/tcp.sh -O /etc/VPS-ARG/herramientas/tcp.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ultrahost -O /etc/VPS-ARG/herramientas/ultrahost
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/utils.sh -O /etc/VPS-ARG/herramientas/utils.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
 chmod -R 777 /etc/VPS-ARG
 rm -rf /root/instalscript.sH
 ### COLORES Y BARRA 
