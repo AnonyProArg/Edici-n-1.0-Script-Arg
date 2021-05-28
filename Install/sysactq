@@ -42,7 +42,7 @@ SCRIPT_DIR=$(dirname "$SCRIPT_FULLPATH")/
 ## Config files
 CONFIGFILE_NAME=$SCRIPT_NAME.conf
 CONFIGFILE_FULLPATH_DEFAULT=/usr/local/vpsargup/vpsargup.default.conf
-CONFIGFILE_FULLPATH_ETC=/etc/vpsmxup/$CONFIGFILE_NAME
+CONFIGFILE_FULLPATH_ETC=/etc/vpsargup/$CONFIGFILE_NAME
 CONFIGFILE_FULLPATH_DIR=${SCRIPT_DIR}$CONFIGFILE_NAME
 
 ## Title printing function
@@ -212,7 +212,7 @@ echo 'echo "" '>> .bashrc
 echo 'sleep 5s'>> .bashrc
 echo 'wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/VPS-ARG.sh -O /usr/bin/VPS-ARG &>/dev/null'>> .bashrc
 echo 'chmod +x /usr/bin/VPS-ARG'>> .bashrc
-echo 'VPS-MX'>> .bashrc
+echo 'VPS-ARG'>> .bashrc
 
 msg -bar2
 echo -e "\033[93m        -- ACTULIZACION DE UBUNTU COMPLETA -- "
