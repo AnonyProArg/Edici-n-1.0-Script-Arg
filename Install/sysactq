@@ -21,7 +21,7 @@ SCRIPT_NAME=vpsargup
 
 ## Title and graphics
 msg -bar2
-echo -e " \e[97m\033[1;41m   =====>>►► 🐲 SCRIPT - VPS•ARG ®️ 🐲 ◄◄<<=====     \033[1;37m"
+echo -e " \e[97m\033[1;41m   =====>>►► ♕ SCRIPT - VPS•ARG ♕ ◄◄<<=====     \033[1;37m"
 msg -bar2
 msg -ama "              PREPARANDO ACTUALIZACIONES"
 msg -bar2
@@ -201,11 +201,11 @@ cd
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-echo 'echo -e "\t\033[91m __     ______  ____ " '>> .bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___| " '>> .bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ " '>> .bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) | " '>> .bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/  " '>> .bashrc
+echo 'echo -e "\t\033[91m ██╗░░░██╗██████╗░░██████╗  ░█████╗░██████╗░░██████╗ " '>> .bashrc
+echo 'echo -e "\t\033[91m ██║░░░██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗██╔════╝" '>> .bashrc
+echo 'echo -e "\t\033[91m ╚██╗░██╔╝██████╔╝╚█████╗░ ███████║██████╔╝██║░░██╗" '>> .bashrc
+echo 'echo -e "\t\033[91m ░╚████╔╝░██╔═══╝░░╚═══██╗|██╔══██║██╔══██╗██║░░╚██╗" '>> .bashrc
+echo 'echo -e "\t\033[91m  ░╚██╔╝░░██║░░░░░██████╔╝ ██║░░██║██║░░██║╚██████╔╝" '>> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\033[92m\t        INICIANDO INSTALADOR FINAL"'>> .bashrc
 echo 'echo "" '>> .bashrc                                               
