@@ -39,7 +39,8 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ultrahost /etc/VPS-ARG/herramientas/ultrahost
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/utils.sh /etc/VPS-ARG/herramientas/utils.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh /etc/VPS-ARG/herramientas/ports.sh
-rm -rf /root/instalscript.sh
+chmod -R 777 /etc/VPS-ARG
+rm -rf /root/instalscript.sH
 ### COLORES Y BARRA 
 msg () {
 BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
