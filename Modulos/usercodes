@@ -861,8 +861,8 @@ else
 echo -e "${yellow}$usr $valid"
 fi
 done <<< "$(mostrar_usuarios)"
-rm -rf /etc/VPS-MX/VPS-MX-userlock
-rm -rf /etc/VPS-MX/controlador/Limiter.log
+rm -rf /etc/VPS-ARG/VPS-ARG-userlock
+rm -rf /etc/VPS-ARG/controlador/Limiter.log
 unlockall2
 msg -bar
 msg -ne " Enter Para Continuar" && read enter
@@ -943,7 +943,7 @@ curl -s --max-time 10 -d "chat_id=$IDB1&disable_web_page_preview=1&text=$MSG" $U
            continue
            fi
            echo -e "\033[1;33m OK! \033[1;31m${conexao[$user]} CONEXIONESS"
-		   BLOQUEADO="$(wc -l /etc/VPS-MX/VPS-MX-userlock | awk '{print $1}')"
+		   BLOQUEADO="$(wc -l /etc/VPS-ARG/VPS-MX-userlock | awk '{print $1}')"
 		   #BLOQUEADO="$(grep -c BLOCK-MULTILOGIN /etc/VPS-MX/controlador/Limiter.log)"
 		   BLOQUEADO2="$(echo ${BLOQUEADO}|bc)0"
 		   BLOQUEADO3="/10"
@@ -955,7 +955,7 @@ curl -s --max-time 10 -d "chat_id=$IDB1&disable_web_page_preview=1&text=$MSG" $U
     #echo "${EXPIRED}0"|bc > ${SCPdir}/USRexpired
 	echo "${EXPIRADO2}${EXPIRADO3}"|bc > ${SCPdir}/USRexpired
 	echo "${BLOQUEADO2}${BLOQUEADO3}"|bc > ${SCPdir}/USRbloqueados
-	limseg="$(less /etc/VPS-MX/controlador/tiemlim.log)"
+	limseg="$(less /etc/VPS-ARG/controlador/tiemlim.log)"
 	
 	sleep $limseg # TEMPO DE ESPERA DO LOOP
     clear
@@ -978,10 +978,10 @@ tput cuu1 && tput dl1
 done
 case ${selection} in
 1)
-cp ${USRdatabase} $HOME/VPS-MX-Backup
+cp ${USRdatabase} $HOME/VPS-ARG-Backup
 msg -azu "$(fun_trans "Procedimiento Hecho con Exito, Guardado en:")"
 echo ""
-echo -e "\033[1;31mBACKUP > [\033[1;32m$HOME/VPS-MX-Backup\033[1;31m]"
+echo -e "\033[1;31mBACKUP > [\033[1;32m$HOME/VPS-ARG-Backup\033[1;31m]"
 echo ""
 ;;
 2)
