@@ -943,11 +943,11 @@ curl -s --max-time 10 -d "chat_id=$IDB1&disable_web_page_preview=1&text=$MSG" $U
            continue
            fi
            echo -e "\033[1;33m OK! \033[1;31m${conexao[$user]} CONEXIONESS"
-		   BLOQUEADO="$(wc -l /etc/VPS-ARG/VPS-MX-userlock | awk '{print $1}')"
-		   #BLOQUEADO="$(grep -c BLOCK-MULTILOGIN /etc/VPS-MX/controlador/Limiter.log)"
+		   BLOQUEADO="$(wc -l /etc/VPS-ARG/VPS-ARG-userlock | awk '{print $1}')"
+		   #BLOQUEADO="$(grep -c BLOCK-MULTILOGIN /etc/VPS-ARG/controlador/Limiter.log)"
 		   BLOQUEADO2="$(echo ${BLOQUEADO}|bc)0"
 		   BLOQUEADO3="/10"
-		   EXPIRADO="$(grep -c EXPIRADO /etc/VPS-MX/controlador/Limiter.log)"
+		   EXPIRADO="$(grep -c EXPIRADO /etc/VPS-ARG/controlador/Limiter.log)"
 		   EXPIRADO2="$(echo ${EXPIRADO}|bc)0"
 		   EXPIRADO3="/10"
     done <<< "$(mostrar_usuarios)"
@@ -989,12 +989,12 @@ while [[ ! -e ${dirbackup} ]]; do
 echo -ne "\033[1;37m ¡¡Recomiendo DESACTIVAR Limitador si es que lo tine ACTIVO!!\n"
 echo -ne "\033[1;37m Escriba la ubicacion de la copia de seguridad\n" 
 msg -bar
-echo -ne "\033[1;37m ENTER: para ruta predeterminada /root/VPS-MX-Backup: " && read dirbackup
+echo -ne "\033[1;37m ENTER: para ruta predeterminada /root/VPS-ARG-Backup: " && read dirbackup
 echo ""
 echo "----------  RESTAURANDO CUENTAS ESPERE "
 echo ""
 msg -bar
-[[ -z "${dirbackup}" ]] && dirbackup="/root/VPS-MX-Backup"
+[[ -z "${dirbackup}" ]] && dirbackup="/root/VPS-ARG-Backup"
 tput cuu1 && tput dl1
 done
 VPSsec=$(date +%s)
@@ -1034,7 +1034,7 @@ if [[ -z $PIDVRF ]]; then
 msg -bar
 echo -ne "\033[1;96m   ¿Cada cuantos segundos ejecutar el limitador?\n\033[1;97m  +Segundos = -Uso de CPU | -Segundos = +Uso de CPU\033[0;92m \n                Predeterminado:\033[1;37m 120s\n     Cuantos Segundos (Numeros Unicamente): " && read tiemlim   
 [[ -z "$tiemlim" ]] && tiemlim="120"
-echo "${tiemlim}" > /etc/VPS-MX/controlador/tiemlim.log
+echo "${tiemlim}" > /etc/VPS-ARG/controlador/tiemlim.log
 cd ${SCPusr}
 screen -dmS very ${SCPusr}/usercodes verificar
 else
@@ -1068,7 +1068,7 @@ if [[ -z $PIDVRF2 ]]; then
 msg -bar
 echo -ne "\033[1;96m   ¿Cada cuantos segundos ejecutar el desbloqueador?\n\033[1;97m  +Segundos = -Uso de CPU | -Segundos = +Uso de CPU\033[0;92m \n                Predeterminado:\033[1;37m 300s\n     Cuantos Segundos (Numeros Unicamente): " && read tiemdes   
 [[ -z "$tiemdes" ]] && tiemdes="300"
-echo "${tiemdes}" > /etc/VPS-MX/controlador/tiemdes.log
+echo "${tiemdes}" > /etc/VPS-ARG/controlador/tiemdes.log
 cd ${SCPusr} 
 screen -dmS very2 ${SCPusr}/usercodes desbloqueo
 else
@@ -1089,7 +1089,7 @@ baner_fun () {
 banner_on () {
 clear 
 clear 
-local="/etc/VPS-MX/bannerssh"
+local="/etc/VPS-ARG/bannerssh"
 rm -rf $local  > /dev/null 2>&1
 local2="/etc/dropbear/banner"
 chk=$(cat /etc/ssh/sshd_config | grep Banner)
@@ -1097,8 +1097,8 @@ if [ "$(echo "$chk" | grep -v "#Banner" | grep Banner)" != "" ]; then
 local=$(echo "$chk" |grep -v "#Banner" | grep Banner | awk '{print $2}')
  else
 echo "" >> /etc/ssh/sshd_config
-echo "Banner /etc/VPS-MX/bannerssh" >> /etc/ssh/sshd_config
-local="/etc/VPS-MX/bannerssh"
+echo "Banner /etc/VPS-ARG/bannerssh" >> /etc/ssh/sshd_config
+local="/etc/VPS-ARG/bannerssh"
 fi
 msg -bar
 msg -tit
@@ -1107,7 +1107,7 @@ msg -bar
 msg -ne "$(fun_trans  "Inserte el BANNER de preferencia en HTML sin saltos"): \n\n" && read ban_ner
 echo ""
 msg -bar
-credi="$(less /etc/VPS-MX/message.txt)"
+credi="$(less /etc/VPS-ARG/message.txt)"
 echo "$ban_ner" >> $local
 echo '<p style="text-align: center;"><span style="color: #0000ff;"><strong>'$credi'</strong></span><br /><em><span style="color: #ff0000;"><strong>SCRIPT - VPS&bull;MX</strong></span></em></p>' >> $local
 if [[ -e "$local2" ]]; then
@@ -1168,7 +1168,7 @@ ${SCPusr}/usercodes
 desbloqueo_auto () {
 while true; do
 Desbloqueo.sh 2>/dev/null
-tiemdes="$(less /etc/VPS-MX/controlador/tiemdes.log)"
+tiemdes="$(less /etc/VPS-ARG/controlador/tiemdes.log)"
 sleep $tiemdes
     done
 }
@@ -1180,7 +1180,7 @@ msg -bar
 msg -tit
 echo -e "\033[1;32m  REGISTRO TOTAL DE CUENTAS VIEJAS Y NUEVAS"
 msg -bar
-cat /etc/VPS-MX/VPS-MXuser
+cat /etc/VPS-ARG/VPS-ARGuser
 msg -bar
 msg -ne " Enter Para Continuar" && read enter
 ${SCPusr}/usercodes
@@ -1235,7 +1235,7 @@ ${SCPusr}/usercodes
 clear 
 clear
 msg -bar
-sed -i -e 's/^[ \t]*//; s/[ \t]*$//; /^$/d' /etc/VPS-MX/controlador/Limiter2.log
+sed -i -e 's/^[ \t]*//; s/[ \t]*$//; /^$/d' /etc/VPS-ARG/controlador/Limiter2.log
 [[ -e "${SCPusr}/Limiter2.log" ]] && {
 msg -tit
 msg -ama "              REGISTRO DEL LIMITADOR "
