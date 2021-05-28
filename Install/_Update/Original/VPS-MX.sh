@@ -3,7 +3,7 @@ clear
 cd $HOME
 systemedia &> /dev/null
 rm $(pwd)/$0 &> /dev/null
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/VPS-ARG"
 SCPinstal="$HOME/install"
 SCPidioma="${SCPdir}/idioma"
 SCPusr="${SCPdir}/controlador"
@@ -37,10 +37,10 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 ### PAQUETES PRINCIPALES 
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
-echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-MX --    \e[49m"
+echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-ARG --    \e[49m"
 echo -e "  \033[100m     PONER ATENCION  PARA SIGUIENTE PREGUNTA     "
 echo -e "\033[97m"
 msg -bar
@@ -153,7 +153,7 @@ idfix64_86 () {
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -bar2
 echo ""
 echo -e "\e[91m   INSTALACION SEMI MANUAL DE PAQUETES "
@@ -176,7 +176,7 @@ clear
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
 msg -bar2
 echo ""
 echo -e "\e[91mESCOJER PRIMERO #All locales# Y LUEGO #en_US.UTF-8# \e[0m" 
@@ -194,7 +194,7 @@ clear
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -bar2
 echo -e "\033[1;97m  ¿PRECENTO ALGUN ERROR ALGUN PAQUETE ANTERIOR?" 
 msg -bar2
@@ -255,9 +255,9 @@ byinst="true"
 install_fim () {
 msg -ama "               Finalizando Instalacion" && msg bar2
 #rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://www.dropbox.com/s/s6pwqszg1jfmlkc/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://www.dropbox.com/s/y5jwcmj3p6z8paa/IDT.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://www.dropbox.com/s/gs3lhq8odxzu7ib/tiemlim.log &>/dev/null
+[[ $(find /etc/VPS-ARG/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/nombre.log https://www.dropbox.com/s/s6pwqszg1jfmlkc/nombre.log &>/dev/null
+[[ $(find /etc/VPS-ARG/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/IDT.log https://www.dropbox.com/s/y5jwcmj3p6z8paa/IDT.log &>/dev/null
+[[ $(find /etc/VPS-ARG/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/tiemlim.log https://www.dropbox.com/s/gs3lhq8odxzu7ib/tiemlim.log &>/dev/null
 
 wget -O /bin/rebootnb https://www.dropbox.com/s/ehdrk5fu5t52a0k/rebootnb &> /dev/null
 chmod +x /bin/rebootnb 
@@ -274,21 +274,21 @@ echo "exit 0" >> /etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " '>> .bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " '>> .bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " '>> .bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " '>> .bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " '>> .bashrc
+echo 'echo -e "\t\033[91m __     ______  ____  " '>> .bashrc
+echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___| " '>> .bashrc
+echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ " '>> .bashrc
+echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |" '>> .bashrc
+echo 'echo -e "\t\033[91m    \_/  |_|   |____/ " '>> .bashrc
 echo 'echo "" '>> .bashrc
-echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >> .bashrc
+echo 'mess1="$(less /etc/VPS-ARG/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\t\033[92mRESELLER : $mess1 "'>> .bashrc
 echo 'echo "" '>> .bashrc                                               
-echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-MX o vps-mx "'>> .bashrc
+echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG o vps-arg "'>> .bashrc
 echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/VPS-MX/VPS-MX_Oficial/master/Version &>/dev/null'>> .bashrc
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-echo -e "  \033[1;41m               sudo VPS-MX o vps-mx             \033[0;37m" && msg -bar2
+echo -e "  \033[1;41m               sudo VPS-ARG o vps-ARG             \033[0;37m" && msg -bar2
 sleep 5
 exit
 }
@@ -345,9 +345,9 @@ NOTIFY () {
 clear
 clear
 msg -bar
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
 msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)| VPS-MX By @Kalix1 "
+msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By @Kalix1 "
 msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
@@ -359,15 +359,15 @@ echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @USA1_BOT"
 echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564"
 msg -bar
 echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
-echo "${nombr}" > /etc/VPS-MX/controlador/nombre.log
+echo "${nombr}" > /etc/VPS-ARG/controlador/nombre.log
 echo -e "\033[1;93mIgrese su ID 👤:\033[0;37m"; read -p " " idbot
-echo "${idbot}" > /etc/VPS-MX/controlador/IDT.log 
+echo "${idbot}" > /etc/VPS-ARG/controlador/IDT.log 
 msg -bar
 echo -e "\033[1;32m              ID AGREGADO CON EXITO"
 msg -bar
-NOM="$(less /etc/VPS-MX/controlador/nombre.log)"
+NOM="$(less /etc/VPS-ARG/controlador/nombre.log)"
 NOM1="$(echo $NOM)"
-IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
+IDB1=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
 
 KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
@@ -388,7 +388,7 @@ chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://www.dropbox.com/s/9kmvmfyvudynp8a/estilos.css &> /dev/null
 msg -bar2
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - AR - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 20 a 64 De Preferencia🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
@@ -441,4 +441,4 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
 else
 invalid_key
 fi
-rm -rf VPS-MX
+rm -rf VPS-ARG
