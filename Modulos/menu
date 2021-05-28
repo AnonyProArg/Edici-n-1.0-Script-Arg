@@ -568,6 +568,7 @@ case $1 in
 "sockspy.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SOCKS PYTHON --------------------- $(pid_inst python)";;
 "v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 "==>>") " && msg -azu "V2RAY ---------------------------- $(pid_inst v2ray)";; 
 "budp.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "BADVPN-(UDP:7300) ---------------- $(pid_inst badvpn)";;
+"multissl.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "PAYLOAD + SSL(AUTOMATICO) ---------------- $(pid_inst multissl)";;
 
 "paysnd.sh")return 1;;
 "ultrahost")return 1;;
@@ -944,6 +945,7 @@ echo -ne " + Mas liviano y sencillo de actulizar\n"
 echo -ne " + Auto Reinicio Forzado (Actulizaciones de Ubuntu) \n"
 echo -ne " + Auto root Directo \n"
 echo -ne " + Error de IP Privada e IP Publica en menu \n"
+echo -ne " + PAYLOAD + SSL INSTALACION AUTOMATICA \n"
 msg -bar
 }
 monhtop () {
