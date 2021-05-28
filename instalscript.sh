@@ -1,5 +1,9 @@
+
 #!/bin/bash 
-mkdir /etc/VPS-ARG
+mkdir /etc/VPS-ARG 
+mkdir /etc/VPS-ARG/controlador 
+mkdir /etc/VPS-ARG/protocolos 
+mkdir /etc/VPS-ARG/herramientas
 rm -rf /root/instalscript.sh
 ### COLORES Y BARRA 
 msg () {
