@@ -17,11 +17,11 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 
 ## Script name
-SCRIPT_NAME=vpsmxup
+SCRIPT_NAME=vpsargup
 
 ## Title and graphics
 msg -bar2
-echo -e " \e[97m\033[1;41m   =====>>►► 🐲 SCRIPT - VPS•MX ®️ 🐲 ◄◄<<=====     \033[1;37m"
+echo -e " \e[97m\033[1;41m   =====>>►► 🐲 SCRIPT - VPS•ARG ®️ 🐲 ◄◄<<=====     \033[1;37m"
 msg -bar2
 msg -ama "              PREPARANDO ACTUALIZACIONES"
 msg -bar2
@@ -108,7 +108,7 @@ do
 done
 	
 printTitle "Actualización automática"
-INSTALL_DIR_PARENT="/usr/local/vpsmxup/"
+INSTALL_DIR_PARENT="/usr/local/vpsargup/"
 
 
 SCRIPT_HASH_AFTER_UPDATE=`md5sum ${SCRIPT_FULLPATH} | awk '{ print $1 }'`
@@ -201,16 +201,16 @@ cd
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " '>> .bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " '>> .bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " '>> .bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " '>> .bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " '>> .bashrc
+echo 'echo -e "\t\033[91m __     ______  ____  " '>> .bashrc
+echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___| " '>> .bashrc
+echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ " '>> .bashrc
+echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |" '>> .bashrc
+echo 'echo -e "\t\033[91m    \_/  |_|   |____/ " '>> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\033[92m\t        INICIANDO INSTALADOR FINAL"'>> .bashrc
 echo 'echo "" '>> .bashrc                                               
 echo 'sleep 5s'>> .bashrc
-echo 'wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/Install/VPS-MX.sh -O /usr/bin/VPS-MX &>/dev/null'>> .bashrc
+echo 'wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/VPS-ARG.sh -O /usr/bin/VPS-ARG &>/dev/null'>> .bashrc
 echo 'chmod +x /usr/bin/VPS-MX'>> .bashrc
 echo 'VPS-MX'>> .bashrc
 
