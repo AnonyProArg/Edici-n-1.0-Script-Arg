@@ -132,11 +132,11 @@ function_verify () {
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n                 CONATACTE A @Kalix1\n————————————————————————————————————————————————————\n\n\n"
-  [[ -d /etc/VPS-MX ]] && rm -rf /etc/VPS-MX
+  [[ -d /etc/VPS-ARG ]] && rm -rf /etc/VPS-ARG
   exit 1
   } || {
   ### INTALAR VERSION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/VPS-MX/VPS-MX_Oficial/master/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version")
   echo "$v1" > /etc/versin_script
   }
 }
@@ -179,7 +179,7 @@ clear
 clear
 msg -bar
 msg -tit
-echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-MX"
+echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG"
 msg -bar2 && msg -ne "\033[1;93m          >>> INTRODUSCA LA KEY ABAJO <<<\n   \033[1;37m" && read Key
 tput cuu1 && tput dl1
 done
@@ -198,7 +198,7 @@ updatedb
 
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "    $(source trans -b es:es "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-MX #MOD by @Kalix1\e[97m]"
+   msg -verd "    $(source trans -b es:es "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-ARG #MOD by AnonyProArg\e[97m]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="." 
@@ -215,8 +215,8 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
    echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
    mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
-   echo "${SCPdir}/menu" > /usr/bin/vps-mx && chmod +x /usr/bin/vps-mx
-   echo "${SCPdir}/menu" > /usr/bin/VPS-MX && chmod +x /usr/bin/VPS-MX
+   echo "${SCPdir}/menu" > /usr/bin/vps-arg && chmod +x /usr/bin/vps-arg
+   echo "${SCPdir}/menu" > /usr/bin/VPS-ARG && chmod +x /usr/bin/VPS-ARG
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "es" > ${SCPidioma}
@@ -500,7 +500,7 @@ if [[ ${yesno} = @(s|S|y|Y) ]]; then
 rm -rf ${SCPdir} &>/dev/null
 rm -rf ${SCPusr} &>/dev/null
 rm -rf ${SCPinst} &>/dev/null
-[[ -e /bin/VPS-MX ]] && rm /bin/VPS-ARG
+[[ -e /bin/VPS-ARG ]] && rm /bin/VPS-ARG
 [[ -e /usr/bin/VPS-ARG ]] && rm /usr/bin/VPS-ARG
 [[ -e /bin/menu ]] && rm /bin/menu
 [[ -e /usr/bin/menu ]] && rm /usr/bin/menu
@@ -618,7 +618,7 @@ script[$Numb]="apacheon.sh"
 echo -e "\033[1;93m-----------------------SEGURIDAD---------------------"
 #PROTECION
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FIREWALL PARA VPS VPS•MX            $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FIREWALL PARA VPS VPS•ARG            $ofc"
 script[$Numb]="blockBT.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FAIL2BAN PROTECION                  $ofc"
@@ -799,7 +799,7 @@ PIDVRF3="$(ps aux|grep "${SCPdir}/menu monitorservi"|grep -v grep|awk '{print $2
 PIDVRF5="$(ps aux|grep "${SCPdir}/menu moni2"|grep -v grep|awk '{print $2}')"
 
 if [[ -z $PIDVRF3 ]]; then
-sed -i '5a\screen -dmS very3 /etc/VPS-MX/menu monitorservi' /bin/resetsshdrop
+sed -i '5a\screen -dmS very3 /etc/VPS-ARG/menu monitorservi' /bin/resetsshdrop
 msg -bar
 echo -e "\033[1;34m          ¿Monitorear Protocolo SSH/SSHD?"
 msg -bar
@@ -843,7 +843,7 @@ sed -i "55d" /bin/monitor.sh
 sed -i '55i #EstadoServicio v2ray' /bin/monitor.sh 
 [[ "$monv2ray" = "s" || "$monv2ray" = "S" ]] && monv2ray 
 
-#echo "screen -dmS very3 /etc/VPS-MX/menu monitorservi" >> /bin/resetsshdrop
+#echo "screen -dmS very3 /etc/VPS-ARG/menu monitorservi" >> /bin/resetsshdrop
 cd ${SCPdir}
 screen -dmS very3 ${SCPdir}/menu monitorservi
 screen -dmS monis2 ${SCPdir}/menu moni2
@@ -908,7 +908,7 @@ echo -e "\033[1;97m   SSH REG:\033[1;92m $SSH4 \033[1;97m   SS-SSRR REG:\033[1;9
 VERY="$(ps aux|grep "${SCPusr}/usercodes verificar"| grep -v grep)"
 VERY2="$(ps aux|grep "${SCPusr}/usercodes desbloqueo"| grep -v grep)"
 VERY3="$(ps aux|grep "${SCPdir}/menu monitorservi"| grep -v grep)"
-limseg="$(less /etc/VPS-MX/controlador/tiemlim.log)" 
+limseg="$(less /etc/VPS-ARG/controlador/tiemlim.log)" 
 [[ -z ${VERY} ]] && verificar="\033[1;31m[OFF]" || verificar="\033[1;32m[ON]"
 [[ -z ${VERY2} ]] && desbloqueo="\033[1;31m[OFF]" || desbloqueo="\033[1;32m[ON]"
 [[ -z ${VERY3} ]] && monitorservi="\033[1;31m[OFF]" || monitorservi="\033[1;32m[ON]"
