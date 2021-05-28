@@ -312,7 +312,7 @@ iptables-save > /etc/iptables/rules.v4
 echo ""
 echo -e " Port Seleccionado: $portbg | Cantidad de GB: $gbuser"
 echo ""
-echo " $portbg | $gbuser | $multiplicacion " >> /etc/VPS-MX/v2ray/lisportt.log 
+echo " $portbg | $gbuser | $multiplicacion " >> /etc/VPS-ARG/v2ray/lisportt.log 
 msg -bar
 msg -ne "Enter Para Continuar" && read enter
 ${SCPinst}/v2ray.sh
@@ -368,7 +368,7 @@ msg -ne "Enter Para Continuar" && read enter
 ${SCPinst}/v2ray.sh
 }
 [[ $(sed -n '/'${portbg}'/=' /etc/VPS-ARG/v2ray/lisportt.log|head -1) ]] || invaliduuid
-gblim=$(cat /etc/VPS-MX/v2ray/lisportt.log|grep -w "$portbg"|cut -d'|' -f3)
+gblim=$(cat /etc/VPS-ARG/v2ray/lisportt.log|grep -w "$portbg"|cut -d'|' -f3)
 sudo iptables -D OUTPUT -p tcp --sport $portbg -j DROP
 sudo iptables -D OUTPUT -p tcp --sport $portbg -m quota --quota $gblim -j ACCEPT
 iptables-save > /etc/iptables/rules.v4
