@@ -5,17 +5,17 @@ clear
 msg -bar
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
-NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
+NOM=`less /etc/VPS-ARG/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
-IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
+IDB=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
 declare -A TIMEUS 
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/VPS-ARG"
 SCPdir2="${SCPdir}/herramientas"
 SCPusr="${SCPdir}/controlador"
-MyPID="${SCPusr}/pid-vps-mx"
-MyTIME="${SCPusr}/time-vps-mx"
-USRdatabase="${SCPdir}/VPS-MXuser"
+MyPID="${SCPusr}/pid-vps-arg"
+MyTIME="${SCPusr}/time-vps-arg"
+USRdatabase="${SCPdir}/VPS-ARGuser"
 VERY="$(ps aux|grep "${SCPusr}/usercodes verificar"| grep -v grep)"
 VERY2="$(ps aux|grep "${SCPusr}/usercodes desbloqueo"| grep -v grep)"
 dirapache="/usr/local/lib/ubuntn/apache/ver" && [[ ! -d ${dirapache} ]] && exit
@@ -99,14 +99,14 @@ kill "$userpid" 2>/dev/null
 userdel $user
 echo -e "\033[1;32mUSUARIO:\033[1;33m $user \033[1;31mEliminado"
 done
-rm -rf ${SCPdir}/VPS-MXuser
+rm -rf ${SCPdir}/VPS-ARGuser
 service sshd restart &>/dev/null
 service ssh restart &>/dev/null
 service dropbear start &>/dev/null
 service stunnel4 start &>/dev/null
 service squid restart &>/dev/null
-rm -rf ${SCPdir}/VPS-MX-userlock &>/dev/null
-rm -rf /etc/VPS-MX/controlador/Limiter.log &>/dev/null
+rm -rf ${SCPdir}/VPS-ARG-userlock &>/dev/null
+rm -rf /etc/VPS-ARG/controlador/Limiter.log &>/dev/null
 unlockall2
 msg -bar
 msg -ne " Enter Para Continuar" && read enter
@@ -125,8 +125,8 @@ echo ""
 echo -e "\033[1;91m ## Cancelar Precione CTRL+C"
 msg -bar
 read -p "        ►► Presione enter para continuar ◄◄"
-rm -rf /etc/VPS-MX/VPS-MX-userlock
-rm -rf /etc/VPS-MX/controlador/Limiter.log
+rm -rf /etc/VPS-ARG/VPS-ARG-userlock
+rm -rf /etc/VPS-ARG/controlador/Limiter.log
 unlockall2
 msg -bar
 echo -e "\033[1;92m           ¡¡CONTADORES REINICIADOS!!"
@@ -166,13 +166,13 @@ done
 }
 
 block_userfun () {
-local USRloked="/etc/VPS-MX/VPS-MX-userlock"
+local USRloked="/etc/VPS-ARG/VPS-ARG-userlock"
 local LIMITERLOG="${USRdatabase}/Limiter.log"
 local LIMITERLOG2="${USRdatabase}/Limiter2.log"
 if [[ $2 = "-loked" ]]; then 
 [[ $(cat ${USRloked}|grep -w "$1") ]] && return 1
 echo " $1 (BLOCK-MULTILOGIN) $(date +%r--%d/%m/%y)"
-limseg="$(less /etc/VPS-MX/controlador/tiemdes.log)"
+limseg="$(less /etc/VPS-ARG/controlador/tiemdes.log)"
 KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
@@ -220,7 +220,7 @@ block_user () {
 clear
 clear
 msg -bar
-local USRloked="/etc/VPS-MX/VPS-MX-userlock"
+local USRloked="/etc/VPS-ARG/VPS-ARG-userlock"
 [[ ! -e ${USRloked} ]] && touch ${USRloked}
 usuarios_ativos=($(mostrar_usuarios))
 if [[ -z ${usuarios_ativos[@]} ]]; then
@@ -287,7 +287,7 @@ useradd -M -s /bin/false $1 -e ${valid} > /dev/null 2>&1 || return 1
    echo "$1|$2|${datexp}|$4" > ${USRdatabase}
    for value in `echo ${newbase}`; do
    echo $value >> ${USRdatabase}
-   echo $value >> ${SCPdir}/B-VPS-MXuser/VPS-MXuser-"$Fecha"
+   echo $value >> ${SCPdir}/B-VPS-ARGuser/VPS-ARGuser-"$Fecha"
    done
    } || echo "$1|$2|${datexp}|$4" > ${USRdatabase}
 }
@@ -496,8 +496,8 @@ done
      msg -ne "$(fun_trans "  >> Limite de Conexion"): " && echo -e "$limiteuser"
 msg -bar
 diasuser2="$(echo "$diasuser"|bc)+1"
-echo "${diasuser2}"|bc > /etc/VPS-MX/controlador/DIAS.log
-diasuser3="$(less /etc/VPS-MX/controlador/DIAS.log)"
+echo "${diasuser2}"|bc > /etc/VPS-ARG/controlador/DIAS.log
+diasuser3="$(less /etc/VPS-ARG/controlador/DIAS.log)"
 add_user "${nomeuser}" "${senhauser}" "${diasuser3}" "${limiteuser}" && msg -ama "$(fun_trans "            Usuario Creado con Exito")" || msg -verm "$(fun_trans "         Error, Usuario no creado")"
 [[ $(dpkg --get-selections|grep -w "openvpn"|head -1) ]] && [[ -e /etc/openvpn/openvpn-status.log ]] && newclient "$nomeuser" "$senhauser"
 msg -bar
@@ -555,8 +555,8 @@ pkill -u $usuario_del
 droplim=`droppids|grep -w "$usuario_del"|cut -d'|' -f2` 
 kill -9 $droplim &>/dev/null
 rm_user "$usuario_del" && msg -verd " [$(fun_trans "Removido")]" || msg -verm " [$(fun_trans "No Removido")]"
-rm -rf /etc/VPS-MX/VPS-MX-userlock
-rm -rf /etc/VPS-MX/controlador/Limiter.log
+rm -rf /etc/VPS-ARG/VPS-ARG-userlock
+rm -rf /etc/VPS-ARG/controlador/Limiter.log
 unlockall2
 msg -bar
 msg -ne " Enter Para Continuar" && read enter
