@@ -114,8 +114,8 @@ SCPidioma="${SCPdir}/idioma"
 local LINGUAGE=$(cat ${SCPidioma})
 [[ -z $LINGUAGE ]] && LINGUAGE=es
 [[ $LINGUAGE = "es" ]] && echo "$@" && return
-[[ ! -e /usr/bin/trans ]] && wget -O /usr/bin/trans https://www.dropbox.com/s/ryky68szhqhi48e/trans &> /dev/null
-[[ ! -e /etc/VPS-ARG/texto-mx ]] && touch /etc/VPS-MX/texto-mx
+[[ ! -e /usr/bin/trans ]] && wget -O /usr/bin/trans https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/trans &> /dev/null
+[[ ! -e /etc/VPS-ARG/texto-mx ]] && touch /etc/VPS-ARG/texto-mx
 source /etc/VPS-ARG/texto-mx
 if [[ -z "$(echo ${texto[$@]})" ]]; then
 #ENGINES=(aspell google deepl bing spell hunspell apertium yandex)
@@ -136,7 +136,7 @@ function_verify () {
   exit 1
   } || {
   ### INTALAR VERSION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Vercion")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version")
   echo "$v1" > /etc/versin_script
   }
 }
@@ -222,7 +222,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "es" > ${SCPidioma}
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
    echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-   echo -e "  \033[1;41m               sudo VPSMX o menu             \033[0;37m" && msg -bar2
+   echo -e "  \033[1;41m               sudo VPSARG o menu             \033[0;37m" && msg -bar2
 
 else
 invalid_key
