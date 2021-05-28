@@ -558,7 +558,7 @@ case $1 in
 
 "openssh.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "OPENSSH $(pid_inst sshd)";;
 
-"squid.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SQUID ---------------------------- $(pid_inst squid)";;
+"squid.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SQUID ---------------------------- "$(msg -verd " [$2]") $(msg -verm2 "<<==") $(pid_inst squid)";;
 "dropbear.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "DROPBEAR ------------------------- $(pid_inst dropbear)";;
 "openvpn.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "OPENVPN -------------------------- $(pid_inst openvpn)";;
 "ssl.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SSL ------------------------------ $(pid_inst stunnel4)";;
@@ -601,7 +601,7 @@ clear
 tput cuu1 && tput dl1
 msg -bar2
 msg -tit
-msg -ama "                 MENU DE HERRAMIENTAS"
+msg -ama "                 【ＭＥＮＵ　ＤＥ　ＨＥＲＲＡＭＩＥＮＴＡＳ】"
 msg -bar2
 local Numb=1
 for arqs in $(ls ${SCPfrm}); do
@@ -919,12 +919,12 @@ creditoss () {
 clear 
 msg -bar
 msg -tit
-echo -ne " \033[1;93m          CREDITOS Y REGISTRO DE CAMBIOS\n"
+echo -ne " \033[1;93m          【ＣＲＥＤＩＴＯＳ　Ｙ　ＲＥＧＩＳＴＲＯ　ＤＥ　ＣＡＭＢＩＯＳ】\n"
 msg -bar
 [[ -e ${SCPdir}/message.txt ]] && msg -bra " RESELLER AUTORIZADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
 [[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
 msg -bar
-echo -ne "\033[1;97m        CAMBIOS DE LA VERSION 8.3\n"
+echo -ne "\033[1;97m        Version 1.0\n"
 echo -ne " - Compatible con Ubuntu's 14,16,18,20\n"
 echo -ne "        (Server live's ext 0.4)\n"
 echo -ne " - Compatibilidad Ubuntu 20, Squid,Openvpn,Dropbear\n"
@@ -967,13 +967,13 @@ msg -bar
 }
 msg -bar
 msg -bar3
-menu_func "ADMINISTRAR CUENTAS | SSH/SSL/DROPBEAR" "ADMINISTRAR CUENTAS | SS/SSRR" "ADMINISTRAR CUENTAS | V2RAY"   "\033[1;100mINSTALADORES DE PROTOCOLOS" "PUERTOS ACTIVOS" "HERRAMIENTAS y EXTRAS" "CAMBIAR COLORES DEL PANEL" "MONITOR DE PROTOCOLOS --------> ${monitorservi}" " AUTO INICIAR SCRIPT ----------> $AutoRun " 
+menu_func "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 |𝕊𝕊ℍ/𝕊𝕊𝕃/𝔻ℝ𝕆ℙ𝔹𝔼𝔸ℝ ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊/𝕊𝕊ℝℝ ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕍𝟚ℝ𝔸𝕐 ✶*"   "\033[1;100m*✶ 𝕀ℕ𝕊𝕋𝔸𝕃𝔸𝔻𝕆ℝ𝔼𝕊 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶*" "*✶ ℙ𝕌𝔼ℝ𝕋𝕆𝕊 𝔸ℂ𝕋𝕀𝕍𝕆𝕊 ✶*" "*✶ ℍ𝔼ℝℝ𝔸𝕄𝕀𝔼ℕ𝕋𝔸𝕊 𝕪 𝔼𝕏𝕋ℝ𝔸𝕊 ✶*" "*✶ ℂ𝔸𝕄𝔹𝕀𝔸ℝ ℂ𝕆𝕃𝕆ℝ𝔼𝕊 𝔻𝔼𝕃 ℙ𝔸ℕ𝔼𝕃 ✶*" "*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶* --------> ${monitorservi}" "*✶ 𝔸𝕌𝕋𝕆 𝕀ℕ𝕀ℂ𝕀𝔸ℝ 𝕊ℂℝ𝕀ℙ𝕋  ✶* ----------> $AutoRun " 
 msg -bar
-echo -ne " $(msg -verd " [10]") $(msg -verm2 "=>>") \e[36m MONITOR DE PROCESOS DE SISTEMA CON HTOP \e[97m \n"
+echo -ne " $(msg -verd " [10]") $(msg -verm2 "=>>") \e[36m*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆ℂ𝔼𝕊𝕆𝕊 𝔻𝔼 𝕊𝕀𝕊𝕋𝔼𝕄𝔸 ℂ𝕆ℕ ℍ𝕋𝕆ℙ ✶* \e[97m \n"
 msg -bar
-echo -ne " \e[93m [11] \e[97m $(msg -verm2 "=>>") $(msg -verd "ACTUALIZAR ") " && echo -ne "\e[93m [12] \e[97m $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m DESINSTALAR "
+echo -ne " \e[93m [11] \e[97m $(msg -verm2 "=>>") $(msg -verd "【ＡＣＴＵＡＬＩＺＡＲ】 ") " && echo -ne "\e[93m [12] \e[97m $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m 【ＤＥＳＩＮＳＴＡＬＡＲ】 "
 msg -bar
-echo -ne "$(msg -verd "  [13]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mCREDITOS" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m ❗️ SALIR DEL SCRIPT ❗️ "
+echo -ne "$(msg -verd "  [13]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mCREDITOS" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m ❗️ 【ＳＡＬＩＲ　ＤＥＬ　ＳＣＲＩＰＴ】 ❗️ "
 msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
