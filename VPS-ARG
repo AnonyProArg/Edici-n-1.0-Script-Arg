@@ -75,7 +75,7 @@ sleep 3s
 ####------- REINICIAR UPDATER Y RECONFIGURAR HORARIO
 
 msg -bar2
-echo -e " \e[97m\033[1;41m   =====>>►► 🐲 SCRIPT - VPS•MX ®️ 🐲 ◄◄<<=====     \033[1;37m"
+echo -e " \e[97m\033[1;41m   =====>>►► 🐲 SCRIPT - VPS•ARG ®️ 🐲 ◄◄<<=====     \033[1;37m"
 msg -bar2
 msg -ama "               PREPARANDO INSTALACION"
 msg -bar2
