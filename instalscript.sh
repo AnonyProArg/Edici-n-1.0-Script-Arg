@@ -57,7 +57,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 clear
  msg -bar2
- msg -ama "     [ VPS - AR - SCRIPT \033[1;97m By:AnonyProArg ❌\033[1;33m ]"
+ msg -ama "     [ VPS - AR - SCRIPT \033[1;97m By:AnonyProArg \033[1;33m ]"
  msg -bar2
 ## Install/Interno
 	echo -e  "\033[1;97m              Copiando Instalador Interno "
@@ -87,7 +87,7 @@ otro_fun2 () {
     
 	echo "OK IGNORAR ESTE PASO"
 }
-echo -e "\e[1;100mRECUERDA QUE ESTE SCRIPT ES TOTALMENTE GRATUITO\nY DE CODIGO ABIERTO ESTA TOTALMENTE PROHIBIDA SU VENTA\nEN CASO QUE LO HAYAS COMPRADO  -\nRECUERDA QUE TE METIERON TODITA LA VERGA EN EL CULO\e[0m"
+echo -e "\e[1;100mRECUERDA QUE ESTE SCRIPT ES TOTALMENTE GRATUITO\nESTA TOTALMENTE PROHIBIDA SU VENTA\nCOMPARTE PARA LLEGAR A MAS -\nARGENTINOS 😎🇦🇷\e[0m"
 msg -bar
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
