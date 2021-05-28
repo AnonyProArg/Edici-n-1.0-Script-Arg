@@ -4,12 +4,12 @@ clear
 clear
 [[ $(dpkg --get-selections|grep -w "speedtest-cli"|head -1) ]] || apt-get install speedtest-cli -y &>/dev/null
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
-SCPdir="/etc/VPS-MX" && [[ ! -d ${SCPdir} ]] && exit 1
+SCPdir="/etc/VPS-ARG" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPusr="${SCPdir}/controlador" && [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
 SCPfrm="${SCPdir}/herramientas" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
 SCPinst="${SCPdir}/protocolos" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
 msg -bar
-echo -e "${cor[4]} $(fun_trans "    PRUEBA DE VELOCIDAD DE HOSTING ") [By VPS-MX]"
+echo -e "${cor[4]} $(fun_trans "    PRUEBA DE VELOCIDAD DE HOSTING ") [By VPS-ARG]"
 msg -bar
 ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
 # PROGRESS - BAR
