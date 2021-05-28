@@ -12,8 +12,8 @@ PASS = ''
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:22'
-RESPONSE = 'HTTP/1.1 200 <strong>(<span style="color: #ff0000;"><strong><span style="color: #ff9900;">By</span>-<span style="color: #008000;">VPS</span>-MEX</strong></span>)</strong>\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 conexion exitosa\r\n\r\n'
+DEFAULT_HOST = '127.0.0.1:80'
+RESPONSE = 'HTTP/1.1 101 <strong>(<span style="color: #ff0000;"><strong><span style="color: #ff9900;">By</span>-<span style="color: #008000;">VPS</span>-ARG</strong></span>)</strong>\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 conexion exitosa\r\n\r\n'
 #RESPONSE = 'HTTP/1.1 200 Hello_World!\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 Connection established\r\n\r\n'  # lint:ok
 
 class Server(threading.Thread):
