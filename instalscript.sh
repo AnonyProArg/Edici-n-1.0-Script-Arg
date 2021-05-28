@@ -16,7 +16,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 clear
  msg -bar2
- msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+ msg -ama "     [ VPS - AR - SCRIPT \033[1;97m By:AnonyProArg ❌\033[1;33m ]"
  msg -bar2
 ## Install/Interno
 	echo -e  "\033[1;97m              Copiando Instalador Interno "
