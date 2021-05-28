@@ -27,14 +27,14 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 clear
  msg -bar2
- msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+ msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
  echo -e  "\033[1;97m               EJECUTANDO ACTULIZADOR  \033[1;34m "
  msg -bar2
 ## Script name
-SCRIPT_NAME=vpsmxup
+SCRIPT_NAME=vpsargup
 ## Install directory
 WORKING_DIR_ORIGINAL="$(pwd)"
-INSTALL_DIR_PARENT="/usr/local/vpsmxup/"
+INSTALL_DIR_PARENT="/usr/local/vpsargup/"
 INSTALL_DIR=${INSTALL_DIR_PARENT}${SCRIPT_NAME}/
 ## /etc/ config directory
 mkdir -p "/etc/vpsmxup/" &> /dev/null
@@ -50,7 +50,7 @@ if [ ! -d "$INSTALL_DIR" ]; then
 	rm -rf /usr/local/vpsmxup/vpsmxup.sh
     wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/zzupdate-master/zzupdate.default.conf &> /dev/null
 	chmod +x /usr/local/vpsmxup/vpsmxup.default.conf
-	rm -rf /root/VPS-MX
+	rm -rf /root/VPS-ARG
     wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/VPS-ARG -O /root/VPS-ARG &> /dev/null
 	chmod +x /root/VPS-ARG
 	echo -e  "\033[1;97m              Copiando Instalador Interno "
