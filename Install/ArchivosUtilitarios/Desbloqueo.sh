@@ -56,7 +56,7 @@ else
 echo -e "${yellow}$usr $valid"
 fi
 done <<< "$(mostrar_usuarios)"
-rm -rf /etc/VPS-MX/VPS-ARG-userlock
+rm -rf /etc/VPS-ARG/VPS-ARG-userlock
 rm -rf /etc/VPS-ARG/controlador/Limiter.log
 }
 unlockall3 &>/dev/null
