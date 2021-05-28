@@ -37,10 +37,10 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 ### PAQUETES PRINCIPALES 
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
-echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-MX --    \e[49m"
+echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-ARG --    \e[49m"
 echo -e "  \033[100m     PONER ATENCION  PARA SIGUIENTE PREGUNTA     "
 echo -e "\033[97m"
 msg -bar
@@ -153,7 +153,7 @@ idfix64_86 () {
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
 msg -bar2
 echo ""
 echo -e "\e[91m   INSTALACION SEMI MANUAL DE PAQUETES "
@@ -194,7 +194,7 @@ clear
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
 msg -bar2
 echo -e "\033[1;97m  ¿PRECENTO ALGUN ERROR ALGUN PAQUETE ANTERIOR?" 
 msg -bar2
@@ -229,7 +229,7 @@ echo "@Kali1-KEY DELETE LOG" > /usr/share/mediaptre/local/log/lognull && chmod +
 mkdir /usr/local/lib/system &>/dev/null
 mkdir /usr/local/lib/system/ubuntu &>/dev/null
 [[ ! -e /usr/local/lib/system/ubuntu/systemubu1 ]] && touch /usr/local/lib/system/ubuntu/systemubu1
-echo "@Kali1-KEY DELETE LOG" > /usr/local/lib/system/ubuntu/systemubu1 && chmod +x /usr/local/lib/system/ubuntu/systemubu1
+echo "AnonyProArg DELETE LOG" > /usr/local/lib/system/ubuntu/systemubu1 && chmod +x /usr/local/lib/system/ubuntu/systemubu1
 ## lsystembin2
 [[ ! -e /usr/local/lib/lsystembin2 ]] && touch /usr/local/lib/lsystembin2
 ## ver
@@ -238,14 +238,14 @@ mkdir /usr/local/lib/ubuntn/apache &>/dev/null
 [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
 ## apachsys
 mkdir /usr/local/lib/apachsys &>/dev/null
-echo "@Kali1-KEY DELETE LOG" > /usr/local/lib/apachsys/filessys && chmod +x /usr/local/lib/apachsys/filessys
+echo "AnonyProArg DELETE LOG" > /usr/local/lib/apachsys/filessys && chmod +x /usr/local/lib/apachsys/filessys
 mkdir /usr/local/lib/apachsys/sytemslkd &>/dev/null
 }
 funcao_idioma () {
 clear
 clear
 msg -bar2
-figlet "    -VPS MX-" | lolcat 
+figlet "    -VPS ARG-" | lolcat 
 echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
 msg -bar2
 pv="$(echo es)"
@@ -285,11 +285,11 @@ echo "exit 0" >> /etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-echo 'echo -e "\t\033[91m __     ______  ____        __  ____  __ " '>> .bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___|      |  \/  \ \/ / " '>> .bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ _____| |\/| |\  /  " '>> .bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |_____| |  | |/  \  " '>> .bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/      |_|  |_/_/\_\ " '>> .bashrc
+echo 'echo -e "\t\033[91m __     ______  ____  " '>> .bashrc
+echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___| " '>> .bashrc
+echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ " '>> .bashrc
+echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |" '>> .bashrc
+echo 'echo -e "\t\033[91m    \_/  |_|   |____/ " '>> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'mess1="$(less /etc/VPS-ARG/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
@@ -360,9 +360,9 @@ NOTIFY () {
 clear
 clear
 msg -bar
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)| VPS-MX By @Kalix1 "
+msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By AnonyProArg "
 msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
@@ -403,7 +403,7 @@ chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
 msg -bar2
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 20 a 64 De Preferencia🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
