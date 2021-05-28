@@ -3,7 +3,9 @@
 mkdir /etc/VPS-ARG 
 mkdir /etc/VPS-ARG/controlador 
 mkdir /etc/VPS-ARG/protocolos 
-mkdir /etc/VPS-ARG/herramientas
+mkdir /etc/VPS-ARG/herramientas 
+wget /etc/VPS-ARG https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt
+wget etc/VPS-ARG https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu
 rm -rf /root/instalscript.sh
 ### COLORES Y BARRA 
 msg () {
