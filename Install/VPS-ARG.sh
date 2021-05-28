@@ -40,7 +40,7 @@ msg -bar2
 msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
-echo -e "  \033[41m    -- INSTALACION DE PAQUETES PARA VPS-ARG --    \e[49m"
+echo -e "  \033[41m    --♕  ł₦₴₮₳Ⱡ₳₵łØ₦ ĐɆ ₱₳QɄɆ₮Ɇ₴ ₱₳Ɽ₳ V₱₴-₳Ɽ₲ ♕ --    \e[49m"
 echo -e "  \033[100m     PONER ATENCION  PARA SIGUIENTE PREGUNTA     "
 echo -e "\033[97m"
 msg -bar
@@ -153,7 +153,7 @@ idfix64_86 () {
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg\033[1;33m ]"
 msg -bar2
 echo ""
 echo -e "\e[91m   INSTALACION SEMI MANUAL DE PAQUETES "
@@ -246,7 +246,7 @@ clear
 clear
 msg -bar2
 figlet "    -VPS ARG-" | lolcat 
-echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
+echo -e "     (っ◔◡◔)っ ♥ ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑO ♥"
 msg -bar2
 pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
@@ -299,7 +299,7 @@ echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG o vps-arg 
 echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version &>/dev/null'>> .bashrc
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-echo -e "  \033[1;41m               sudo VPS-ARG o vps-arg             \033[0;37m" && msg -bar2
+echo -e "  \033[1;41m               sudo VPS-ARG             \033[0;37m" && msg -bar2
 
 read -p "  REBOOT SISTEMA  [ s | n ]: " -e -i s rebt
 [[ "$rebt" = "s" || "$rebt" = "S" ]] && reboot_fun
@@ -360,7 +360,7 @@ NOTIFY () {
 clear
 clear
 msg -bar
-msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ♕ By AnonyProArg ♕ \033[1;33m ]"
 msg -bar
 msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By AnonyProArg "
 msg -bar
@@ -369,7 +369,6 @@ echo -e "\033[1;94m >> Usuario Expirado"
 echo -e "\033[1;94m >> Usuario Eliminado"
 echo -e "\033[1;94m >> Avisos de VPS Reiniciada"
 echo -e "\033[1;94m >> Avisos de Monitor de Protocolos"
-echo -e "\033[1;97m Inicie BOT de Telegram @Noti_VPSMX_Bot"
 echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @USA1_BOT"
 echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564"
 msg -bar
@@ -444,8 +443,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
-   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
-   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
+   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default no)"
    msg -bar2
    ## read -p " [ s | n ]: " NOTIFY 
    read -p " default (n)  [ s | n ]: " -e -i n NOTIFY
