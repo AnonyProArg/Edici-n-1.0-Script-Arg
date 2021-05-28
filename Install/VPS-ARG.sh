@@ -416,14 +416,6 @@ cd $HOME
 msg -ne "Files: "
 wget -O $HOME/lista-arq ${REQUEST}/lista-arq > /dev/null 2>&1 && echo -e "\033[1;32m Verificado" || {
    echo -e "\033[1;32m Verificada"
-   invalid_key
-   exit
-   }
-sleep 1s
-updatedb
-function_verify
-if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
-   msg -bar2
    msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-MX #MOD by @Kalix1\e[97m]"
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="."
@@ -454,7 +446,4 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
    msg -bar2
 [[ ${byinst} = "true" ]] && install_fim
-else
-invalid_key
-fi
 rm -rf VPS-ARG
