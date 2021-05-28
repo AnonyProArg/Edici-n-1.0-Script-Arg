@@ -285,11 +285,11 @@ echo "exit 0" >> /etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-echo 'echo -e "\t\033[91m __     ______  ____  " '>> .bashrc
-echo 'echo -e "\t\033[91m \ \   / /  _ \/ ___| " '>> .bashrc
-echo 'echo -e "\t\033[91m  \ \ / /| |_) \___ \ " '>> .bashrc
-echo 'echo -e "\t\033[91m   \ V / |  __/ ___) |" '>> .bashrc
-echo 'echo -e "\t\033[91m    \_/  |_|   |____/ " '>> .bashrc
+echo 'echo -e "\t\033[91m ██╗░░░██╗██████╗░░██████╗  ░█████╗░██████╗░░██████╗" '>> .bashrc
+echo 'echo -e "\t\033[91m ██║░░░██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗██╔════╝ " '>> .bashrc
+echo 'echo -e "\t\033[91m ╚██╗░██╔╝██████╔╝╚█████╗░ ███████║██████╔╝██║░░██╗ " '>> .bashrc
+echo 'echo -e "\t\033[91m ░╚████╔╝░██╔═══╝░░╚═══██╗|██╔══██║██╔══██╗██║░░╚██╗" '>> .bashrc
+echo 'echo -e "\t\033[91m  ░╚██╔╝░░██║░░░░░██████╔╝ ██║░░██║██║░░██║╚██████╔╝" '>> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'mess1="$(less /etc/VPS-ARG/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
