@@ -176,7 +176,7 @@ clear
 clear
 clear
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -bar2
 echo ""
 echo -e "\e[91mESCOJER PRIMERO #All locales# Y LUEGO #en_US.UTF-8# \e[0m" 
@@ -229,7 +229,7 @@ echo "@Kali1-KEY DELETE LOG" > /usr/share/mediaptre/local/log/lognull && chmod +
 mkdir /usr/local/lib/system &>/dev/null
 mkdir /usr/local/lib/system/ubuntu &>/dev/null
 [[ ! -e /usr/local/lib/system/ubuntu/systemubu1 ]] && touch /usr/local/lib/system/ubuntu/systemubu1
-echo "AnonyProArg DELETE LOG" > /usr/local/lib/system/ubuntu/systemubu1 && chmod +x /usr/local/lib/system/ubuntu/systemubu1
+echo "@Kali1-KEY DELETE LOG" > /usr/local/lib/system/ubuntu/systemubu1 && chmod +x /usr/local/lib/system/ubuntu/systemubu1
 ## lsystembin2
 [[ ! -e /usr/local/lib/lsystembin2 ]] && touch /usr/local/lib/lsystembin2
 ## ver
@@ -238,7 +238,7 @@ mkdir /usr/local/lib/ubuntn/apache &>/dev/null
 [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
 ## apachsys
 mkdir /usr/local/lib/apachsys &>/dev/null
-echo "AnonyProArg DELETE LOG" > /usr/local/lib/apachsys/filessys && chmod +x /usr/local/lib/apachsys/filessys
+echo "@Kali1-KEY DELETE LOG" > /usr/local/lib/apachsys/filessys && chmod +x /usr/local/lib/apachsys/filessys
 mkdir /usr/local/lib/apachsys/sytemslkd &>/dev/null
 }
 funcao_idioma () {
@@ -265,7 +265,7 @@ clear
 clear
 msg -bar2
 msg -ama "               Finalizando Instalacion" && msg bar2
-#rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
+#rm -rf /etc/VPS-ARG/controlador/nombre.log &>/dev/null
 [[ $(find /etc/VPS-ARG/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/nombre.log https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/nombre.log &>/dev/null
 [[ $(find /etc/VPS-ARG/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/IDT.log https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/IDT.log &>/dev/null
 [[ $(find /etc/VPS-ARG/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-ARG/controlador/tiemlim.log https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/tiemlim.log &>/dev/null
@@ -360,7 +360,7 @@ NOTIFY () {
 clear
 clear
 msg -bar
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By AnonyProArg ❌\033[1;33m ]"
 msg -bar
 msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By AnonyProArg "
 msg -bar
@@ -416,7 +416,15 @@ cd $HOME
 msg -ne "Files: "
 wget -O $HOME/lista-arq ${REQUEST}/lista-arq > /dev/null 2>&1 && echo -e "\033[1;32m Verificado" || {
    echo -e "\033[1;32m Verificada"
-   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-MX #MOD by @Kalix1\e[97m]"
+   invalid_key
+   exit
+   }
+sleep 1s
+updatedb
+function_verify
+if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
+   msg -bar2
+   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-ARG By AnonyProArg\e[97m]"
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="."
    stopping="$(source trans -b es:${id} "Configurando Directorios"|sed -e 's/[^a-z -]//ig')"
