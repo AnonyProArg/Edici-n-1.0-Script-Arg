@@ -494,7 +494,6 @@ done
      msg -ne "$(fun_trans "  >> Dias de Duracion"): " && echo -e "$diasuser"
      msg -ne "$(fun_trans "  >> Fecha de Expiracion"): " && echo -e "$(date "+%F" -d " + $diasuser days")"
      msg -ne "$(fun_trans "  >> Limite de Conexion"): " && echo -e "$limiteuser"
-     msg -ne "$(fun_trans "VPS-ARG:443@"&& echo -e"$nomeuser"msg -ne "$(fun_trans ":"&& echo -e"$senhauser"
 msg -bar
 diasuser2="$(echo "$diasuser"|bc)+1"
 echo "${diasuser2}"|bc > /etc/VPS-ARG/controlador/DIAS.log
