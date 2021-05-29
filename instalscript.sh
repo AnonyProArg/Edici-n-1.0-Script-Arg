@@ -83,7 +83,7 @@ ubu18_fun () {
 
 otro_fun () {
     
-	echo "OK OTRA VERSION"
+	echo "Ubuntu 20.04"
 }
 otro_fun2 () {
     
@@ -98,7 +98,7 @@ msg -bar
     msg -bar
     echo " 1).- Ubuntu 16.04 "
     echo " 2).- Ubuntu 18.04 "
-    echo " 3).- Otra Version "
+    echo " 3).- Ubuntu 20.04 "
     echo " 4).- Ignorar Este Paso"
 	msg -bar
 	echo -n "Digite solo el numero segun su respuesta: "
