@@ -652,6 +652,9 @@ script[$Numb]="systeminf"
 #EXTRAS
 echo -e "\033[1;93m-------------------------EXTRAS----------------------"
 let Numb++
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SMS SPAM                           $ofc"
+script[$Numb]="SMS.sh"
+let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PAYLOAD FUERZA BRUTA               $ofc"
 script[$Numb]="paysnd.sh"
 let Numb++
