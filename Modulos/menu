@@ -199,7 +199,7 @@ updatedb
 
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "    $(source trans -b es:es "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-ARG #MOD by AnonyProArg\e[97m]"
+   msg -verd "    $(source trans -b es:es "Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-ARG  by AnonyProArg\e[97m]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="." 
@@ -223,7 +223,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "es" > ${SCPidioma}
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
    echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-   echo -e "  \033[1;41m               sudo VPS-ARG o vps-arg             \033[0;37m" && msg -bar2
+   echo -e "  \033[1;41m               sudo VPS-ARG              \033[0;37m" && msg -bar2
 
 else
 invalid_key
@@ -569,7 +569,6 @@ case $1 in
 "sockspy.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SOCKS PYTHON --------------------- $(pid_inst python)";;
 "v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 "==>>") " && msg -azu "V2RAY ---------------------------- $(pid_inst v2ray)";; 
 "budp.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "BADVPN-(UDP:7300) ---------------- $(pid_inst badvpn)";;
-valuest="\033[1;32m[PyS]"
 "multissl.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "PAYLOAD + SSL(AUTOMATICO) -------- $(pid_inst multissl)";;
 
 "paysnd.sh")return 1;;
