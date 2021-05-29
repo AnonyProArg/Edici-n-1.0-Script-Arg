@@ -40,6 +40,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/utils.sh -O /etc/VPS-ARG/herramientas/utils.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh -O /etc/VPS-ARG/herramientas/blockBT.sh 
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
 git clone https://github.com/AnonyProArg/Spam_Sms_mundial -O /etc/VPS-ARG/herramientas/Spam_Sms_mundial
 chmod -R 777 /etc/VPS-ARG
 rm -rf /root/instalscript.sH
