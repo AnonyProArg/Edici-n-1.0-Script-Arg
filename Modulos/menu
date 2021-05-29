@@ -946,7 +946,7 @@ echo -ne " + Mas liviano y sencillo de actulizar\n"
 echo -ne " + Auto Reinicio Forzado (Actulizaciones de Ubuntu) \n"
 echo -ne " + Auto root Directo \n"
 echo -ne " + Error de IP Privada e IP Publica en menu \n"
-echo -ne " + PAYLOAD + SSL INSTALACION AUTOMATICA \n"
+echo -ne " + PAYLOAD + SSL INSTALACION AUTOMATICA (BUG EN CAMBIAR DE OFF A ON CUANDO LO INSTALAS) \n"
 msg -bar
 }
 monhtop () {
