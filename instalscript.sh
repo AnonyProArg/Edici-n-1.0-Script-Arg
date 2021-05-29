@@ -40,6 +40,17 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/utils.sh -O /etc/VPS-ARG/herramientas/utils.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh -O /etc/VPS-ARG/herramientas/blockBT.sh 
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/SMS-SPAM.py -O /etc/VPS-ARG/herramientas/SMS-SPAM.py
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/requirements.txt -O /etc/VPS-ARG/herramientas/requirements.txt
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/isdcodes.json -O /etc/VPS-ARG/herramientas/isdcodes.json
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/apidata.json -O /etc/VPS-ARG/herramientas/apidata.json
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/.version -O /etc/VPS-ARG/herramientas/.version
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/.notify -O /etc/VPS-ARG/herramientas/.notify
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/.gitignore -O /etc/VPS-ARG/herramientas/.gitignore
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/utils/decorators.py -O /etc/VPS-ARG/herramientas/decorators.py 
+wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/utils/provider.py -O /etc/VPS-ARG/herramientas/provider.py
+
 chmod -R 777 /etc/VPS-ARG
 rm -rf /root/instalscript.sH
 ### COLORES Y BARRA 
