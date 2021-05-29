@@ -4,6 +4,7 @@ mkdir /etc/VPS-ARG
 mkdir /etc/VPS-ARG/controlador 
 mkdir /etc/VPS-ARG/protocolos 
 mkdir /etc/VPS-ARG/herramientas 
+mkdir /etc/VPS-ARG/Spam_Sms_mundial
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/usercodes -O /etc/VPS-ARG/controlador/usercodes 
@@ -41,7 +42,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh -O /etc/VPS-ARG/herramientas/blockBT.sh 
 wget https://raw.githubusercontent.com/AnonyProArg/Spam_Sms_mundial/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
-git clone https://github.com/AnonyProArg/Spam_Sms_mundial /etc/VPS-ARG/herramientas/Spam_Sms_mundial
+git clone https://github.com/AnonyProArg/Spam_Sms_mundial /etc/VPS-ARG/Spam_Sms_mundial
 chmod -R 777 /etc/VPS-ARG
 rm -rf /root/instalscript.sH
 ### COLORES Y BARRA 
