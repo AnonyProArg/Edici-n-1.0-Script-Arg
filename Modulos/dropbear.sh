@@ -2,7 +2,7 @@
 #25/01/2021
 clear
 clear
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/VPS-ARG"
 SCPfrm="${SCPdir}/herramientas" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="${SCPdir}/protocolos"&& [[ ! -d ${SCPinst} ]] && exit
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
@@ -17,13 +17,13 @@ i=1
 echo -e "$portas"
 }
 fun_ip () {
-if [[ -e /etc/VPS-MX/MEUIPvps ]]; then
-IP="$(cat /etc/VPS-MX/MEUIPvps)"
+if [[ -e /etc/VPS-ARG/MEUIPvps ]]; then
+IP="$(cat /etc/VPS-ARG/MEUIPvps)"
 else
 MEU_IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MEU_IP" != "$MEU_IP" ]] && IP="$MEU_IP2" || IP="$MEU_IP"
-echo "$MEU_IP" > /etc/VPS-MX/MEUIPvps
+echo "$MEU_IP" > /etc/VPS-ARG/MEUIPvps
 fi
 }
 fun_eth () {
@@ -84,7 +84,7 @@ fun_dropbear () {
  }
 msg -bar
 msg -tit
-echo -e "\033[1;32m $(fun_trans "   INSTALADOR DROPBEAR | VPS-MX By @Kalix1")"
+echo -e "\033[1;32m $(fun_trans "   INSTALADOR DROPBEAR | VPS-ARG By AnonyProArg")"
 msg -bar
 echo -e "\033[1;31m $(fun_trans "Seleccione Puertos Validados en orden secuencial:\n")\033[1;32m 22 80 81 82 85 90\033[1;37m"
 msg -bar
