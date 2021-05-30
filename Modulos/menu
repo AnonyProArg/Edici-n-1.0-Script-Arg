@@ -2,7 +2,6 @@
 #22/01/2021
 clear
 clear
-rm /etc/VPS-ARG/message.txt
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt 
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 > /dev/null 2>&1
 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 > /dev/null 2>&1
