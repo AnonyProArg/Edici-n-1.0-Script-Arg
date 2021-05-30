@@ -148,7 +148,9 @@ clear
 msg -bar
 msg -tit
 echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG" 
-mkdir /etc/funciona
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
+chmod 777 actualizador.sh
+bash actualizador.sh
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
 sudo VPS-ARG
 }
