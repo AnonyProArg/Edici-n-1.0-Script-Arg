@@ -906,8 +906,8 @@ selection=$(selection_fun 13)
 case ${selection} in
 1)${SCPusr}/usercodes "${idioma}" ;;
 2)${SCPinst}/C-SSR.sh ;;
-3)${SCPinst}/xray.sh ;;
-4)${SCPinst}/v2ray.sh ;;
+3)${SCPinst}/v2ray.sh ;;
+4)${SCPinst}/xray.sh ;;
 5)menu_inst;;
 6)mine_port;;
 7)ferramentas_fun;;
