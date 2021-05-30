@@ -143,41 +143,6 @@ function_verify () {
   }
 }
 atualiza_fun () {
-fun_ip 
-SCPinstal="$HOME/install"
-verificar_arq () {
-case $1 in
-"menu"|"message.txt"|"menu.enc")ARQ="${SCPdir}/";; #Menu
-"usercodes")ARQ="${SCPusr}/";; #Panel SSRR
-"C-SSR.sh")ARQ="${SCPinst}/";; #Panel SSR
-"openssh.sh")ARQ="${SCPinst}/";; #OpenVPN
-"squid.sh")ARQ="${SCPinst}/";; #Squid
-"dropbear.sh")ARQ="${SCPinst}/";; #Instalacao
-"openvpn.sh")ARQ="${SCPinst}/";; #Instalacao
-"ssl.sh")ARQ="${SCPinst}/";; #Instalacao
-"shadowsocks.sh")ARQ="${SCPinst}/";; #Instalacao
-"Shadowsocks-libev.sh")ARQ="${SCPinst}/";; #Instalacao
-"Shadowsocks-R.sh")ARQ="${SCPinst}/";; #Instalacao 
-"v2ray.sh")ARQ="${SCPinst}/";; #Instalacao
-"multissl.sh")ARQ="${SCPinst}/";; #Instalacao
-"budp.sh")ARQ="${SCPinst}/";; #Instalacao
-"sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
-*)ARQ="${SCPfrm}/";; #Herramientas
-esac
-mv -f ${SCPinstal}/$1 ${ARQ}/$1
-chmod +x ${ARQ}/$1
-}
-error_fun () {
-msg -bar2 && msg -verm "ERROR entre VPS<-->GENERADOR (Port 81 TCP)" && msg -bar2
-[[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}
-exit 1
-}
-invalid_key () {
-msg -bar2 && msg -verm "  Code Invalido -- #¡Key Invalida#! " && msg -bar2
-[[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq
-exit 1
-}
-while [[ ! $Key ]]; do
 clear
 clear
 msg -bar
