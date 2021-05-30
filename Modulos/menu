@@ -145,13 +145,13 @@ function_verify () {
 atualiza_fun () {
 clear
 clear
-msg -bar
-msg -tit
-echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG" 
 rm /etc/VPS-ARG/actualizador.sh 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
 chmod 777 actualizador.sh
-bash actualizador.sh
+msg -bar
+msg -tit
+echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG" 
+ bash actualizador.sh
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
 exit
 }
