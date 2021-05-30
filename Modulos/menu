@@ -577,7 +577,7 @@ case $1 in
 "ports.sh")return 1;;
 "dns-netflix.sh")return 1;;
 "tcp.sh")return 1;;
-"gestor.sh")return 1;;
+"Contra.sh")return 1;;
 "squidpass.sh")return 1;;
 "fai2ban.sh")return 1;;
 "blockBT.sh")return 1;;
@@ -640,8 +640,8 @@ let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTRAR PUERTOS ACTIVOS         $ofc"
 script[$Numb]="ports.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "Pass Root/Add root/Horario/etc..   $ofc"
-script[$Numb]="gestor.sh"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "Cambiar contraseña de acceso VPS    $ofc"
+script[$Numb]="Contra.sh"
 #OPTIMIZADORES
 echo -e "\033[1;93m---------------------OPTIMIZADORES-------------------"
 let Numb++
