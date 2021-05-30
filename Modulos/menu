@@ -149,7 +149,7 @@ rm /etc/VPS-ARG/actualizador.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
 chmod 777 actualizador.sh
 bash actualizador.sh
-exit&;VPS-ARG
+exit
 }
 funcao_idioma () {
 tput cuu1 && tput dl1
