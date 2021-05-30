@@ -187,7 +187,7 @@ msg -bar2 && msg -ne "\033[1;93m          >>> ACTUALIZANDO AUTOMATICAMENTE <<<\n
 mkdir /etc/funciona
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
 sudo VPS-ARG
-}
+ done
 funcao_idioma () {
 tput cuu1 && tput dl1
 msg -bar2
