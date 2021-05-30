@@ -1,1 +1,1 @@
-passwd
+sudo passwd
