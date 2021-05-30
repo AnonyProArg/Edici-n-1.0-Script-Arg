@@ -147,12 +147,11 @@ clear
 clear
 msg -bar
 msg -tit
-echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG"
-msg -bar2 && msg -ne "\033[1;93m          >>> ACTUALIZANDO AUTOMATICAMENTE <<<\n   \033[1;37m"
+echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG" 
 mkdir /etc/funciona
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
 sudo VPS-ARG
-
+}
 funcao_idioma () {
 tput cuu1 && tput dl1
 msg -bar2
