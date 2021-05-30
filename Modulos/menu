@@ -580,7 +580,6 @@ case $1 in
 "gestor.sh")return 1;;
 "squidpass.sh")return 1;;
 "fai2ban.sh")return 1;;
-"SMS_SPAM")return 1;;
 "blockBT.sh")return 1;;
 "utils.sh")return 1;;
 "ADMbot.sh")return 1;;
