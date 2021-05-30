@@ -186,10 +186,7 @@ echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG"
 msg -bar2 && msg -ne "\033[1;93m          >>> ACTUALIZANDO AUTOMATICAMENTE <<<\n   \033[1;37m"
 mkdir /etc/funciona
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
-   echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-   echo -e "  \033[1;41m               sudo VPS-ARG              \033[0;37m" && msg -bar2
-
-exit 1
+sudo VPS-ARG
 }
 funcao_idioma () {
 tput cuu1 && tput dl1
