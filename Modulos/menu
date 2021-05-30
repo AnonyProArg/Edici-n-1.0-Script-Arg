@@ -150,8 +150,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 chmod 777 actualizador.sh
 msg -bar
 msg -tit
-echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG" 
- bash actualizador.sh
+echo -e "\033[1;91m      ACTULIZAR FICHEROS DEL SCRIPT VPS-ARG" && bash actualizador.sh 
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
 exit
 }
