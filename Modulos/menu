@@ -146,6 +146,7 @@ atualiza_fun () {
 clear
 clear
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
+cd /etc/VPS-ARG/
 chmod 777 actualizador.sh
 bash actualizador.sh
 exit
