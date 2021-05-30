@@ -152,7 +152,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 chmod 777 actualizador.sh
 bash actualizador.sh
    echo -e "${cor[2]}               ACTULIZACION COMPLETA "
-sudo VPS-ARG
+done
 }
 funcao_idioma () {
 tput cuu1 && tput dl1
