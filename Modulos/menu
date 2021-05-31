@@ -144,10 +144,10 @@ function_verify () {
 atualiza_fun () {
 clear
 clear
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
-cd /etc/VPS-ARG/
-chmod 777 actualizador.sh
-bash actualizador.sh
+echo -e "\033[97m     ACTUALIZANDO Y INICIANDO ACTUALIZADOR" 
+        fun_bar "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1 "
+chmod 777 cd /etc/VPS-ARG/actualizador.sh
+bash cd /etc/VPS-ARG/actualizador.sh
 exit
 }
 funcao_idioma () {
