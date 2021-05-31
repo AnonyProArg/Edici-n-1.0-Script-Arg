@@ -1,7 +1,8 @@
-#!bien/bash
-if [[ Hola ]];
+#!/bin/bash
+	string1='reo'
+	if [[ $string1 = *e* ]];
 	then
-	  echo perfecto
+	  echo Eso es verdad
 	else
-	  echo mal
+	  echo Eso es mentira
 	fi
