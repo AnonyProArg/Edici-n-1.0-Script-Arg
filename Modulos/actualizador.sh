@@ -21,7 +21,9 @@ sleep 1s
 }
 ##PAKETES
 echo ""
-echo -e "\033[97m               DESCARGANDO ACTUALIZACION" 
+echo -e "\033[97m      EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR" 
+fun_bar " apt update > /dev/null 2>&1 "
+echo -e "\033[97m               DESCARGANDO PAQUETES ACTUALIZADOS" 
 fun_bar " wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu
 wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS-ARG/protocolos/xray.sh
 git clone https://github.com/AnonyProArg/Xray.git /etc/VPS-ARG/Xray
@@ -29,6 +31,8 @@ git clone https://github.com/AnonyProArg/Sms-Spam.git /etc/VPS-ARG/Sms-Spam
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version -O /etc/versin_script
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc/VPS-ARG/Sms-Spam/.notify apt-get > /dev/null 2>&1 "
+echo -e "\033[97m      BORRANDO ARCHIVOS OBSOLETOS" 
+fun_bar " apt upgrade > /dev/null 2>&1 "
 chmod -R 777 /etc/VPS-ARG
 clear
 clear
