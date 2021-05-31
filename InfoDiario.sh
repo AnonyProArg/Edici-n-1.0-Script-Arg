@@ -1,1 +1,10 @@
-
+#!/bin/bash
+clear
+#22/01/2021
+msg -ama "       DIARIO DEL CREADOR" #Actualzado El 31/05/2021
+msg -ne "ACTUALMENTE ESTOY ARREGLANDO ERRORES"
+msg -ne "TAMBIEN AUMENTANDO LA COMPATIBILIDAD"
+msg -ne "EN ESTOS DIAS ESTARE AGREGANDO ALGO NUEVO, MANTENTE ATENT@"
+msg -ne "GRACIAS POR PASARTE, VUELVE PRONTO"
+msg -ne "Enter Para Continuar" && read enter
+VPS-ARG
