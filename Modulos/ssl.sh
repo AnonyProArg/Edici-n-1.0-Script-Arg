@@ -198,7 +198,7 @@ echo -e "${cor[3]}       INSTALADOR MONO Y MULTI SSL By AnonyProArg"
 msg -bar
 echo -e "${cor[1]}            Escoja la opcion deseada."
 msg -bar
-echo -e "${cor[4]} 1).-\033[1;37m ININICIAR O PARAR SSL "
+echo -e "${cor[4]} 1).-\033[1;37m INICIAR O PARAR SSL "
 echo -e "${cor[4]} 2).-\033[1;37m AGREGAR PUERTOS SSL   "
 echo -e "${cor[4]} 3).-\033[1;37m Instalar PDirect + SSL(AUTOMATICO) "
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
