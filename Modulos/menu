@@ -534,7 +534,7 @@ float_data "$arqs" "$Numb" && {
   let Numb++
   }
 done
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIENTE BOT DE TELEGAM  $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIENTE BOT DE TELEGRAM  $ofc"
 script[$Numb]="ADMbot.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "COMPARTIR ARCHIVO ONLINE            $ofc"
