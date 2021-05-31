@@ -846,13 +846,12 @@ creditoss () {
 clear 
 msg -bar
 msg -tit
-echo -ne " \033[1;93m【ＣＲＥＤＩＴＯＳ】\n"
+echo -ne " \033[1;93m           【ＣＲＥＤＩＴＯＳ】\n"
 msg -bar
 [[ -e ${SCPdir}/message.txt ]] && msg -bra "CREADOR Y ENCARAGDO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
+[[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
 msg -bar
-echo -ne "\033[1;97m        Version 1.1\n"
-echo -ne " AnonyProArg unico encargado de este Script \n"
-echo -ne " Revendedores oficiales actualmente: CONECTADOS 2.0 & BLACK (Mujeriego jaja) \n"
+}
 monhtop () {
 clear 
 msg -bar
