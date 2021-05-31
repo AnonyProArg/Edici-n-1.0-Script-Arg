@@ -29,7 +29,7 @@ sleep 1s
 }
 ##PAKETES
 echo ""
-echo -e "\033[97m     ACTUALIZANDO REPOSITORIOS DEL VPS" 
+echo -e "\033[97m     ACTUALIZANDO REPOSITORIOS DEL VPS(UPDATE-UPGRADE)" 
         fun_bar " apt update -y apt upgrade -y  >  /dev/null 2>&1 " 
 echo -e "\033[97m     DESCARGANDO INSTALADORES" 
         fun_bar " wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt
@@ -120,7 +120,7 @@ otro_fun2 () {
     
 	echo "OK IGNORAR ESTE PASO"
 }
-echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\nSE VENDE POR EL MOTIVO QUE YO TODOS LOS DÍAS ESTARÉ TRABAJANDO EN EL\n REVENDEDOR OFICIAL Blɑckッ WhatsApp: +54 9 370 508-3898-\nPRECIO ORIGINAL $500, si pagaste más, te estafaron!  Para hacerte revendedor oficial o decirme problemas con el script: graciascovidportodo@gmail.com\e[0m"
+echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\nSE VENDE POR EL MOTIVO QUE YO TODOS LOS DÍAS ESTARÉ TRABAJANDO EN EL(agregando nuevas funciones o mejorando las que tiene)\n REVENDEDOR OFICIAL Blɑckッ WhatsApp: +54 9 370 508-3898-\nPRECIO ORIGINAL 500pe, si pagaste más, te estafaron!  Para hacerte revendedor oficial o decirme problemas con el script: graciascovidportodo@gmail.com\e[0m"
 msg -bar
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
