@@ -142,6 +142,7 @@ function_verify () {
   }
 }
 atualiza_fun () {
+clear
 ##PAKETES
 echo ""
 echo -e "\033[97m     ACTUALIZANDO Y INICIANDO ACTUALIZADOR" 
