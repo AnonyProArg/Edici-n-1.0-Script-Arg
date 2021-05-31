@@ -246,7 +246,7 @@ clear
 clear
 msg -bar2
 figlet "    -VPS ARG-" | lolcat 
-echo -e "     (っ◔◡◔)っ ♥ ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑO ♥"
+echo -e "     (っ◔◡◔)っ ♥ ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL ♥"
 msg -bar2
 pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
