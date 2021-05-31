@@ -30,7 +30,7 @@ sleep 1s
 ##PAKETES
 echo ""
 echo -e "\033[97m     ACTUALIZANDO REPOSITORIOS DEL VPS" 
-        fun_bar " apt upgrade apt upgrade   >  /dev/null 2>&1 " 
+        fun_bar " apt update apt upgrade   >  /dev/null 2>&1 " 
 echo -e "\033[97m     DESCARGANDO INSTALADORES" 
         fun_bar " wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu 
