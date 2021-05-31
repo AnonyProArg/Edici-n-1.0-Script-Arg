@@ -848,7 +848,8 @@ msg -bar
 msg -tit
 echo -ne " \033[1;93m          CREDITOS\n"
 msg -bar
-[[ -e ${SCPdir}/message.txt ]] && msg -bra " CREADOR Y ENCARGADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
+[[ -e ${SCPdir}/message.txt ]] && msg -bra " CREADOR Y ENCARGADO : \n\033[1;96m $(cat ${SCPdir}/message.txt) "
+[[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
 msg -bar
 echo -ne "\033[1;97m        BLACK GEY\n"
 msg -bar
