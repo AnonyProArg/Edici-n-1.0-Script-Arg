@@ -853,12 +853,6 @@ msg -bar
 echo -ne "\033[1;97m        Version 1.1\n"
 echo -ne " AnonyProArg unico encargado de este Script \n"
 echo -ne " Revendedores oficiales actualmente: CONECTADOS 2.0 & BLACK (Mujeriego jaja) \n"
-infovps () {
-clear 
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/ > /dev/null 2>&1
-chmod 777 /etc/VPS-ARG/InfoDiario.sh > /dev/null 2>&1
-bash /etc/VPS-ARG/InfoDiario.sh
-exit
 monhtop () {
 clear 
 msg -bar
