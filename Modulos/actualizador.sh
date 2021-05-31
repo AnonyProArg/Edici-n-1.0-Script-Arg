@@ -15,9 +15,12 @@ wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc
 chmod -R 777 /etc/VPS-ARG
 clear
 clear
-echo -e "\e[032m   ACTUALIZACION COPLETA"
-echo -e "\e[032m   Correcion de errores y bug"
+clear
+clear
+clear
+clear 
+clear
+echo -e "\e[032m                   ACTUALIZACION COPLETA"
+echo -e "\e[032m               Correcion de errores y bug"
 msg -ne "Enter Para Continuar" && read enter
-${SCPdir}/menu
-
-
+VPS-ARG
