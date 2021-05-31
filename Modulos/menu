@@ -30,6 +30,19 @@ _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 dirapache="/usr/local/lib/ubuntn/apache/ver" && [[ ! -d ${dirapache} ]] && exit
 if [[ -e /etc/bash.bashrc-bakup ]]; then AutoRun="\033[1;32m[ON]"
 elif [[ -e /etc/bash.bashrc ]]; then AutoRun="\033[1;31m[OFF]"
+fi
+# Funcoes Globais
+msg () {
+#ACTULIZADOR
+[[ ! -e /etc/versin_script ]] && echo 1 > /etc/versin_script
+v11=$(cat /etc/versin_script_new) 
+v22=$(cat /etc/versin_script)
+[[ $v11 = $v22 ]] && vesaoSCT="\033[1;37mVersion\033[1;32m $v22  \033[1;31m]" || vesaoSCT="\033[1;31m($v22)\033[1;97m→\033[1;32m($v11)\033[1;31m  ]" 
+aviso_bock () {
+echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/vps-mx
+echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/VPS-MX
+ rm -rf /etc/VPS-MX 
+}
 local colors="/etc/VPS-ARG/colors"
 if [[ ! -e $colors ]]; then
 COLOR[0]='\033[1;37m' #BRAN='\033[1;37m'
