@@ -30,7 +30,6 @@ _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 dirapache="/usr/local/lib/ubuntn/apache/ver" && [[ ! -d ${dirapache} ]] && exit
 if [[ -e /etc/bash.bashrc-bakup ]]; then AutoRun="\033[1;32m[ON]"
 elif [[ -e /etc/bash.bashrc ]]; then AutoRun="\033[1;31m[OFF]"
-fi
 local colors="/etc/VPS-ARG/colors"
 if [[ ! -e $colors ]]; then
 COLOR[0]='\033[1;37m' #BRAN='\033[1;37m'
