@@ -12,6 +12,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS
 git clone https://github.com/AnonyProArg/Xray.git /etc/VPS-ARG/Xray
 git clone https://github.com/AnonyProArg/Sms-Spam.git /etc/VPS-ARG/Sms-Spam
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version -O /etc/versin_script
+wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
 chmod -R 777 /etc/VPS-ARG
 echo -e ""
 
