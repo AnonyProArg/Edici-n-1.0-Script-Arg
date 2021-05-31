@@ -1,4 +1,3 @@
-clear
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu
 wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS-ARG/protocolos/xray.sh
 git clone https://github.com/AnonyProArg/Xray.git /etc/VPS-ARG/Xray
@@ -8,11 +7,6 @@ wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/SMS.sh -O /etc/
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc/VPS-ARG/Sms-Spam/.notify
 chmod -R 777 /etc/VPS-ARG
 clear
-clear
-echo -e      "\e[032m Archivos actualizados"
-clear
-clear
-done
 clear
 echo -e "\e[032m                   ACTUALIZACION COPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
