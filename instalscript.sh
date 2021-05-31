@@ -4,6 +4,8 @@ mkdir /etc/VPS-ARG
 mkdir /etc/VPS-ARG/controlador 
 mkdir /etc/VPS-ARG/protocolos 
 mkdir /etc/VPS-ARG/herramientas 
+mkdir /etc/VPS-ARG/Xray
+mkdir /etc/VPS-ARG/Sms-Spam
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/usercodes -O /etc/VPS-ARG/controlador/usercodes 
@@ -41,9 +43,9 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ports.sh -O /etc/VPS-ARG/herramientas/ports.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/blockBT.sh -O /etc/VPS-ARG/herramientas/blockBT.sh 
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
-git clone https://github.com/AnonyProArg/Sms-Spam.git /etc/VPS-ARG/
+git clone https://github.com/AnonyProArg/Sms-Spam.git /etc/VPS-ARG/Sms-Spam
 wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS-ARG/protocolos/xray.sh
-git clone https://github.com/AnonyProArg/Xray.git /etc/VPS-ARG/
+git clone https://github.com/AnonyProArg/Xray.git /etc/VPS-ARG/Xray
 chmod -R 777 /etc/VPS-ARG
 rm -rf /root/instalscript.sH
 ### COLORES Y BARRA 
