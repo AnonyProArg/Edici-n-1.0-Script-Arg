@@ -534,7 +534,7 @@ float_data "$arqs" "$Numb" && {
   let Numb++
   }
 done
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIENTE BOT DE TELEGRAM  $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIENTE BOT DE TELEGRAM $ofc"
 script[$Numb]="ADMbot.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "COMPARTIR ARCHIVO ONLINE            $ofc"
@@ -575,7 +575,7 @@ script[$Numb]="systeminf"
 #EXTRAS
 echo -e "\033[1;93m-------------------------EXTRAS----------------------"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SMS SPAM                           $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SMS SPAM                           $dev"
 script[$Numb]="SMS.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PAYLOAD FUERZA BRUTA               $ofc"
