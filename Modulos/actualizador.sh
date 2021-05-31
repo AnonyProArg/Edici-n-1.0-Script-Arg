@@ -31,7 +31,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/I
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc/VPS-ARG/Sms-Spam/.notify apt-get >    /dev/null 2>&1 "
 echo -e "\033[97m      BORRANDO ARCHIVOS OBSOLETOS" 
-        fun_bar " apt upgrade >    /dev/null 2>&1 "
+        fun_bar " wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu >    /dev/null 2>&1 "
 chmod -R 777 /etc/VPS-ARG
 clear
 clear
