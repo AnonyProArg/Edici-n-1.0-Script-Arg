@@ -10,9 +10,12 @@ chmod -R 777 /etc/VPS-ARG
 clear
 clear
 clear
+echo -e      "\e[032m Archivos actualizados"
 clear
 clear
 clear 
+clear
+exit
 clear
 echo -e "\e[032m                   ACTUALIZACION COPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
