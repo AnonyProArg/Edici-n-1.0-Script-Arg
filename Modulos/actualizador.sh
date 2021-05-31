@@ -1,3 +1,4 @@
+Clear
 fun_bar () {
 comando="$1"
  _=$(
