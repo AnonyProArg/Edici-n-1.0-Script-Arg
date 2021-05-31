@@ -142,6 +142,7 @@ function_verify () {
   }
 }
 atualiza_fun () {
+clear 
 clear
 ##PAKETES
 echo ""
