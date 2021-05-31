@@ -21,6 +21,6 @@ clear
 clear 
 clear
 echo -e "\e[032m                   ACTUALIZACION COPLETA"
-echo -e "\e[032m               Correcion de errores y bug"
+echo -e "\e[032m               Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
