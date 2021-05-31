@@ -534,7 +534,7 @@ float_data "$arqs" "$Numb" && {
   let Numb++
   }
 done
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIENTE BOT DE TELEGRAM $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIANTE BOT DE TELEGRAM $ofc"
 script[$Numb]="ADMbot.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "COMPARTIR ARCHIVO ONLINE            $ofc"
@@ -542,7 +542,7 @@ script[$Numb]="apacheon.sh"
 echo -e "\033[1;93m-----------------------SEGURIDAD---------------------"
 #PROTECION
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FIREWALL PARA VPS VPS•ARG            $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FIREWALL PARA VPS VPS•ARG           $ofc"
 script[$Numb]="blockBT.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FAIL2BAN PROTECION                  $ofc"
@@ -559,10 +559,10 @@ let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "AGREGAR DNS NETFLIX By @USA1_BOT    $ofc"
 script[$Numb]="dns-netflix.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTRAR PUERTOS ACTIVOS         $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTRAR PUERTOS ACTIVOS        $ofc"
 script[$Numb]="ports.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "CAMBIAR CONTRASEÑA DE VPS           $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "CAMBIAR CONTRASEÑA DE VPS          $ofc"
 script[$Numb]="Contra.sh"
 #OPTIMIZADORES
 echo -e "\033[1;93m---------------------OPTIMIZADORES-------------------"
@@ -846,33 +846,18 @@ creditoss () {
 clear 
 msg -bar
 msg -tit
-echo -ne " \033[1;93m【ＣＲＥＤＩＴＯＳ　Ｙ　ＲＥＧＩＳＴＲＯ　ＤＥ　ＣＡＭＢＩＯＳ】\n"
+echo -ne " \033[1;93m【ＣＲＥＤＩＴＯＳ】\n"
 msg -bar
-[[ -e ${SCPdir}/message.txt ]] && msg -bra " RESELLER AUTORIZADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
-[[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
+[[ -e ${SCPdir}/message.txt ]] && msg -bra "CREADOR Y ENCARAGDO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
 msg -bar
-echo -ne "\033[1;97m        Version 1.0\n"
-echo -ne " - Compatible con Ubuntu's 14,16,18,20\n"
-echo -ne "        (Server live's ext 0.4)\n"
-echo -ne " - Compatibilidad Ubuntu 20, Squid,Openvpn,Dropbear\n"
-echo -ne " - Cambio en el proceso del usercode\n"
-echo -ne " - Menus Mas limpios\n"
-echo -ne " - Se ajustaron menus con retorno\n"
-echo -ne " - Ejecusion mas rapida de Comandos\n"
-echo -ne " - Instalador mejorado retro Compatible \n"
-echo -ne " - Add v2ray, opcion de port y tls manual \n"
-echo -ne " - Se agregaron 2 comandos mas al BOT Gestor \n"
-echo -ne "  (Bloquear y Desbloquear Usuarios, Como Ver Bloqueados)\n"
-echo -ne " + Auto Install Python para Install Inicial \n"
-echo -ne " + Selecionable Upgrade de S.O \n"
-echo -ne " + Cambio de pass root \n"
-echo -ne " + Se habilito el updater de menu \n"
-echo -ne " + Mas liviano y sencillo de actulizar\n"
-echo -ne " + Auto Reinicio Forzado (Actulizaciones de Ubuntu) \n"
-echo -ne " + Auto root Directo \n"
-echo -ne " + Error de IP Privada e IP Publica en menu \n"
-echo -ne " + PSrect + SSL INSTALACION AUTOMATICA \n"
-msg -bar
+echo -ne "\033[1;97m        Version 1.1\n"
+echo -ne " AnonyProArg unico encargado de este Script \n"
+echo -ne " Revendedores oficiales actualmente: CONECTADOS 2.0 & BLACK (Mujeriego jaja) \n"
+infovps () {
+clear 
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/ > /dev/null 2>&1
+chmod 777 /etc/VPS-ARG/InfoDiario.sh > /dev/null 2>&1
+bash /etc/VPS-ARG/InfoDiario.sh
 }
 monhtop () {
 clear 
@@ -901,7 +886,9 @@ echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m*✶ 𝕄𝕆ℕ𝕀�
 msg -bar
 echo -ne " \e[93m [12] \e[97m $(msg -verm2 "=>>") $(msg -verd "🌐𝔸ℂ𝕋𝕌𝔸𝕃𝕀ℤ𝔸ℝ🌐") " && echo -ne "\e[93m [13] \e[97m $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ"
 msg -bar
-echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mℂℝ𝔼𝔻𝕀𝕋𝕆𝕊🔥" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗️✖️𝕊𝔸𝕃𝕀ℝ 𝔻𝔼𝕃 𝕊ℂℝ𝕀ℙ✖️❗️"
+echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mℂℝ𝔼𝔻𝕀𝕋𝕆𝕊🔥" && echo -ne echo -ne "$(msg -verd "  [15]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mINFO DIARIA"
+msg -bar
+echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗️✖️𝕊𝔸𝕃𝕀ℝ 𝔻𝔼𝕃 𝕊ℂℝ𝕀ℙ✖️❗️"
 msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
@@ -919,6 +906,7 @@ case ${selection} in
 12)atualiza_fun;;
 13)remove_script;;
 14)creditoss ;;
+15)infovps ;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "Enter Para Continuar" && read enter
