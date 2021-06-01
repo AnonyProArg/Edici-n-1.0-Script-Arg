@@ -846,7 +846,6 @@ limseg="$(less /etc/VPS-ARG/controlador/tiemlim.log)"
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "   EXPIRADOS: " && echo -ne "\033[1;97m$(cat ${SCPdir}/USRexpired) "  && msg -ne " \033[1;95m BLOQUEADOS: " && echo -e "\033[1;97m$(cat ${SCPdir}/USRbloqueados) \n\033[1;97m        ACTULIZACION DE MONITOR CADA: \033[1;34m $limseg s" 
 creditoss () {
 clear 
-bash InfoDiario.sh 
 }
 monhtop () {
 clear 
@@ -892,7 +891,7 @@ case ${selection} in
 11)monhtop;;
 12)atualiza_fun;;
 13)remove_script;;
-14)infovps ;;
+14)bash /etc/VPS-ARG/InfoDiario.sh ;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "Enter Para Continuar" && read enter
