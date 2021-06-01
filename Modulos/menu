@@ -876,7 +876,7 @@ echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m*✶ 𝕄𝕆ℕ𝕀�
 msg -bar
 echo -ne " \e[93m [12] \e[97m $(msg -verm2 "=>>") $(msg -verd "🌐𝔸ℂ𝕋𝕌𝔸𝕃𝕀ℤ𝔸ℝ🌐") " && echo -ne "\e[93m [13] \e[97m $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ"
 msg -bar
-echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mℂℝ𝔼𝔻𝕀𝕋𝕆𝕊🔥" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗️✖️𝕊𝔸𝕃𝕀ℝ 𝔻𝔼𝕃 𝕊ℂℝ𝕀ℙ✖️❗️"
+echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mINFO SCRIP" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗️✖️𝕊𝔸𝕃𝕀ℝ 𝔻𝔼𝕃 𝕊ℂℝ𝕀ℙ✖️❗️"
 msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
