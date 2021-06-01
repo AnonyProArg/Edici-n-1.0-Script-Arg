@@ -21,7 +21,7 @@ echo -e "$portas"
 fun_bar () {
 comando="$1"
  _=$(
-$comando > /dev/null 2>&1
+$comando >           /dev/null 2>&1
 ) & > /dev/null
 pid=$!
 while [[ -d /proc/$pid ]]; do
@@ -36,7 +36,7 @@ echo
 tput cuu1
 tput dl1
 done
-                 echo -e "            \033[1;33m[\033[1;31m########################################\033[1;33m] - \033[1;32m100%\033[0m"
+                 echo -e "                  \033[1;33m[\033[1;31m########################################\033[1;33m] - \033[1;32m100%\033[0m"
 sleep 1s
 }
 ssl_stunel () {
