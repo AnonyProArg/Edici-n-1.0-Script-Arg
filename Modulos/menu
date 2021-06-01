@@ -143,12 +143,9 @@ function_verify () {
 }
 atualiza_fun () {
 clear 
-##PAKETES
-echo ""
-echo -e "\033[97m     ACTUALIZANDO E INICIANDO ACTUALIZADOR" 
-        fun_bar "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1 "
-chmod 777 /etc/VPS-ARG/actualizador.sh
-bash /etc/VPS-ARG/actualizador.sh
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1
+chmod 777 /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1
+bash /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1
 exit
 }
 funcao_idioma () {
