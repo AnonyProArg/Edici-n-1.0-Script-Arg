@@ -850,11 +850,12 @@ echo -ne " \033[1;93m          LOADING...."
 msg -bar
 [[ -e ${SCPdir}/message.txt ]] && msg -bra " RESELLER AUTORIZADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
 [[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
-clear
+msg -bar
 clear 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/InfoDiario.sh > /dev/null 2>&1
 chmod 777 /etc/VPS-ARG/InfoDiario.sh > /dev/null 2>&1
 bash /etc/VPS-ARG/InfoDiario.sh > /dev/null 2>&1
+msg -bar
 }
 monhtop () {
 clear 
