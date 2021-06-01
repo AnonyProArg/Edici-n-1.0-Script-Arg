@@ -145,7 +145,7 @@ atualiza_fun () {
 clear 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1
 chmod 777 /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1
-bash /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1
+bash /etc/VPS-ARG/actualizador.sh
 exit
 }
 funcao_idioma () {
