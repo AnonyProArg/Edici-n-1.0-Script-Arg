@@ -20,11 +20,13 @@ echo -ne   " \033[1;33m[\033[1;31mtu->(　-_･) ︻デ═一 ▸▸ ▸▸▸�
 sleep 1s
 }
 diario () {
+clear
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
 atualiza_fun () {
+clear
 ##PAKETES
 echo ""
 echo -e "\033[97m     EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR" 
