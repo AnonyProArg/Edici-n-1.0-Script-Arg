@@ -1,4 +1,20 @@
 clear
+-tit)echo -e "\e[97m \033[1;41m|...SCRIPT (>‿◠)✌ VPS-ARG...| \033[1;49m\033[1;49m \033[1;31m[ \033[1;32m $vesaoSCT " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+msg -tit
+echo -e "\e[032m                   MENU DE ACTUALIZACIONES "
+echo ""
+msg -bar
+echo -ne "\e[93m  [1]" msg -bra "\033[1;31m DIARIO DEL CREADOR  " 
+echo ""
+echo -ne "\e[93m  [2]" msg -bra  "\033[1;41m ACTUALIZAR SCRIPT "
+echo ee
+echo -ne "\e[93m  [2]" msg -bra  "\033[1;41m MENU "
+msg -bar
+selection=$(selection_fun 13)
+case ${selection} in
+1)diario ;;
+2)atualiza_fun ;;
+0)cd $HOME && exit 0;;
 fun_bar () {
 comando="$1"
  _=$(
@@ -19,6 +35,12 @@ done
 echo -ne   " \033[1;33m[\033[1;31mtu->(　-_･) ︻デ═一 ▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸(x_x)<-tu ex \033[1;33m] - \033[1;32m OK \033[0m\n"
 sleep 1s
 }
+diario () {
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
+chmod -R 777 /etc/VPS-ARG
+bash /etc/VPS-ARG/diario.sh
+}
+atualiza_fun () {
 ##PAKETES
 echo ""
 echo -e "\033[97m     EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR" 
