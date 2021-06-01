@@ -1,8 +1,5 @@
 clear
-fi
-NEGRITO='\e[1m'
-SEMCOR='\e[0m'
- case $1 in
+case $1 in
   -ne)cor="${COLOR[1]}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
   -ama)cor="${COLOR[3]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
   -verm)cor="${COLOR[3]}${NEGRITO}[!] ${COLOR[1]}" && echo -e "${cor}${2}${SEMCOR}";;
