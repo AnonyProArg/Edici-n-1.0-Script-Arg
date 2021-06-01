@@ -864,9 +864,9 @@ menu_func "𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 
 msg -bar
 echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆ℂ𝔼𝕊𝕆𝕊 -\e[97m \n"  
 msg -bar
-echo -ne "\e[93m  [12]\e[97m $(msg -verm2" =>>") " && msg -verd "\033[1;31m 🌐𝔸ℂ𝕋𝕌𝔸𝕃𝕀ℤ𝔸ℝ  🌐 -"  
+echo -ne "\e[93m  [12]\e[97m $(msg -verm2 "=>>") " && msg -verd "\033[1;31m ACTUALIZACIONES -"  
 msg -bar
-echo -ne "\e[93m  [13]\e[97m $(msg -verm2" =>>") " && msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ  -" 
+echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ  -" 
 msg -bar
 echo -ne "$(msg -verd "  [0]") $(msg -verm2  "=>>") " && msg -bra  "\033[1;41m❗ SALIR DEL SCRIPT  ❗️ -"
 msg -bar
