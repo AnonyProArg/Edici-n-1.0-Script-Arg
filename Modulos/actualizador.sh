@@ -1,4 +1,23 @@
+#!/bin/bash
+#25/01/2021 by AnonyProArg
 clear
+clear
+SCPdir="/etc/VPS-ARG"
+SCPfrm="${SCPdir}/herramientas" && [[ ! -d ${SCPfrm} ]] && exit
+SCPinst="${SCPdir}/protocolos"&& [[ ! -d ${SCPinst} ]] && exit
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
+dirapache="/usr/local/lib/ubuntn/apache/ver" && [[ ! -d ${dirapache} ]] && exit
+mportas () {
+unset portas
+portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
+while read port; do
+var1=$(echo $port | awk '{print $1}') && var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
+[[ "$(echo -e $portas|grep "$var1 $var2")" ]] || portas+="$var1 $var2\n"
+done <<< "$portas_var"
+i=1
+echo -e "$portas"
+}
+
 fun_bar () {
 comando="$1"
  _=$(
@@ -6,26 +25,21 @@ $comando > /dev/null 2>&1
 ) & > /dev/null
 pid=$!
 while [[ -d /proc/$pid ]]; do
-echo -ne "  \033[1;33m["
-   for((i=0; i<40; i++)); do
-   echo -ne "\033[1;31m>"
-   sleep 0.1
+echo -ne " \033[1;33m["
+   for((i=0; i<20; i++)); do
+   echo -ne "\033[1;31m##"
+   sleep 0.5
    done
 echo -ne "\033[1;33m]"
 sleep 1s
 echo
-tput cuu1 && tput dl1
+tput cuu1
+tput dl1
 done
-echo -ne   " \033[1;33m[\033[1;31mtu->(　-_･) ︻デ═一 ▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸(x_x)<-tu ex \033[1;33m] - \033[1;32m OK \033[0m\n"
+echo -e " \033[1;33m[\033[1;31m########################################\033[1;33m] - \033[1;32m100%\033[0m"
 sleep 1s
 }
-diario () {
-clear
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
-chmod -R 777 /etc/VPS-ARG
-bash /etc/VPS-ARG/diario.sh
-}
-atualiza_fun () {
+ssl_stunel () {
 clear
 ##PAKETES
 echo ""
@@ -48,18 +62,34 @@ echo -e "\e[032m                   ACTUALIZACION COMPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
-echo -e "\033[97m     MENU DE ACTUALIZACIONES"
-echo ""
-echo -ne "\e[93m  [1]" "\033[1;31m DIARIO DEL CREADOR  " 
-echo ""
-echo -ne "\e[93m  [2]" "\033[1;41m ACTUALIZAR SCRIPT "
-echo ee
-echo -ne "\e[93m  [2]" "\033[1;41m MENU "
-selection=$(selection_fun 13)
-case ${selection} in
-1)diario ;;
-2)atualiza_fun ;;
-0)cd $HOME && exit 0;;
+
+}
+clear
+ssl_multi () {
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
+chmod -R 777 /etc/VPS-ARG
+bash /etc/VPS-ARG/diario.sh
+}
+clear
+msg -bar
+msg -bar3
+msg -tit
+echo -e "${cor[3]}       MENU DE ACTUALIZACIONES "
+msg -bar
+echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL CREADOR "
+echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT "
+echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
+msg -bar
+echo -ne     "\033[1;37mESCOJA SU OPCION: "
+read opcao
+case $opcao in
+1)
+msg -bar
+ssl_stunel
+;;
+2)
+msg -bar
+ssl_multi
+sleep 3
+exit
 esac
-msg -ne "Enter Para Continuar" && read enter
-VPS-ARG
