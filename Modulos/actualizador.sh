@@ -48,8 +48,6 @@ echo -e "\e[032m                   ACTUALIZACION COMPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
-  }
-done
 echo -e "\033[97m     MENU DE ACTUALIZACIONES"
 echo ""
 echo -ne "\e[93m  [1]" "\033[1;31m DIARIO DEL CREADOR  " 
