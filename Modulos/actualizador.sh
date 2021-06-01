@@ -85,11 +85,11 @@ read opcao
 case $opcao in
 1)
 msg -bar
-ssl_stunel
+ssl_multi
 ;;
 2)
 msg -bar
-ssl_multi
+ssl_stunel
 sleep 3
 exit
 esac
