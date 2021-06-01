@@ -21,7 +21,7 @@ echo -e "$portas"
 fun_bar () {
 comando="$1"
  _=$(
-$comando >           /dev/null 2>&1
+$comando > /dev/null 2>&1
 ) & > /dev/null
 pid=$!
 while [[ -d /proc/$pid ]]; do
