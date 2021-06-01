@@ -48,6 +48,7 @@ echo -e "\e[032m                   ACTUALIZACION COMPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
+  }
 done
 echo -e "\033[97m     MENU DE ACTUALIZACIONES"
 echo ""
