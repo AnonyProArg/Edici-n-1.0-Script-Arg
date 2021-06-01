@@ -1,15 +1,28 @@
 clear
--tit)echo -e "\e[97m \033[1;41m|...SCRIPT (>‿◠)✌ VPS-ARG...| \033[1;49m\033[1;49m \033[1;31m[ \033[1;32m $vesaoSCT " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+fi
+NEGRITO='\e[1m'
+SEMCOR='\e[0m'
+ case $1 in
+  -ne)cor="${COLOR[1]}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
+  -ama)cor="${COLOR[3]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -verm)cor="${COLOR[3]}${NEGRITO}[!] ${COLOR[1]}" && echo -e "${cor}${2}${SEMCOR}";;
+  -verm2)cor="${COLOR[1]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -azu)cor="${COLOR[6]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -verd)cor="${COLOR[2]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -bra)cor="${COLOR[0]}${SEMCOR}" && echo -e "${cor}${2}${SEMCOR}";;
+  "-bar2"|"-bar")cor="${COLOR[1]}———————————————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+  -tit)echo -e "\e[97m \033[1;41m|...SCRIPT (>‿◠)✌ VPS-ARG...| \033[1;49m\033[1;49m \033[1;31m[ \033[1;32m $vesaoSCT " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+  -bar3) $([[ ! -e $(echo -e $(echo "2f7573722f73686172652f6d65646961707472652f6c6f63616c2f6c6f672f6c6f676e756c6c"| sed 's/../\\x&/g;s/$/ /')) ]] && $( aviso_bock > /dev/null 2>&1)) && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+msg -bar2
 msg -tit
-echo -e "\e[032m                   MENU DE ACTUALIZACIONES "
+msg -ama "               MENU DE ACTUALIZACIONES "
+msg -bar2
 echo ""
-msg -bar
 echo -ne "\e[93m  [1]" msg -bra "\033[1;31m DIARIO DEL CREADOR  " 
 echo ""
 echo -ne "\e[93m  [2]" msg -bra  "\033[1;41m ACTUALIZAR SCRIPT "
 echo ee
 echo -ne "\e[93m  [2]" msg -bra  "\033[1;41m MENU "
-msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
 1)diario ;;
