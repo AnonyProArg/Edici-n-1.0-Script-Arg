@@ -1,16 +1,4 @@
 clear
-echo -e "\033[97m     MENU DE ACTUALIZACIONES"
-echo ""
-echo -ne "\e[93m  [1]" msg -bra "\033[1;31m DIARIO DEL CREADOR  " 
-echo ""
-echo -ne "\e[93m  [2]" msg -bra  "\033[1;41m ACTUALIZAR SCRIPT "
-echo ee
-echo -ne "\e[93m  [2]" msg -bra  "\033[1;41m MENU "
-selection=$(selection_fun 13)
-case ${selection} in
-1)diario ;;
-2)atualiza_fun ;;
-0)cd $HOME && exit 0;;
 fun_bar () {
 comando="$1"
  _=$(
@@ -56,5 +44,21 @@ find . -iname 'wget-log*' -delete
 find . -iname 'instalscript.sh*' -delete
 echo -e "\e[032m                   ACTUALIZACION COMPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
+msg -ne "Enter Para Continuar" && read enter
+VPS-ARG
+done
+echo -e "\033[97m     MENU DE ACTUALIZACIONES"
+echo ""
+echo -ne "\e[93m  [1]" "\033[1;31m DIARIO DEL CREADOR  " 
+echo ""
+echo -ne "\e[93m  [2]" "\033[1;41m ACTUALIZAR SCRIPT "
+echo ee
+echo -ne "\e[93m  [2]" "\033[1;41m MENU "
+selection=$(selection_fun 13)
+case ${selection} in
+1)diario ;;
+2)atualiza_fun ;;
+0)cd $HOME && exit 0;;
+esac
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
