@@ -15,7 +15,6 @@ case $1 in
  esac
 msg -tit
 msg -ama "               MENU DE ACTUALIZACIONES "
-msg -bar2
 echo ""
 echo -ne "\e[93m  [1]" msg -bra "\033[1;31m DIARIO DEL CREADOR  " 
 echo ""
