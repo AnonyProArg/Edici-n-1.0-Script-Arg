@@ -534,7 +534,7 @@ float_data "$arqs" "$Numb" && {
   let Numb++
   }
 done
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTAR MEDIANTE BOT DE TELEGRAM $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTRAR MEDIANTE BOT DE TELEGRAM $ofc"
 script[$Numb]="ADMbot.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "COMPARTIR ARCHIVO ONLINE            $ofc"
@@ -674,7 +674,7 @@ echo $selection
 export -f msg
 export -f selection_fun
 export -f fun_trans
-export -f  menu_func
+export -f menu_func
 export -f meu_ip
 export -f fun_ip
 clear
@@ -842,37 +842,6 @@ limseg="$(less /etc/VPS-ARG/controlador/tiemlim.log)"
 
 [[ -e ${SCPdir}/USRonlines ]] && msg -bar && msg -ne "\033[1;97m   LIMITADOR:\033[1;92m $verificar \033[1;97m DESBLOQUEO AUTOMATICO:\033[1;92m $desbloqueo\n   \033[1;32mCONECTADOS: " && echo -ne "\033[1;97m$(cat ${SCPdir}/USRonlines) "
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "   EXPIRADOS: " && echo -ne "\033[1;97m$(cat ${SCPdir}/USRexpired) "  && msg -ne " \033[1;95m BLOQUEADOS: " && echo -e "\033[1;97m$(cat ${SCPdir}/USRbloqueados) \n\033[1;97m        ACTULIZACION DE MONITOR CADA: \033[1;34m $limseg s" 
-creditoss () {
-clear 
-msg -bar
-msg -tit
-echo -ne " \033[1;93m          CREDITOS Y REGISTRO DE CAMBIOS\n"
-msg -bar
-[[ -e ${SCPdir}/message.txt ]] && msg -bra " RESELLER AUTORIZADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
-[[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
-msg -bar
-echo -ne "\033[1;97m        CAMBIOS DE LA VERSION 8.3\n"
-echo -ne " - Compatible con Ubuntu's 14,16,18,20\n"
-echo -ne "        (Server live's ext 0.4)\n"
-echo -ne " - Compatibilidad Ubuntu 20, Squid,Openvpn,Dropbear\n"
-echo -ne " - Cambio en el proceso del usercode\n"
-echo -ne " - Menus Mas limpios\n"
-echo -ne " - Se ajustaron menus con retorno\n"
-echo -ne " - Ejecusion mas rapida de Comandos\n"
-echo -ne " - Instalador mejorado retro Compatible \n"
-echo -ne " - Add v2ray, opcion de port y tls manual \n"
-echo -ne " - Se agregaron 2 comandos mas al BOT Gestor \n"
-echo -ne "  (Bloquear y Desbloquear Usuarios, Como Ver Bloqueados)\n"
-echo -ne " + Auto Install Python para Install Inicial \n"
-echo -ne " + Selecionable Upgrade de S.O \n"
-echo -ne " + Cambio de pass root \n"
-echo -ne " + Se habilito el updater de menu \n"
-echo -ne " + Mas liviano y sencillo de actulizar\n"
-echo -ne " + Auto Reinicio Forzado (Actulizaciones de Ubuntu) \n"
-echo -ne " + Auto root Directo \n"
-echo -ne " + Error de IP Privada e IP Publica en menu \n"
-msg -bar 
-}
 monhtop () {
 clear 
 msg -bar
@@ -894,13 +863,13 @@ msg -bar
 }
 msg -bar
 msg -bar3
-menu_func "*✶𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊ℍ/𝕊𝕊𝕃/𝔻ℝ𝕆ℙ𝔹𝔼𝔸ℝ" " *✶𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊/𝕊𝕊ℝℝ" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕍𝟚ℝ𝔸𝕐 ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕏ℝ𝔸𝕐 ✶*"  "\033[1;100m*✶ 𝕀ℕ𝕊𝕋𝔸𝕃𝔸𝔻𝕆ℝ𝔼𝕊 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶*" "*✶ ℙ𝕌𝔼ℝ𝕋𝕆𝕊 𝔸ℂ𝕋𝕀𝕍𝕆𝕊 ✶*" "*✶ ℍ𝔼ℝℝ𝔸𝕄𝕀𝔼ℕ𝕋𝔸𝕊 𝕪 𝔼𝕏𝕋ℝ𝔸𝕊 ✶*" "*✶ ℂ𝔸𝕄𝔹𝕀𝔸ℝ ℂ𝕆𝕃𝕆ℝ𝔼𝕊 𝔻𝔼𝕃 ℙ𝔸ℕ𝔼𝕃 ✶*" "*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶* --------> ${monitorservi}" "*✶ 𝔸𝕌𝕋𝕆 𝕀ℕ𝕀ℂ𝕀𝔸ℝ 𝕊ℂℝ𝕀ℙ𝕋  ✶* ----------> $AutoRun " 
+menu_func "𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊ℍ/𝕊𝕊𝕃/𝔻ℝ𝕆ℙ𝔹𝔼𝔸ℝ" " 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊/𝕊𝕊ℝℝ" "𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕍𝟚ℝ𝔸𝕐 " " 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕏ℝ𝔸𝕐 "  "\033[1;100m 𝕀ℕ𝕊𝕋𝔸𝕃𝔸𝔻𝕆ℝ𝔼𝕊 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 " " ℙ𝕌𝔼ℝ𝕋𝕆𝕊 𝔸ℂ𝕋𝕀𝕍𝕆𝕊 " " ℍ𝔼ℝℝ𝔸𝕄𝕀𝔼ℕ𝕋𝔸𝕊 𝕪 𝔼𝕏𝕋ℝ𝔸𝕊 " " ℂ𝔸𝕄𝔹𝕀𝔸ℝ ℂ𝕆𝕃𝕆ℝ𝔼𝕊 𝔻𝔼𝕃 ℙ𝔸ℕ𝔼𝕃 " " 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊  --------> ${monitorservi}" " 𝔸𝕌𝕋𝕆 𝕀ℕ𝕀ℂ𝕀𝔸ℝ 𝕊ℂℝ𝕀ℙ𝕋   ----------> $AutoRun " 
 msg -bar
 echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆ℂ𝔼𝕊𝕆𝕊 𝔻𝔼 𝕊𝕀𝕊𝕋𝔼𝕄𝔸 ℂ𝕆ℕ ℍ𝕋𝕆ℙ ✶* \e[97m \n"
 msg -bar
 echo -ne " \e[93m [12] \e[97m $(msg -verm2 "=>>") $(msg -verd "🌐𝔸ℂ𝕋𝕌𝔸𝕃𝕀ℤ𝔸ℝ🌐") " && echo -ne "\e[93m [13] \e[97m $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ"
 msg -bar
-echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mCREDITOS" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗ SALIR DEL SCRIPT ❗️ "
+echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗ SALIR DEL SCRIPT ❗️ "
 msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
@@ -917,7 +886,6 @@ case ${selection} in
 11)monhtop;;
 12)atualiza_fun;;
 13)remove_script;;
-14)creditoss;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "Enter Para Continuar" && read enter
