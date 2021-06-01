@@ -6,8 +6,6 @@ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 > /dev/null 2>&1
 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 > /dev/null 2>&1
 sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1 > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/InfoDiario.sh > /dev/null 2>&1
-chmod -R 777 /etc/VPS-ARG
 _hora=$(printf '%(%D-%H:%M:%S)T') 
 #COLORES 
 red=$(tput setaf 1)
@@ -147,7 +145,7 @@ atualiza_fun () {
 clear 
 ##PAKETES
 echo ""
-echo -e "\033[97m     ACTUALIZANDO Y INICIANDO ACTUALIZADOR" 
+echo -e "\033[97m     ACTUALIZANDO E INICIANDO ACTUALIZADOR" 
         fun_bar "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh > /dev/null 2>&1 "
 chmod 777 /etc/VPS-ARG/actualizador.sh
 bash /etc/VPS-ARG/actualizador.sh
@@ -490,7 +488,7 @@ case $1 in
 "Shadowsocks-libev.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SHADOWSOCKS-LIBEV ---------------- $(pid_inst ss-server)";;
 "Shadowsocks-R.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SHADOWSOCKS-R -------------------- ${valuest}";; 
 "sockspy.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "SOCKS PYTHON --------------------- $(pid_inst python)";;
-"v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 "==>>") " && msg -azu " V2RAY --------------------------- $(pid_inst v2ray)";; 
+"v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 "==>>") " && msg -azu  " V2RAY -------------------------- $(pid_inst v2ray)";; 
 "budp.sh")echo -ne "$(msg -verd " [$2]") $(msg -verm2 "==>>") " && msg -azu "BADVPN-(UDP:7300) ---------------- $(pid_inst badvpn)";;
 
 "paysnd.sh")return 1;;
@@ -896,13 +894,13 @@ msg -bar
 }
 msg -bar
 msg -bar3
-menu_func "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 |𝕊𝕊ℍ/𝕊𝕊𝕃/𝔻ℝ𝕆ℙ𝔹𝔼𝔸ℝ ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊/𝕊𝕊ℝℝ ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕍𝟚ℝ𝔸𝕐 ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕏ℝ𝔸𝕐 ✶*"  "\033[1;100m*✶ 𝕀ℕ𝕊𝕋𝔸𝕃𝔸𝔻𝕆ℝ𝔼𝕊 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶*" "*✶ ℙ𝕌𝔼ℝ𝕋𝕆𝕊 𝔸ℂ𝕋𝕀𝕍𝕆𝕊 ✶*" "*✶ ℍ𝔼ℝℝ𝔸𝕄𝕀𝔼ℕ𝕋𝔸𝕊 𝕪 𝔼𝕏𝕋ℝ𝔸𝕊 ✶*" "*✶ ℂ𝔸𝕄𝔹𝕀𝔸ℝ ℂ𝕆𝕃𝕆ℝ𝔼𝕊 𝔻𝔼𝕃 ℙ𝔸ℕ𝔼𝕃 ✶*" "*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶* --------> ${monitorservi}" "*✶ 𝔸𝕌𝕋𝕆 𝕀ℕ𝕀ℂ𝕀𝔸ℝ 𝕊ℂℝ𝕀ℙ𝕋  ✶* ----------> $AutoRun " 
+menu_func "*✶𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊ℍ/𝕊𝕊𝕃/𝔻ℝ𝕆ℙ𝔹𝔼𝔸ℝ" " *✶𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊/𝕊𝕊ℝℝ" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕍𝟚ℝ𝔸𝕐 ✶*" "*✶ 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕏ℝ𝔸𝕐 ✶*"  "\033[1;100m*✶ 𝕀ℕ𝕊𝕋𝔸𝕃𝔸𝔻𝕆ℝ𝔼𝕊 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶*" "*✶ ℙ𝕌𝔼ℝ𝕋𝕆𝕊 𝔸ℂ𝕋𝕀𝕍𝕆𝕊 ✶*" "*✶ ℍ𝔼ℝℝ𝔸𝕄𝕀𝔼ℕ𝕋𝔸𝕊 𝕪 𝔼𝕏𝕋ℝ𝔸𝕊 ✶*" "*✶ ℂ𝔸𝕄𝔹𝕀𝔸ℝ ℂ𝕆𝕃𝕆ℝ𝔼𝕊 𝔻𝔼𝕃 ℙ𝔸ℕ𝔼𝕃 ✶*" "*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ✶* --------> ${monitorservi}" "*✶ 𝔸𝕌𝕋𝕆 𝕀ℕ𝕀ℂ𝕀𝔸ℝ 𝕊ℂℝ𝕀ℙ𝕋  ✶* ----------> $AutoRun " 
 msg -bar
 echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m*✶ 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆ℂ𝔼𝕊𝕆𝕊 𝔻𝔼 𝕊𝕀𝕊𝕋𝔼𝕄𝔸 ℂ𝕆ℕ ℍ𝕋𝕆ℙ ✶* \e[97m \n"
 msg -bar
 echo -ne " \e[93m [12] \e[97m $(msg -verm2 "=>>") $(msg -verd "🌐𝔸ℂ𝕋𝕌𝔸𝕃𝕀ℤ𝔸ℝ🌐") " && echo -ne "\e[93m [13] \e[97m $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ"
 msg -bar
-echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mINFO SCRIPT" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m ❗️ SALIR DEL SCRIPT ❗️ "
+echo -ne "$(msg -verd "  [14]") $(msg -verm2 "=>>") " && echo -ne "\033[1;97mCREDITOS" && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m❗ SALIR DEL SCRIPT ❗️ "
 msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
@@ -919,7 +917,7 @@ case ${selection} in
 11)monhtop;;
 12)atualiza_fun;;
 13)remove_script;;
-14)creditoss ;;
+14)creditoss;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "Enter Para Continuar" && read enter
