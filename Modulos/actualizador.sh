@@ -35,6 +35,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/ > /dev/null 2>&1
 chmod -R 777 /etc/VPS-ARG
 find . -iname 'wget-log*' -delete
+find . -iname 'instalscript.sh*' -delete
 echo -e "\e[032m                   ACTUALIZACION COPLETA"
 echo -e "\e[032m               Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
