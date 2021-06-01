@@ -1,11 +1,11 @@
 
-#!/bin/bash 
-mkdir /etc/VPS-ARG 
-mkdir /etc/VPS-ARG/controlador 
-mkdir /etc/VPS-ARG/protocolos 
-mkdir /etc/VPS-ARG/herramientas 
-mkdir /etc/VPS-ARG/Xray
-mkdir /etc/VPS-ARG/Sms-Spam
+#!/bin/bash > /dev/null 2>&1
+mkdir /etc/VPS-ARG > /dev/null 2>&1 
+mkdir /etc/VPS-ARG/controlador > /dev/null 2>&1
+mkdir /etc/VPS-ARG/protocolos > /dev/null 2>&1
+mkdir /etc/VPS-ARG/herramientas > /dev/null 2>&1
+mkdir /etc/VPS-ARG/Xray > /dev/null 2>&1
+mkdir /etc/VPS-ARG/Sms-Spam > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/usercodes -O /etc/VPS-ARG/controlador/usercodes > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/C-SSR.sh -O /etc/VPS-ARG/protocolos/C-SSR.sh > /dev/null 2>&1
