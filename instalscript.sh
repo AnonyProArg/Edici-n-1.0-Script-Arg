@@ -120,7 +120,7 @@ otro_fun2 () {
     
 	echo "OK IGNORAR ESTE PASO"
 }
-echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\nSE VENDE POR EL MOTIVO QUE YO TODOS LOS DÍAS ESTARÉ TRABAJANDO EN EL(agregando nuevas funciones o mejorando las que tiene)\n REVENDEDOR OFICIAL Blɑckッ WhatsApp: +54 9 370 508-3898-\nPRECIO ORIGINAL 500pe, si pagaste más, te estafaron!  Para hacerte revendedor oficial o decirme problemas con el script: graciascovidportodo@gmail.com\e[0m"
+echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\n REVENDEDOR OFICIAL Blɑckッ WhatsApp: +543705083898 & CONECTADOS 2.0 +543832461735\n -\nPRECIO ORIGINAL 500pe(REVENDEDOR 700), si pagaste más, te estafaron!\e[0m"
 msg -bar
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
