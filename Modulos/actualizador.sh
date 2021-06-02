@@ -39,6 +39,50 @@ done
                  echo -e "                   "
 sleep 1s
 }
+
+fun_bar () {
+comando="$1"
+ _=$(
+$comando > /dev/null 2>&1
+) & > /dev/null
+pid=$!
+while [[ -d /proc/$pid ]]; do
+echo -ne " \033[1;33m["
+   for((i=0; i<20; i++)); do
+   echo -ne "\033[1;31m        ##                ##                     ##"
+   sleep 0.5
+   done
+echo -ne "\033[1;33m]"
+sleep 1s
+echo
+tput cuu1
+tput dl1
+done
+                 echo -e "                   "
+sleep 1s
+}
+
+fun_bar () {
+comando="$1"
+ _=$(
+$comando > /dev/null 2>&1
+) & > /dev/null
+pid=$!
+while [[ -d /proc/$pid ]]; do
+echo -ne " \033[1;33m["
+   for((i=0; i<1; i++)); do
+   echo -ne "\033[1;31m        ##                ##                     ##"
+   sleep 0.5
+   done
+echo -ne "\033[1;33m]"
+sleep 1s
+echo
+tput cuu1
+tput dl1
+done
+                 echo -e "                   "
+sleep 1s
+}
 ssl_stunel () {
 clear
 ##PAKETES
