@@ -192,7 +192,8 @@ ar
 msg -bar
 mx
 ;;
-}
+
+
 clear
 msg -bar
 msg -bar3
