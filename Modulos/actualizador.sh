@@ -97,4 +97,5 @@ sleep 3
 0)
 msg -bar
 menu
+;;
 exit
