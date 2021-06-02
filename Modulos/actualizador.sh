@@ -191,8 +191,8 @@ ar
 2)
 msg -bar
 mx
+exit
 ;;
-esac
 
 clear
 msg -bar
