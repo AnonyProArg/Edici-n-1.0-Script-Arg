@@ -2,6 +2,6 @@
 PASS="123"
 read -s -p "Password: " mypassword
 echo ""
-if [ "$mypassword" == "$PASS" ]  
-else VPS-ARG
-fi
+[ "$mypassword" == "$PASS" ] && echo "Password accepted"| VPS-ARG ; killall konsole || echo "Access denied"
+
+exit
