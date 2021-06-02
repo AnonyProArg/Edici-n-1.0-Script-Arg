@@ -187,9 +187,11 @@ ar
 2)
 msg -bar
 mx
+sleep 3
+exit
 ;;
 esac
-}
+
 clear
 msg -bar
 msg -bar3
