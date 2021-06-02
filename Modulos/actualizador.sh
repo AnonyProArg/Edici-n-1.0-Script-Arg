@@ -75,32 +75,6 @@ tput cuu1
 tput dl1
 done 
 sleep 1s
-fun_bar2 () {
-comando="$1"
- _=$(
-$comando > /dev/null 2>&1
-) & > /dev/null
-pid=$!
-while [[ -d /proc/$pid ]]; do
-echo -ne " \033[1;33m["
-   for((i=0; i<1; i++)); do
-   echo -ne "\033[1;31m██████████████████████████████████████████████████████████████████████████████████"
-   echo -ne "\033[1;31m██████████████████████████████ ░█████╗░██████╗░░██████╗░██████████████████████████"
-   echo -ne "\033[1;31m██████████████████████████████ ██╔══██╗██╔══██╗██╔════╝ ██████████████████████████"
-   echo -ne "\033[1;31m██████████████████████████████ ██████ ║██████╔╝██║░░██  ██████████████████████████"
-   echo -ne "\033[1;31m██████████████████████████████ ██╔══██║██╔══██╗██║░░╚██╗██████████████████████████"
-   echo -ne "\033[1;31m██████████████████████████████ ██║░░██║██║░░██║╚██████╔ ██████████████████████████"
-   echo -ne "\033[1;31m██████████████████████████████████████████████████████████████████████████████████"
-   sleep 0.5
-   done
-echo -ne "\033[1;33m]"
-sleep 1s
-echo
-tput cuu1
-tput dl1
-done
-sleep 1s
-}
 ssl_stunel () {
 clear
 ##PAKETES
@@ -110,7 +84,7 @@ echo -e "\033[97m------------------EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR
 echo -e "\033[97m------------------------DESCARGANDO PAQUETES ACTUALIZADOS--------------------------" 
         fun_bar1 "wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS-ARG/protocolos/xray.sh > /dev/null 2>&1 "
 echo -e "\033[97m--------------------------BORRANDO ARCHIVOS OBSOLETOS-----------------------------" 
-        fun_bar2 "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh -O /etc/VPS-ARG/protocolos/ssl.sh > /dev/null 2>&1 "
+        fun_bar1 "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh -O /etc/VPS-ARG/protocolos/ssl.sh > /dev/null 2>&1 "
 git clone https://github.com/AnonyProArg/Xray.git /etc/VPS-ARG/Xray > /dev/null 2>&1
 git clone https://github.com/AnonyProArg/Sms-Spam.git /etc/VPS-ARG/Sms-Spam > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version -O /etc/versin_script > /dev/null 2>&1
