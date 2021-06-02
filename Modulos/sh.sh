@@ -7,5 +7,3 @@ then killall konsole echo "Access Denied"
 else echo "Password accepted"
 VPS-ARG 
 fi
-
-*************************************************
