@@ -159,7 +159,6 @@ echo -e "${cor[3]}         MENU DE ACTUALIZACIONES "
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESAROLLADOR "
 echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT "
-echo -e "${cor[4]} 3).-\033[1;37m ACTUALÍZAR HORA DEL VPS "
 echo -e "${cor[3]} 0).-\033[1;37m SALIR "
 msg -bar
 echo -ne     "\033[1;37mESCOJA SU OPCION: "
@@ -168,10 +167,6 @@ case $opcao in
 1)
 msg -bar
 ssl_multi
-;;
-3)
-msg -bar
-hora
 ;;
 2)
 msg -bar
