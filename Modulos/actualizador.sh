@@ -188,7 +188,6 @@ ar
 msg -bar
 mx
 ;;
-exit 
 clear
 msg -bar
 msg -bar3
