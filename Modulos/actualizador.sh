@@ -78,7 +78,7 @@ echo -e "${cor[3]}         MENU ACTUALIZACIONES "
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESAROLLADOR "
 echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT "
-echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
+echo -e "${cor[3]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne     "\033[1;37mESCOJA SU OPCION: "
 read opcao
@@ -91,5 +91,5 @@ ssl_multi
 msg -bar
 ssl_stunel
 sleep 3
-exit
-esac
+0)
+VPS-ARG
