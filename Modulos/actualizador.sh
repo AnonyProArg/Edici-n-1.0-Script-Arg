@@ -76,6 +76,7 @@ tput dl1
 done 
 sleep 1s
 }
+
 fun_bar2 () {
 comando="$1"
  _=$(
