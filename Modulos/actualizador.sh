@@ -71,8 +71,8 @@ chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
 menu () {
-exit
 sudo VPS_ARG
+}
 clear
 msg -bar
 msg -bar3
