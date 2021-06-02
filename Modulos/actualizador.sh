@@ -70,7 +70,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<1; i++)); do
+   for((i=0; i<0.7; i++)); do
    sleep 2             
    echo -ne "\033[1;31m█████████████████████████████████████████████████████████"
    sleep 2
@@ -110,7 +110,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<1; i++)); do
+   for((i=0; i<0.7; i++)); do
    sleep 2
    echo -ne "\033[1;31m███████████████████████████████████████████████████████████████"
    sleep 2
