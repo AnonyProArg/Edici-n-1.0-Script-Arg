@@ -1,7 +1,6 @@
 /bin/cp /etc/skel/.bashrc ~/
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
-date "+FECHA: %D%nHORA: %T"
 echo 'echo -e "\t\033[91m ██╗░░░██╗██████╗░░██████╗  ░█████╗░██████╗░░██████╗ " '>> .bashrc
 echo 'echo -e "\t\033[91m ██║░░░██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗██╔════╝" '>> .bashrc
 echo 'echo -e "\t\033[91m ╚██╗░██╔╝██████╔╝╚█████╗░ ███████║██████╔╝██║░░██╗" '>> .bashrc
