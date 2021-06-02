@@ -688,7 +688,7 @@ title=`echo -e "\033[1;96m$(cat ${SCPdir}/message.txt) " `
 printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 30 ) / 2 )) "$title"
 title=`echo -e "\033[1;96m$(cat ${SCPdir}/bienvenido.txt)"`
 msg -bar
-echo "usuario" printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 19 ) / 2 )) "$title" 
+echo "usuario" $(( ( $(echo -e "$title" | wc -c ) + 19 ) / 2 )) "$title" 
 date "+FECHA: %D%nHORA : %T"
 msg -bar
 echo -e "     \033[1;37mIP: \033[1;93m$(meu_ip)     \033[1;37mS.O: \033[1;96m$(os_system)"
