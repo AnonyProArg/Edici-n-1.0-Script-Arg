@@ -19,7 +19,7 @@ echo -e "$portas"
 msg -bar
 msg -bar3
 msg -tit
-                                                             | date "+FECHA: %D%nHORA: %T" |
+echo "                                               date "+FECHA: %D%nHORA: %T""                                                              
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
 msg -bar 
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
