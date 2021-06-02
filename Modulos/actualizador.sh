@@ -168,7 +168,7 @@ sleep 3
 exit
 ;;
 esac
-
+}
 ssl_multi () {
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
 chmod -R 777 /etc/VPS-ARG
@@ -185,7 +185,7 @@ echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT   "
 echo -e "${cor[4]} 3).-\033[1;37m ACTUALIZAR FECHA/HORA DEL VPS   "
 echo -e "${cor[4]} 0).-\033[1;37m SALIR "
 msg -bar
-echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
+echo -ne "\033[1;37m ESCOJA SU OPCION: "
 read opcao
 case $opcao in
 2)
