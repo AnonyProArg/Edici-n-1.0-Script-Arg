@@ -685,7 +685,7 @@ msg -tit
 # echo -e "\033[1;31m[\033[1;32m $vesaoSCT\033[1;97m"
 # msg -bar
 title=`echo -e "\033[1;96m$(cat ${SCPdir}/message.txt) " `
-echo "CREADOR:" $(( ( $(echo -e "$title" | wc -c ) + ) / 2 )) "$title"
+printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 30 ) / 2 )) "$title"
 title=`echo -e "\033[1;96m$(cat ${SCPdir}/bienvenido.txt)"`
 msg -bar
 echo "USUARIO:" $(( ( $(echo -e "$title" | wc -c ) + ) / 2 )) "$title" 
