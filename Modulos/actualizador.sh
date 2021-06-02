@@ -192,7 +192,7 @@ ar
 msg -bar
 mx
 ;;
-
+esac
 
 clear
 msg -bar
