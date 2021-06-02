@@ -19,7 +19,8 @@ echo -e "$portas"
 msg -bar
 msg -bar3
 msg -tit
-echo -e "  \033[100m     DIARIO DEL DESARROLADOR " date " +FECHA: %D%nHORA: %T"
+echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
+date " +FECHA: %D%nHORA: %T"
 msg -bar 
 echo -ne " -   DATA DE LA V-1.3= TERMINE DE MODIFICAR EL ACTUALIZADOR (POR EL MOMENTO)\n"
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
