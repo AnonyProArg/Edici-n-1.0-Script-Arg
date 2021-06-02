@@ -70,26 +70,26 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<0; i++)); do
-   sleep 2             
+   for((i=0; i<1; i++)); do
+   sleep 1             
    echo -ne "\033[1;31m███████████████████████████████████████████████████████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████                                ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████  ██╗   ██╗ ██████╗   ██████╗   ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████  ██║   ██║ ██╔══██╗ ██╔════╝   ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████ ╚██╗  ██╔╝ ██████╔╝ ╚█████╗    ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████    ████╔   ██╔═══╝   ╚═══██╗   ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████     ██╔╝   ██║      ██████╔    ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m████████████████                                ███████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m███████████████████████████████████████████████████████████████"
-   sleep 2
+   sleep 1
    echo -ne "\033[1;31m███████████████████████████████████████████████████████████████"
    sleep 0
    done
@@ -110,7 +110,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<0; i++)); do
+   for((i=0; i<1; i++)); do
    sleep 2
    echo -ne "\033[1;31m███████████████████████████████████████████████████████████████"
    sleep 2
@@ -146,7 +146,7 @@ ssl_stunel () {
 clear
 ##PAKETES
 echo ""
-echo -e "\033[97m--------EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR----------" 84
+echo -e "\033[97m--------EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR----------" 
         fun_bar "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu > /dev/null 2>&1 "
 echo -e "\033[97m--------------DESCARGANDO PAQUETES ACTUALIZADOS----------------" 
         fun_bar1 "wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS-ARG/protocolos/xray.sh > /dev/null 2>&1 "
