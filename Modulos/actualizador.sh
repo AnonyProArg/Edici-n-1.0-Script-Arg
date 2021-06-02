@@ -143,30 +143,6 @@ echo -e "\e[032m                               ACTUALIZACION COMPLETA"
 echo -e "\e[032m                            Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
-ssl_stunel_2 () {
-clear 
-msg -bar
-msg -bar3
-msg -tit
-echo -e "${cor[3]}         MENU DE HORARIOS (LA) PARA ACTUALIZAR "
-msg -bar
-echo -e "${cor[4]} 1).-\033[1;37m ARGENTINA, BRASIL, CHILE, URUGUAY "
-echo -e "${cor[4]} 2).-\033[1;37m MÉXICO, PANAMÁ, LIMA, BOGOTÁ, ETC"
-msg -bar
-echo -ne     "\033[1;37mESCOJA SU OPCION: "
-read opcao
-case $opcao in
-1)
-msg -bar
-ar
-;;
-2)
-msg -bar
-mx
-sleep 3
-exit
-;;
-esac
 
 ssl_multi () {
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
@@ -181,7 +157,6 @@ echo -e "${cor[3]}              MENU DE ACTUALIZACION"
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESARROLADOR "
 echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT   "
-echo -e "${cor[4]} 3).-\033[1;37m ACTUALIZAR FECHA/HORA DEL VPS "
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
@@ -190,12 +165,6 @@ case $opcao in
 2)
 msg -bar
 ssl_stunel
-;;
-3)
-msg -bar
-ssl_stunel_2
-sleep 3
-exit
 ;;
 1)
 msg -bar
