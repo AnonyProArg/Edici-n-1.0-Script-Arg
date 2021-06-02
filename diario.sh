@@ -19,13 +19,15 @@ echo -e "$portas"
 msg -bar
 msg -bar3
 msg -tit
-echo "                                               date "+FECHA: %D%nHORA: %T""                                                              
+echo "" 
+msg -bar                                                  date "+FECHA: %D%nHORA: %T"                                                              
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
 msg -bar 
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
 echo -ne " -   TAMBIEN AUMENTANDO LA COMPATIBILIDAD\n"
 echo -ne " -   EN ESTOS DIAS ESTARE AGREGANDO ALGO NUEVO, MANTENTE ATENT@\n"
 echo ""
+msg -bar 
 echo -e "  \033[100m      DATOS DE LAS ACTUALIZACIONES " 
 msg -bar 
 echo -ne " -   DATA DE LA V-1.4= MEJORAS Y UNA NUEVA FUNCIÓN EN HERRAMIENTAS\n"
