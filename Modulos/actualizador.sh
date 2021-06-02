@@ -166,7 +166,7 @@ find . -iname 'instalscript.sh*' -delete
 echo -e "\033[97m-----------------------------------------------------------------------------------"
 echo -e "\e[032m                               ACTUALIZACION COMPLETA"
 echo -e "\e[032m                            Correccion de errores y bugs"
-msg -ne "Enter Para Continuar" && read enter
+msg -ne "Enter Para Continuar"
 VPS-ARG
 }
 clear
