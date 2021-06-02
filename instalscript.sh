@@ -120,7 +120,7 @@ otro_fun2 () {
     
 	echo "OK IGNORAR ESTE PASO"
 }
-echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\n REVENDEDORES OFICIALES WhatsApp: \n Blɑckッ +543705083898 & CONECTADOS 2.0 +543832461735\nPRECIO ORIGINAL 500pe(REVENDEDOR 700), si pagaste más, te estafaron!\e[0m"
+echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\n REVENDEDORES OFICIALES WhatsApp: \n Blɑckッ +543705083898 & CONECTADOS 2.0 +543832461735\nPRECIO ORIGINAL 500pe(REVENDEDOR 700).\e[0m"
 msg -bar
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
