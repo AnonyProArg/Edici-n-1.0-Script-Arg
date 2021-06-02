@@ -552,7 +552,7 @@ script[$Numb]="squidpass.sh"
 echo -e "\033[1;93m--------------------AJUSTES INTERNOS-----------------"
 #AJUSTES INTERNOS
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ACTUALÍZAR HORA DEL VPS              $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ACTUALÍZAR NOMBRE & HORA DEL VPS     $ofc"
 script[$Numb]="hora.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "TCP ACELERACION (BBR/PLUS)           $dev"
