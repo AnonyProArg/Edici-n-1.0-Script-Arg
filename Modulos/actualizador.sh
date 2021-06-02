@@ -150,32 +150,6 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/d
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
-
-hora () {
-clear 
-msg -bar
-msg -bar3
-msg -tit
-echo -e "${cor[3]}         MENU DE HORARIOS (LA) PARA ACTUALIZAR "
-msg -bar
-echo -e "${cor[4]} 1).-\033[1;37m ARGENTINA, BRASIL, CHILE, URUGUAY "
-echo -e "${cor[4]} 2).-\033[1;37m MÉXICO, PANAMÁ, LIMA, BOGOTÁ, ETC"
-msg -bar
-echo -ne     "\033[1;37mESCOJA SU OPCION: "
-read opcao
-case $opcao in
-1)
-msg -bar
-ar
-;;
-2)
-msg -bar
-mx
-sleep 3
-exit
-;;
-esac
-
 clear
 msg -bar
 msg -bar3
