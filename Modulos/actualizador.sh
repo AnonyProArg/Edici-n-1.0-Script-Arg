@@ -176,6 +176,10 @@ echo -e "${cor[3]}         MENU DE HORARIOS (LA) PARA ACTUALIZAR "
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m ARGENTINA, BRASIL, CHILE, URUGUAY "
 echo -e "${cor[4]} 2).-\033[1;37m MÉXICO, PANAMÁ, LIMA, BOGOTÁ, ETC"
+msg -bar
+echo -ne     "\033[1;37mESCOJA SU OPCION: "
+read opcao
+case $opcao in
 1)
 msg -bar
 ar
@@ -205,7 +209,7 @@ ssl_multi
 ;;
 3)
 msg -bar
-hola
+hora
 ;;
 2)
 msg -bar
