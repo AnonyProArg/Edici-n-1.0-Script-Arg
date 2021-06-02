@@ -70,8 +70,6 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/d
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
-return 0
-}
 clear
 msg -bar
 msg -bar3
