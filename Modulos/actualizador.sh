@@ -151,6 +151,40 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/d
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
+mx () {
+clear 
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
+echo "HORA ACTULIZADA"
+msg -ne "Enter Para Continuar" && read enter
+VPS-ARG
+}
+ar () {
+clear
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/America/Buenos_Aires /etc/localtime > /dev/null 2>&1
+echo "HORA ACTULIZADA"
+msg -ne "Enter Para Continuar" && read enter
+VPS-ARG
+}
+hora () {
+clear 
+msg -bar
+msg -bar3
+msg -tit
+echo -e "${cor[3]}         MENU DE HORARIOS (LA) PARA ACTUALIZAR "
+msg -bar
+echo -e "${cor[4]} 1).-\033[1;37m ARGENTINA, BRASIL, CHILE, URUGUAY "
+echo -e "${cor[4]} 2).-\033[1;37m MÉXICO, PANAMÁ, LIMA, BOGOTÁ, ETC"
+1)
+msg -bar
+ar
+;;
+2)
+msg -bar
+mx
+;;
+exit 
 clear
 msg -bar
 msg -bar3
@@ -159,6 +193,7 @@ echo -e "${cor[3]}         MENU DE ACTUALIZACIONES "
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESAROLLADOR "
 echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT "
+echo -e "${cor[4]} 3).-\033[1;37m ACTUALÍZAR HORA DEL VPS "
 echo -e "${cor[3]} 0).-\033[1;37m SALIR "
 msg -bar
 echo -ne     "\033[1;37mESCOJA SU OPCION: "
@@ -167,6 +202,10 @@ case $opcao in
 1)
 msg -bar
 ssl_multi
+;;
+3)
+msg -bar
+hola
 ;;
 2)
 msg -bar
