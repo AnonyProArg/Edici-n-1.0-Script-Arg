@@ -42,7 +42,7 @@ echo ""
 echo -e "${cor[3]}          PON LA OPCION DONDE ESTE TU PAIS"
 msg -bar
 echo -e "${cor[4]} 2).-\033[1;37m ARGENTINA, BRASIL, CHILE, URUGUAY "
-echo -e "${cor[4]} 3).-\033[1;37m MÉXICO, PANAMÁ, LIMA, BOGOTÁ, ETC"
+echo -e "${cor[4]} 3).-\033[1;37m MÉXICO, PANAMÁ, LIMA, COLOMBIA, ETC"
 echo   " 0) INICIO"
 msg -bar
 echo -ne     "\033[1;37m ESCOJA SU OPCION: "
