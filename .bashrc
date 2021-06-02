@@ -207,7 +207,7 @@ echo -e "\t\033[91m  ░╚██╔╝░░██║░░░░░███�
 echo ""
 mess1="$(less /etc/VPS-ARG/message.txt)"
 echo ""
-echo -e "\t\033[92mRESELLER : $mess1 "
+echo -e "\t\033[92mCREADOR : $mess1 "
 echo ""
 echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG  "
 wget -O /etc/versin_script_new https://raw.githubusercontent.com/AnonyProArg/Edici>echo ""
