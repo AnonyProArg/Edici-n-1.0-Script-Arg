@@ -144,12 +144,10 @@ echo -e "\e[032m                            Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
 
-
 ssl_multi () {
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
-
 
 clear
 msg -bar
