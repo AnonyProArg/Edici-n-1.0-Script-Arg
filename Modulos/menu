@@ -685,10 +685,8 @@ msg -tit
 # echo -e "\033[1;31m[\033[1;32m $vesaoSCT\033[1;97m"
 # msg -bar
 title=`echo -e "\033[1;96m$(cat ${SCPdir}/message.txt) " `
-printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 55 ) / 2 )) "$title"
+printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 55 ) / 2 )) "$title" && title=`echo -e "\033[1;96m$(cat ${SCPdir}/bienvenido.txt)"`printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 55 ) / 2 )) "$title"
 msg -bar
-title=`echo -e "\033[1;96m$(cat ${SCPdir}/bienvenido.txt)"`
-printf "%*s\n" $(( ( $(echo -e "$title" | wc -c ) + 55 ) / 2 )) "$title"
 date "+FECHA: %D%nHORA: %T"
 msg -bar
 echo -e "     \033[1;37mIP: \033[1;93m$(meu_ip)     \033[1;37mS.O: \033[1;96m$(os_system)"
