@@ -37,11 +37,14 @@ msg -tit
 echo -e "${cor[3]}         MENU PARA ACTUALIZAR NOMBRE Y HORARIOS(LA) "
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m CAMBIAR NOMBRE DE INICIO "
+msg -bar
+echo ""
 echo -e "${cor[3]}          PON LA OPCION DONDE ESTE TU PAIS"
+msg -bar
 echo -e "${cor[4]} 2).-\033[1;37m ARGENTINA, BRASIL, CHILE, URUGUAY "
 echo -e "${cor[4]} 3).-\033[1;37m MÉXICO, PANAMÁ, LIMA, BOGOTÁ, ETC"
 msg -bar
-echo -ne     "\033[1;37mESCOJA SU OPCION: "
+echo -ne     "\033[1;37m ESCOJA SU OPCION: "
 read opcao
 case $opcao in
 1)
