@@ -90,7 +90,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 clear
  msg -bar2
- msg -ama "     [ VPS - AR - SCRIPT \033[1;97m By:AnonyProArg \033[1;33m ]"
+ msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By:AnonyProArg \033[1;33m ]"
  msg -bar2
 ## Install/Interno
 	echo -e  "\033[1;97m              Copiando Instalador Interno "
@@ -120,7 +120,7 @@ otro_fun2 () {
     
 	echo "OK IGNORAR ESTE PASO"
 }
-echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\n REVENDEDOR OFICIAL Blɑckッ WhatsApp: +543705083898 & CONECTADOS 2.0 +543832461735\n -\nPRECIO ORIGINAL 500pe(REVENDEDOR 700), si pagaste más, te estafaron!\e[0m"
+echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\n REVENDEDORES OFICIALES WhatsApp: \n Blɑckッ +543705083898 & CONECTADOS 2.0 +543832461735\nPRECIO ORIGINAL 500pe(REVENDEDOR 700), si pagaste más, te estafaron!\e[0m"
 msg -bar
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
