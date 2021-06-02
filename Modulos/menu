@@ -507,6 +507,7 @@ case $1 in
 "PDirect.py")return 1;;
 "PGet.py")return 1;;
 "POpen.py")return 1;;
+"hora.sh")return 1;;
 "PPriv.py")return 1;;
 "PPub.py")return 1;;
 "SMS.sh")return 1;;
@@ -549,6 +550,9 @@ echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "AUTENTIFICAR P
 script[$Numb]="squidpass.sh"
 echo -e "\033[1;93m--------------------AJUSTES INTERNOS-----------------"
 #AJUSTES INTERNOS
+let Numb++
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ACTUALÍZAR HORA DEL VPS              $ofc"
+script[$Numb]="hora.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "TCP ACELERACION (BBR/PLUS)           $dev"
 script[$Numb]="tcp.sh"
