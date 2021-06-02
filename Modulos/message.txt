@@ -29,4 +29,4 @@ mess1="$(less /etc/VPS-ARG/message.txt)"
 echo ""
 echo -e "\t\033[92mRESELLER : $mess1 "
 echo ""
-echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG  "] /etc/root/.bashrc
+echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG  "] //root/.bashrc
