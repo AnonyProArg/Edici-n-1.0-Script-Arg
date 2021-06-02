@@ -5,5 +5,4 @@ echo ""
 if [ "$mypassword" == "$PASS" ]  
 else echo "Password accepted"
 VPS-ARG 
-then killall konsole echo "Access Denied"
 fi
