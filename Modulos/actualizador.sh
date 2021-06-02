@@ -70,8 +70,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/d
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
-menu () {
-sudo VPS_ARG
+return 0
 }
 clear
 msg -bar
@@ -94,7 +93,6 @@ ssl_multi
 msg -bar
 ssl_stunel
 sleep 3
-0)cd $HOME && exit 0;;
+exit
+;;
 esac
-msg -ne "Enter Para Continuar" && read enter
-VPS-ARG
