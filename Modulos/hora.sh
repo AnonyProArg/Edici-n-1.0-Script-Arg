@@ -4,6 +4,7 @@ mx () {
 clear 
 rm /etc/localtime
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
+date "+FECHA: %D%nHORA: %T"
 echo "HORA ACTULIZADA"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
@@ -12,6 +13,7 @@ ar () {
 clear
 rm /etc/localtime
 ln -s /usr/share/zoneinfo/America/Buenos_Aires /etc/localtime > /dev/null 2>&1
+date "+FECHA: %D%nHORA: %T"
 echo "HORA ACTULIZADA"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
