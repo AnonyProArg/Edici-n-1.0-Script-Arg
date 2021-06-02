@@ -150,7 +150,9 @@ ssl_multi () {
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
+
 }
+clear
 mx () {
 clear 
 rm /etc/localtime
@@ -158,7 +160,9 @@ ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
 echo "HORA ACTULIZADA"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
+
 }
+clear
 ar () {
 clear
 rm /etc/localtime
