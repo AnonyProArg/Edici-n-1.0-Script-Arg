@@ -19,7 +19,7 @@ echo -e "$portas"
 msg -bar
 msg -bar3
 msg -tit
-sudo                                                     date "+FECHA: %D%nHORA: %T"     
+date "+FECHA: %D%nHORA: %T"   
 msg -bar                                                                                                
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
 msg -bar 
