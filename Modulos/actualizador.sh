@@ -70,12 +70,14 @@ tput cuu1
 tput dl1
 done 
 echo -ne ""
+}
+
 sleep 1s
 ssl_stunel () {
 clear
 ##PAKETES
 echo ""
-echo -e "\033[97m------------------EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR--------------------" 83
+echo -e "\033[97m------------------EXAMINANDO LINKS Y DIRECTORIOS POR ACTUALIZAR--------------------" 
         fun_bar "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu > /dev/null 2>&1 "
 echo -e "\033[97m------------------------DESCARGANDO PAQUETES ACTUALIZADOS--------------------------" 
         fun_bar1 "wget https://raw.githubusercontent.com/AnonyProArg/Xray/main/xray.sh -O /etc/VPS-ARG/protocolos/xray.sh > /dev/null 2>&1 "
