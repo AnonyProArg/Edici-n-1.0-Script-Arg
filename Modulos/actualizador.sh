@@ -70,6 +70,9 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/d
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
+menu () {
+exit
+sudo VPS_ARG
 clear
 msg -bar
 msg -bar3
@@ -92,4 +95,6 @@ msg -bar
 ssl_stunel
 sleep 3
 0)
-VPS-ARG
+msg -bar
+menu
+exit
