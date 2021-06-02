@@ -143,7 +143,8 @@ echo -e "\e[032m                               ACTUALIZACION COMPLETA"
 echo -e "\e[032m                            Correccion de errores y bugs"
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
-
+}
+clear
 ssl_multi () {
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/diario.sh -O /etc/VPS-ARG/diario.sh > /dev/null 2>&1 
 chmod -R 777 /etc/VPS-ARG
@@ -153,13 +154,13 @@ clear
 msg -bar
 msg -bar3
 msg -tit
-echo -e "${cor[3]}              MENU DE ACTUALIZACION"
+echo -e "${cor[3]}              MENU DE ACTUALIZACIONES"
 msg -bar
-echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESARROLADOR "
+echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESARROLLADOR "
 echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT   "
 echo -e "${cor[4]} 0).-\033[1;37m SALIR "
 msg -bar
-echo -ne "\033[1;37m ESCOJA SU OPCION: "
+echo -ne "\033[1;37m DIGITE LA OPCIÓN: "
 read opcao
 case $opcao in
 2)
