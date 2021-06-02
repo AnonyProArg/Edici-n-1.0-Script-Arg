@@ -94,8 +94,7 @@ ssl_multi
 msg -bar
 ssl_stunel
 sleep 3
-0)
-msg -bar
-menu
-;;
-exit
+0)cd $HOME && exit 0;;
+esac
+msg -ne "Enter Para Continuar" && read enter
+VPS-ARG
