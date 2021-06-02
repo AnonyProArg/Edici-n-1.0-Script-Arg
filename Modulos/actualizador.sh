@@ -27,7 +27,7 @@ pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
    for((i=0; i<20; i++)); do
-   echo -ne "                                        \033[1;31m##"
+   echo -ne "\033[1;31m                                           ##"
    sleep 0.5
    done
 echo -ne "\033[1;33m]"
