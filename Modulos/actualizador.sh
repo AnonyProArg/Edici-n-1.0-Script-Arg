@@ -150,22 +150,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/d
 chmod -R 777 /etc/VPS-ARG
 bash /etc/VPS-ARG/diario.sh
 }
-mx () {
-clear 
-rm /etc/localtime
-ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
-echo "HORA ACTULIZADA"
-msg -ne "Enter Para Continuar" && read enter
-VPS-ARG
-}
-ar () {
-clear
-rm /etc/localtime
-ln -s /usr/share/zoneinfo/America/Buenos_Aires /etc/localtime > /dev/null 2>&1
-echo "HORA ACTULIZADA"
-msg -ne "Enter Para Continuar" && read enter
-VPS-ARG
-}
+
 hora () {
 clear 
 msg -bar
@@ -190,6 +175,7 @@ sleep 3
 exit
 ;;
 esac
+
 clear
 msg -bar
 msg -bar3
