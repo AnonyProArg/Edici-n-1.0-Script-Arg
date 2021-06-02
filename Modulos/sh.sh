@@ -3,6 +3,5 @@ PASS="123"
 read -s -p "Password: " mypassword
 echo ""
 if [ "$mypassword" == "$PASS" ]  
-else echo "Password accepted"
-VPS-ARG 
+else VPS-ARG
 fi
