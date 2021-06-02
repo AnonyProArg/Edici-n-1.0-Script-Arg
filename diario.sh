@@ -20,13 +20,13 @@ msg -bar
 msg -bar3
 msg -tit
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
-date " +FECHA: %D%nHORA: %T"
 msg -bar 
 echo -ne " -   DATA DE LA V-1.3= TERMINE DE MODIFICAR EL ACTUALIZADOR (POR EL MOMENTO)\n"
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
 echo -ne " -   TAMBIEN AUMENTANDO LA COMPATIBILIDAD\n"
 echo -ne " -   EN ESTOS DIAS ESTARE AGREGANDO ALGO NUEVO, MANTENTE ATENT@\n"
 echo -ne " -   GRACIAS POR PASARTE, VUELVE PRONTO\n"
+date "+FECHA: %D%nHORA: %T"
 msg -bar
 msg -ne "Enter Para Continuar" && read enter
 VPS-ARG
