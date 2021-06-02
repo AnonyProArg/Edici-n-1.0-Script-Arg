@@ -158,8 +158,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/I
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/SMS.sh -O /etc/VPS-ARG/herramientas/SMS.sh > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc/VPS-ARG/Sms-Spam/.notify > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/ > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/hora.sh -O /etc/VPS-ARG/herramientas/hora.sh > /dev/null 2>&1
-perl -pi -e "s[echo -e "\033[92m        RESELLER : $mess1 "                                       echo ""][echo -e "\033[92m        CREADOR : $mess1 "                                       echo ""]g" /root/.bashrc
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/hora.sh -O /etc/VPS-ARG/herramientas/hora.sh > /dev/null 2>&1                                    
 chmod -R 777 /etc/VPS-ARG
 find . -iname 'wget-log*' -delete
 find . -iname 'instalscript.sh*' -delete
