@@ -6,6 +6,8 @@ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 > /dev/null 2>&1
 sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 > /dev/null 2>&1
 sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1 > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/bienvenido.txt -O /etc/VPS-ARG/bienvenido.txt > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/revendedores.txt -O /etc/VPS-ARG/revendedores.txt > /dev/null 2>&1
 _hora=$(printf '%(%D-%H:%M:%S)T') 
 #COLORES 
 red=$(tput setaf 1)
