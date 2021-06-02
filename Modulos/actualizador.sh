@@ -42,7 +42,6 @@ echo
 tput cuu1
 tput dl1
 done
-                 echo -e "                   "
 sleep 1s
 }
 fun_bar1 () {
@@ -74,8 +73,7 @@ sleep 1s
 echo
 tput cuu1
 tput dl1
-done
-                 echo -e "                   "
+done 
 sleep 1s
 }
 fun_bar2 () {
@@ -102,7 +100,6 @@ echo
 tput cuu1
 tput dl1
 done
-                 echo -e "                   "
 sleep 1s
 }
 ssl_stunel () {
