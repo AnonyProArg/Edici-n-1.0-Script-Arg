@@ -452,11 +452,11 @@ echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "CAMBIAR PUERTO V2RAY")\n$
 ## CONTROLER
 echo -ne "\033[1;32m [5] > " && msg -azu "AGREGAR USUARIO UUID "
 echo -ne "\033[1;32m [6] > " && msg -azu "ELIMINAR USUARIO UUID"
-echo -ne "\033[1;32m [7] > " && msg -azu "MOSTAR USUARIOS REGISTRADOS"
+echo -ne "\033[1;32m [7] > " && msg -azu "MOSTRAR USUARIOS REGISTRADOS"
 echo -ne "\033[1;32m [8] > " && msg -azu "INFORMACION DE CUENTAS"
 echo -ne "\033[1;32m [9] > " && msg -azu "ESTADISTICAS DE CONSUMO "
 echo -ne "\033[1;32m [10] > " && msg -azu "LIMITADOR POR CONSUMO\e[91m ( BETA x PORT )"
-echo -ne "\033[1;32m [11] > " && msg -azu "LIMPIADOR DE EXPIRADOS ------- $statgen\n$(msg -bar)"
+echo -ne "\033[1;32m [11] > " && msg -azu "ELIMINAR USUARIOS EXPIRADOS ------- $statgen\n$(msg -bar)"
 ## DESISNTALAR
 echo -ne "\033[1;32m [12] > " && msg -azu "\033[1;31mDESINSTALAR V2RAY"
 echo -ne "$(msg -bar)\n\033[1;32m [0] > " && msg -bra "\e[97m\033[1;41m VOLVER \033[1;37m"
