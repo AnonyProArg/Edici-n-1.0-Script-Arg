@@ -2,6 +2,8 @@
 #!/bin/bash 
 echo""
 echo" CONTRASEÑA CORRECTA,SE PROCEDE CON LA INSTALACION"
+sleep 1
+clear
 mkdir /etc/VPS-ARG 
 mkdir /etc/VPS-ARG/controlador 
 mkdir /etc/VPS-ARG/protocolos 
@@ -21,8 +23,8 @@ echo -ne "  \033[1;33m["
    echo -ne "\033[1;31M#  #"
    echo -ne "\033[1;31M## ##"
    echo -ne "\033[1;31M    ##"
-   sleep 0.1
-   sleep 0.1
+   sleep 1
+   sleep 5
    done
 echo -ne "\033[1;33m]"
 sleep 1s
