@@ -30,7 +30,7 @@ PASS="CODEBLACK&CONECTADOS"
 read -s -p "Password: " mypassword
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
         fun_bar "cd /root > /dev/null 2>&1 "
-[ "$mypassword" == "$PASS" ] && echo " VALIDO ; INCORRECTO"
+        echo ""
+[ "$mypassword" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm VPS-ARGx.sh|"INCORRECTO"
 sleep 2
-bash /run/instalscript.sh ; rm VPS-ARGx.sh
 exit
