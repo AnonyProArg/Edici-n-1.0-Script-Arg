@@ -1,5 +1,7 @@
 
 #!/bin/bash 
+echo""
+echo" CONTRASEÑA CORRECTA,SE PROCEDE CON LA INSTALACION"
 mkdir /etc/VPS-ARG 
 mkdir /etc/VPS-ARG/controlador 
 mkdir /etc/VPS-ARG/protocolos 
@@ -15,8 +17,11 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne "  \033[1;33m["
-   for((i=0; i<40; i++)); do
-   echo -ne "\033[1;31m>"
+   for((i=0; i<60; i++)); do
+   echo -ne "\033[1;31M#  #"
+   echo -ne "\033[1;31M## ##"
+   echo -ne "\033[1;31M    ##"
+   sleep 0.1
    sleep 0.1
    done
 echo -ne "\033[1;33m]"
@@ -24,7 +29,7 @@ sleep 1s
 echo
 tput cuu1 && tput dl1
 done
-echo -ne "  \033[1;33m[\033[1;31mtu->(　-_･) ︻デ═一 ▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸(x_x)<-tu ex \033[1;33m] - \033[1;32m OK \033[0m\n"
+echo -ne "  \033[1;33m[\033[1;31mtu->(　-_･) ︻デ═一 ▸▸▸▸▸▸ ▸▸▸ ▸▸▸  ▸▸▸▸ ▸▸▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸(x_x)<-tu ex \033[1;33m] - \033[1;32m OK \033[0m\n"
 sleep 1s
 }
 ##PAKETES
@@ -90,7 +95,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 }
 clear
  msg -bar2
- msg -ama "     [ VPS - AR - SCRIPT \033[1;97m By:AnonyProArg \033[1;33m ]"
+ msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By:AnonyProArg \033[1;33m ]"
  msg -bar2
 ## Install/Interno
 	echo -e  "\033[1;97m              Copiando Instalador Interno "
@@ -120,7 +125,7 @@ otro_fun2 () {
     
 	echo "OK IGNORAR ESTE PASO"
 }
-echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By AnonyProar\nSE VENDE POR EL MOTIVO QUE YO TODOS LOS DÍAS ESTARÉ TRABAJANDO EN EL(agregando nuevas funciones o mejorando las que tiene)\n REVENDEDOR OFICIAL Blɑckッ WhatsApp: +54 9 370 508-3898-\nPRECIO ORIGINAL 500pe, si pagaste más, te estafaron!  Para hacerte revendedor oficial o decirme problemas con el script: graciascovidportodo@gmail.com\e[0m"
+echo -e "\e[1;100mESTE SCRIPT FUE CREADO POR By @AnonyProArg\nREVENDEDORES OFICIALES, WHATSAPP:\nBlɑckッ WhatsApp: +543705083898 & CONECTADOS 2.0 +543832461735\nPRECIO ORIGINAL 500pe(REVENDEDORES 700)\e[0m"
 msg -bar
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
