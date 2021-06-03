@@ -28,7 +28,7 @@ Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_p
 Info="${Green_font_prefix}[ INFORMACION ]${Font_color_suffix}"
 Error="${Red_font_prefix}[# ERROR #]${Font_color_suffix}"
 Tip="${Green_font_prefix}[ NOTA ]${Font_color_suffix}"
-Separator_1="â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”"
+Separator_1="========================================================"
 
 check_root(){
 	[[ $EUID != 0 ]] && echo -e "${Error} La cuenta actual no es ROOT (no tiene permiso ROOT), no puede continuar la operacion, por favor ${Green_background_prefix} sudo su ${Font_color_suffix} Venga a ROOT (le pedire que ingrese la contraseÃ±a de la cuenta actual despues de la ejecucion)" && exit 1
@@ -444,7 +444,7 @@ $(msg -bar)
  ${Red_font_prefix}17.${Font_color_suffix} xsalsa20
  ${Red_font_prefix}18.${Font_color_suffix} xchacha20
 $(msg -bar)
- ${Tip} Para salsa20/chacha20-*:\n Porfavor instale libsodium:\n Opcion 4 en menu principal SSRR"
+ ${Tip} Para salsa20/chacha20-*:\n Por favor instale libsodium:\n Opcion 4 en menu principal SSRR"
 msg -bar
 	stty erase '^H' && read -p "(Predeterminado: 16. chacha20-ietf):" ssr_method
 msg -bar
@@ -1999,18 +1999,18 @@ $(msg -bar)
   ${Green_font_prefix}2.${Font_color_suffix} Actualizar ShadowsocksR
   ${Green_font_prefix}3.${Font_color_suffix} Desinstalar ShadowsocksR
   ${Green_font_prefix}4.${Font_color_suffix} Instalar libsodium (chacha20)
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+=====================================================
   ${Green_font_prefix}5.${Font_color_suffix} Verifique la informacion de la cuenta
   ${Green_font_prefix}6.${Font_color_suffix} Mostrar la informacion de conexion 
   ${Green_font_prefix}7.${Font_color_suffix} Agregar/Modificar/Eliminar la configuracion del usuario  
   ${Green_font_prefix}8.${Font_color_suffix} Modificar manualmente la configuracion del usuario
   ${Green_font_prefix}9.${Font_color_suffix} Borrar el trafico usado  
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+=====================================================
  ${Green_font_prefix}10.${Font_color_suffix} Iniciar ShadowsocksR
  ${Green_font_prefix}11.${Font_color_suffix} Detener ShadowsocksR
  ${Green_font_prefix}12.${Font_color_suffix} Reiniciar ShadowsocksR
  ${Green_font_prefix}13.${Font_color_suffix} Verificar Registro de ShadowsocksR
-â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+=====================================================
  ${Green_font_prefix}14.${Font_color_suffix} Otras Funciones
  ${Green_font_prefix}15.${Font_color_suffix} Actualizar Script 
 $(msg -bar)
@@ -2018,7 +2018,7 @@ $(msg -bar)
 	
 	menu_status
 	msg -bar
-    stty erase '^H' && read -p "Porfavor seleccione una opcion [1-16]:" num
+    stty erase '^H' && read -p "Por  favor seleccione una opcion [1-16]:" num
 	msg -bar
 case "$num" in
 	1)
