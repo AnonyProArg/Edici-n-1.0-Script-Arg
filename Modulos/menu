@@ -869,15 +869,15 @@ msg -bar
 }
 msg -bar
 msg -bar3
-menu_func "ADMINISTRADOR DE CUENTAS | SSH/SSL/DROPBEAR---" "ADMINISTRADOR DE CUENTAS | SS/SSRR --- "     "ADMINISTRADOR DE CUENTAS | V2RAY ---"   "ADMINISTRADOR DE CUENTAS | XRAY --- "   "\033[1;100m INSTALADOR DE PROTOCOLOS ---"    " PUERTOS ACTIVOS ---"    " HERRAMIENTAS Y EXTRAS ---"   " CAMBIAR COLOR DEL PANEL ---"   " MONITOR DE PROTOCOLOS  ------>- - ${monitorservi} " " AUTO-INICAR SCRIPT   ---------->-$AutoRun "
+menu_func "ADMINISTRADOR DE CUENTAS | SSH/SSL/DROPBEAR" "ADMINISTRADOR DE CUENTAS | SS/SSRR"     "ADMINISTRADOR DE CUENTAS | V2RAY "   "ADMINISTRADOR DE CUENTAS | XRAY "   "\033[1;100m INSTALADOR DE PROTOCOLOS "    " PUERTOS ACTIVOS "    " HERRAMIENTAS Y EXTRAS"   " CAMBIAR COLOR DEL PANEL"   " MONITOR DE PROTOCOLOS  ------>${monitorservi} " " AUTO-INICAR SCRIPT   ---------->$AutoRun "
 msg -bar
-echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m MONITOR DE PROCESOS -\e[97m \n"  
+echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m MONITOR DE PROCESOS \e[97m \n"  
 msg -bar
-echo -ne "\e[93m  [12]\e[97m $(msg -verm2 "=>>") " && msg -verd "\032 ACTUALIZACIONES -"  
+echo -ne "\e[93m  [12]\e[97m $(msg -verm2 "=>>") " && msg -verd "\032 ACTUALIZACIONES "  
 msg -bar
-echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m DESINSTALAR -" 
+echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m DESINSTALAR " 
 msg -bar
-echo -ne "$(msg -verd "  [0]") $(msg -verm2  "=>>") " && msg -bra  "\033[1;41m❗ SALIR DEL SCRIPT  ❗️ -"
+echo -ne "$(msg -verd "  [0]") $(msg -verm2  "=>>") " && msg -bra  "\033[1;41m❗ SALIR DEL SCRIPT  ❗️ "
 msg -bar
 selection=$(selection_fun 13)
 case ${selection} in
