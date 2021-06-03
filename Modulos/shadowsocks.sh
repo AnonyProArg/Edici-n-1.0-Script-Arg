@@ -3,7 +3,7 @@
 clear
 clear
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/VPS-ARG"
 SCPfrm="${SCPdir}/herramientas" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="${SCPdir}/protocolos"&& [[ ! -d ${SCPinst} ]] && exit
 mportas () {
@@ -75,7 +75,7 @@ return 0
        while true; do
 	   msg -bar
 	   msg -tit
-	   msg -ama "        INSTALADOR SHADOWSOCKS By @Kalix1"
+	   msg -ama "        INSTALADOR SHADOWSOCKS By AnonyProArg"
 	   msg -bar
        echo -e "\033[1;33m $(fun_trans ${id} "Selecione una Criptografia")"
 	   msg -bar
