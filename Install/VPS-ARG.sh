@@ -41,7 +41,7 @@ msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg 🇦🇷\033[1;33m
 msg -bar
 echo -e "\033[97m"
 echo -e "  \033[41m    --♕  ł₦₴₮₳Ⱡ₳₵łØ₦ ĐɆ ₱₳QɄɆ₮Ɇ₴ ₱₳Ɽ₳ V₱₴-₳Ɽ₲ ♕ --    \e[49m"
-echo -e "  \033[100m    INSTALACION AUTOMATIZADA(RELAJATE Y DISFRUTA)    "
+echo -e "  \033[100m    INSTALACION AUTOMATICA(RELAJATE Y DISFRUTA)    "
 echo -e "\033[97m"
 msg -bar
 
@@ -196,12 +196,12 @@ clear
 msg -bar2
 msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg 🇦🇷\033[1;33m ]"
 msg -bar2
-echo -e "\033[1;97m  ¿PRECENTO ALGUN ERROR ALGUN PAQUETE ANTERIOR?" 
+echo -e "\033[1;97m  ¿PRESENTO ALGUN ERROR LA INSTALACION ANTERIOR?" 
 msg -bar2
 echo -e "\033[1;32m 1- Escoja:(N) No. Para Instalacion Normal"
 echo -e "\033[1;31m 2- Escoja:(S) Si. Saltaron errores."
 msg -bar2
-echo -e "\033[1;39m Al preciona enter continuara la instalacion Normal"
+echo -e "\033[1;39m Presiona enter para continuar la instalacion Normal"
 msg -bar2
 ## read -p " [ S | N ]: " idfix64_86 
 read -p " default (n)  [ s | n ]: " -e -i n idfix64_86  
