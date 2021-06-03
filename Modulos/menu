@@ -79,7 +79,7 @@ SEMCOR='\e[0m'
   -verd)cor="${COLOR[2]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
   -bra)cor="${COLOR[0]}${SEMCOR}" && echo -e "${cor}${2}${SEMCOR}";;
   "-bar2"|"-bar")cor="${COLOR[1]}———————————————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
-  -tit)echo -e "\e[97m \033[100m | #𝟬𝟮/𝟬𝟲/𝟮𝟭 |  ...𝗦𝗖𝗥𝗜𝗣𝗧 (>‿◠)✌ 𝗩𝗣𝗦-𝗔𝗥𝗚...| \033[1;49m\033[1;49m \033[1;31m[ \033[1;32m $vesaoSCT " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+  -tit)echo -e "\e[97m \033[100m |  ... SCRIPT (>‿◠)✌ VPS-ARG...| \033[1;49m\033[1;49m \033[1;31m[ \033[1;32m $vesaoSCT " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
   -bar3) $([[ ! -e $(echo -e $(echo "2f7573722f73686172652f6d65646961707472652f6c6f63616c2f6c6f672f6c6f676e756c6c"| sed 's/../\\x&/g;s/$/ /')) ]] && $( aviso_bock > /dev/null 2>&1)) && echo -e "${SEMCOR}${cor}${SEMCOR}";;
  esac
 }
@@ -869,13 +869,13 @@ msg -bar
 }
 msg -bar
 msg -bar3
-menu_func "𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊ℍ/𝕊𝕊𝕃/𝔻ℝ𝕆ℙ𝔹𝔼𝔸ℝ ---" "𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕊𝕊/𝕊𝕊ℝℝ --- "     "𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕍𝟚ℝ𝔸𝕐 ---"   " 𝔸𝔻𝕄𝕀ℕ𝕀𝕊𝕋ℝ𝔸ℝ ℂ𝕌𝔼ℕ𝕋𝔸𝕊 | 𝕏ℝ𝔸𝕐 --- "   "\033[1;100m𝕀ℕ𝕊𝕋𝔸𝕃𝔸𝔻𝕆ℝ𝔼𝕊 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊 ---"    " ℙ𝕌𝔼ℝ𝕋𝕆𝕊 𝔸ℂ𝕋𝕀𝕍𝕆𝕊 ---"    " ℍ𝔼ℝℝ𝔸𝕄𝕀𝔼ℕ𝕋𝔸𝕊 𝕪 𝔼𝕏𝕋ℝ𝔸𝕊 ---"   " ℂ𝔸𝕄𝔹𝕀𝔸ℝ ℂ𝕆𝕃𝕆ℝ𝔼𝕊 𝔻𝔼𝕃 ℙ𝔸ℕ𝔼𝕃 ---"   " 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆𝕋𝕆ℂ𝕆𝕃𝕆𝕊  ------>- - ${monitorservi} " " 𝔸𝕌𝕋𝕆 𝕀ℕ𝕀ℂ𝕀𝔸ℝ 𝕊ℂℝ𝕀ℙ𝕋   ---------->-$AutoRun "
+menu_func "ADMINISTRADOR DE CUENTAS | SSH/SSL/DROPBEAR---" "ADMINISTRADOR DE CUENTAS | SS/SSRR --- "     "ADMINISTRADOR DE CUENTAS | V2RAY ---"   "ADMINISTRADOR DE CUENTAS | XRAY --- "   "\033[1;100m INSTALADOR DE PROTOCOLOS ---"    " PUERTOS ACTIVOS ---"    " HERRAMIENTAS Y EXTRAS ---"   " CAMBIAR COLOR DEL PANEL ---"   " MONITOR DE PROTOCOLOS  ------>- - ${monitorservi} " " AUTO-INICAR SCRIPT   ---------->-$AutoRun "
 msg -bar
-echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m 𝕄𝕆ℕ𝕀𝕋𝕆ℝ 𝔻𝔼 ℙℝ𝕆ℂ𝔼𝕊𝕆𝕊 -\e[97m \n"  
+echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m MONITOR DE PROCESOS -\e[97m \n"  
 msg -bar
 echo -ne "\e[93m  [12]\e[97m $(msg -verm2 "=>>") " && msg -verd "\032 ACTUALIZACIONES -"  
 msg -bar
-echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m 𝔻𝔼𝕊𝕀ℕ𝕊𝕋𝔸𝕃𝔸ℝ ಥ_ಥ  -" 
+echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m DESINSTALAR -" 
 msg -bar
 echo -ne "$(msg -verd "  [0]") $(msg -verm2  "=>>") " && msg -bra  "\033[1;41m❗ SALIR DEL SCRIPT  ❗️ -"
 msg -bar
