@@ -74,7 +74,7 @@ return 0
 }
 msg -bar
 msg -tit
-echo -e "${cor[3]}  INSTALADOR SHADOWSOCK-LIBEV+(obfs) By @Kalix1"
+echo -e "${cor[3]}  INSTALADOR SHADOWSOCK-LIBEV+(obfs) By AnonyProArg"
 msg -bar
 echo -e "${cor[1]} Escoja la opcion deseada."
 msg -bar
