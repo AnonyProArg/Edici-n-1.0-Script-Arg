@@ -26,7 +26,7 @@ cd /run
 sleep 2
 chmod 777 /run/
 cd 
-PASS="CODEBLACK&CONECTADOS"
+PASS="123"
 read -s -p "Password: " mypassword
 echo ""
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
