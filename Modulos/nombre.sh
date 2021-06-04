@@ -8,7 +8,8 @@ perl -pi -e "s[USUARIO][$nombre]g" /etc/VPS-ARG/bienvenido.txt
 echo -e "NOMBRE EN VPS (SUPERFICIAL): "
 read nombree
 perl -pi -e "s[USER][$nombree]g" /root/.bashrc
-echo  "NOMBRES ACTUALIZADO"
+echo "SE RECOMIENDA SALIR Y ENTRAR NUEVAMENTE"
+echo  "NOMBRES ACTUALIZADOS"
 echo "REDIRIGIENDO AL INICIÓ"
 sleep 5
 VPS-ARG
