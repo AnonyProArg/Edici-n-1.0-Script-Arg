@@ -5,9 +5,9 @@ clear
 msg -bar 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
-SCPfrm="/etc/VPS-MX/herramientas" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
+SCPfrm="/etc/VPS-ARG/herramientas" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
 BARRA1="\e[0;31m————————————————————————————————————————————————————\e[0m"
-SCPinst="/etc/VPS-MX/controlador" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
+SCPinst="/etc/VPS-ARG/controlador" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
 #=================================================
 #	System Required: CentOS 6/7,Debian 8/9,Ubuntu 16+
 #	Description: BBR+BBRVersión mágica+BBRplus+Lotserver
@@ -348,9 +348,9 @@ start_menu(){
 clear
 msg -bar
 msg -tit
-echo -e "    TCP Aceleración (BBR/Plus) VPS-MX By @Kalix1\n                         ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
+echo -e "    TCP Aceleración (BBR/Plus) VPS-ARG By @AnonyProArg\n                         ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
 $(msg -bar)
- ${Green_font_prefix}0.${Font_color_suffix} Script de actualización
+ ${Green_font_prefix}0.${Font_color_suffix} script de actualización
 ————————————Gestión del Núcleo————————————
  ${Green_font_prefix}1.${Font_color_suffix} Instalación BBR/BBR Kernel Mágico
  ${Green_font_prefix}2.${Font_color_suffix} Instalación BBRplus Kernel 
