@@ -565,29 +565,29 @@ let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ADMINISTRAR PUERTOS ACTIVOS          $ofc"
 script[$Numb]="ports.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "CAMBIAR CONTRASEÑA DE VPS            $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "CAMBIAR CONTRASEÑA DE VPS           $ofc"
 script[$Numb]="Contra.sh"
 #OPTIMIZADORES
 echo -e "\033[1;93m---------------------OPTIMIZADORES-------------------"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "Limpiar/Cache/Ram/Librerias/etc..    $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "Limpiar/Cache/Ram/Librerias/etc..   $ofc"
 script[$Numb]="utils.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "DETALLES DEL SISTEMA                 $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "DETALLES DEL SISTEMA                $ofc"
 script[$Numb]="systeminf"
 #EXTRAS
 echo -e "\033[1;93m-------------------------EXTRAS----------------------"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SMS SPAM                             $dev"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SMS SPAM                            $dev"
 script[$Numb]="SMS.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PAYLOAD FUERZA BRUTA                 $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PAYLOAD FUERZA BRUTA                $ofc"
 script[$Numb]="paysnd.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SCANNER DE SUBDOMINIO                $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "SCANNER DE SUBDOMINIO               $ofc"
 script[$Numb]="ultrahost"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PRUEBA DE VELOCIDAD                  $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PRUEBA DE VELOCIDAD                 $ofc"
 script[$Numb]="speed.sh"
 echo -ne "$(msg -bar2)\n$(msg -verd "[0]") $(msg -verm2 ">") " && msg -bra "\e[97m\033[1;41m VOLVER \033[1;37m"
 script[0]="voltar"
