@@ -512,6 +512,7 @@ case $1 in
 "PPriv.py")return 1;;
 "PPub.py")return 1;;
 "SMS.sh")return 1;;
+"aumentar.sh")return 1;;
 "speedtest.py")return 1;;
 "xray.sh")return 1;;
 "SSH20.log")return 1;; 
@@ -524,7 +525,7 @@ clear
 tput cuu1 && tput dl1
 msg -bar2
 msg -tit
-msg -ama "【ＭＥＮＵ　ＤＥ　ＨＥＲＲＡＭＩＥＮＴＡＳ】"
+msg -ama "       MENU DE HERRAMIENTAS"
 msg -bar2
 local Numb=1
 for arqs in $(ls ${SCPfrm}); do
@@ -541,9 +542,6 @@ script[$Numb]="apacheon.sh"
 echo -e "\033[1;93m-----------------------SEGURIDAD---------------------"
 #PROTECION
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FIREWALL PARA VPS•ARG                $ofc"
-script[$Numb]="blockBT.sh"
-let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "FAIL2BAN PROTECCION                  $ofc"
 script[$Numb]="fai2ban.sh"
 let Numb++
@@ -554,6 +552,9 @@ echo -e "\033[1;93m--------------------AJUSTES INTERNOS-----------------"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "ACTUALIZAR NOMBRE & HORA DEL VPS     $ofc"
 script[$Numb]="hora.sh"
+let Numb++
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "OPTIMIZADOR DE RED   2021            $ofc"
+script[$Numb]="aumentar.sh"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "TCP ACELERACION (BBR/PLUS)           $dev"
 script[$Numb]="tcp.sh"
@@ -572,7 +573,7 @@ let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "Limpiar/Cache/Ram/Librerias/etc..    $ofc"
 script[$Numb]="utils.sh"
 let Numb++
-echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "DETALLES DEL SISTEMA                  $ofc"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "DETALLES DEL SISTEMA                 $ofc"
 script[$Numb]="systeminf"
 #EXTRAS
 echo -e "\033[1;93m-------------------------EXTRAS----------------------"
