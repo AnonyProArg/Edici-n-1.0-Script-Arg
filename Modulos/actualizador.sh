@@ -124,6 +124,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Sms-Spam/main/.notify -O /etc
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/InfoDiario.sh -O /etc/VPS-ARG/ > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/hora.sh -O /etc/VPS-ARG/herramientas/hora.sh > /dev/null 2>&1                                    
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/bienvenido.txt -O /etc/VPS-ARG/bienvenido.txt > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/tcp.sh -O /etc/VPS-ARG/herramientas/tcp.sh
 chmod -R 777 /etc/VPS-ARG
 find . -iname 'wget-log*' -delete
 find . -iname 'instalscript.sh*' -delete
