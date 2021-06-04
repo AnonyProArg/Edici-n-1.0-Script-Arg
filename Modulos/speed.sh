@@ -2,6 +2,7 @@
 #26/01/2021
 clear
 clear
+apt install speedtest-cli > /dev/null 2>&1
 [[ $(dpkg --get-selections|grep -w "speedtest-cli"|head -1) ]] || apt-get install speedtest-cli -y &>/dev/null
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPdir="/etc/VPS-ARG" && [[ ! -d ${SCPdir} ]] && exit 1
