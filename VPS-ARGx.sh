@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 fun_bar () {
 comando="$1"
  _=$(
@@ -17,7 +18,7 @@ echo
 tput cuu1
 tput dl1
 done
-echo -ne "######################################"
+echo -ne "################################"
 sleep 1s
 }
 echo "    INSTALADOR DEL SCRIPT VPS-ARG"
@@ -36,4 +37,4 @@ echo -e "\033[97mVERIFICANDO CONTRSEÑA"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 5
-exit session
+exit session 1
