@@ -31,6 +31,7 @@ echo ""
 msg -bar 
 echo -e "  \033[100m      DATOS DE LAS ACTUALIZACIONES " 
 msg -bar 
+echo -ne " -   DATA DE LA V-1.5= MEJORAS DE INTERFAZ Y NUEVA HERRAMIENTA :) \n"
 echo -ne " -   DATA DE LA V-1.4= MEJORAS Y UNA NUEVA FUNCIÓN EN HERRAMIENTAS\n"
 echo -ne " -   DATA DE LA V-1.3= TERMINE DE MODIFICAR EL ACTUALIZADOR (POR EL MOMENTO)\n"
 msg -bar 
