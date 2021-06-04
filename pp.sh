@@ -1,4 +1,5 @@
 read -s -p "Password: " pp
-grep $* key.txt
+read -s -p "Password: " con
+grep $con key.txt
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
-[ "$mypassword" == "$*" ] && echo "VALIDO"|clear ; | echo "INCORRECTO,
+[ "$pp" == "$*" ] && echo "VALIDO"|clear ; | echo "INCORRECTO,
