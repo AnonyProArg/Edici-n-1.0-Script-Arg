@@ -39,3 +39,5 @@ rm /run/instalscript.sh
 sleep 6
 exit
 exit
+exit
+exit
