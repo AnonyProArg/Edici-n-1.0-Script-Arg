@@ -31,6 +31,7 @@ echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
 sleep 3
 clear
 echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
+sleep 3
 echo ""
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
 echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
