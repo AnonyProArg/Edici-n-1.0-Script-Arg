@@ -87,7 +87,7 @@ echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 sleep 5
 echo ""
 echo -e "                  \e[4;35mINSTALADOR DEL SCRIPT VPS-ARG \e[m"
-echo -e "         \e[4;35mAH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
+echo -e "         \e[4;35mAH CONTINUACION ESCOJE UN REVENDEDOR \e[4;32m#OFICIAL\e[m"
 echo ""
 echo ""
 echo -e "${cor[4]} 1).- BLACK +543705083898 \e[1;0;32m#OFICIAL\e[m"
