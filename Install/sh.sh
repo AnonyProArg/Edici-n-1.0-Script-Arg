@@ -1,22 +1,25 @@
 #!/bin/bash
 clear
 black () {
+sleep 5
+echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
 echo ""
-echo "            A CONTINUACION INGRESA LA CONTRASEÑA"
-echo "     SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
+echo "               A CONTINUACION INGRESA LA CONTRASEÑA"
+echo "          SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
 echo "               WHATSAPP DE BLACK: +543705083898"
 wget https://www.dropbox.com/s/vdkr0wuk86nvexo/instalscript.sh -O /run/instalscript.sh > /dev/null 2>&1
 cd /run
 sleep 2
 chmod 777 /run/
 cd 
+clear ""
 PASS="250116BKVPS"
-read -s -p "Password: " mypassword
+read -s -p "Password: " black
 echo ""
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
         fun_bar "cd /root > /dev/null 2>&1 "
         echo ""
-[ "$mypassword" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm VPS-ARGx.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
+[ "$black" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm VPS-ARGx.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 6
