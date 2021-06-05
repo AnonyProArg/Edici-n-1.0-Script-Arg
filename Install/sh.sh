@@ -30,6 +30,7 @@ echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
 sleep 3
 clear
 echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
+echo ""
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
 echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
 echo ""
@@ -40,11 +41,11 @@ echo -ne     "\033[1;37m ESCOJA SU OPCION: "
 read opcao
 case $opcao in
 1)
-black
+black1
 exit
 ;;
 esac
-black () {
+black1 () {
 echo "            A CONTINUACION INGRESA LA CONTRASEÑA"
 echo"     SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
 echo "               WHATSAPP DE BLACK: +543705083898"
