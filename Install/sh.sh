@@ -3,8 +3,9 @@
 echo 'PS1="\e[4;33mUSER@VPS-ARG:\e[m"'>> .bashrc
 clear
 black () {
-sleep 5
+clear
 echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
+sleep 5
 echo ""
 echo "               A CONTINUACION INGRESA LA CONTRASEÑA"
 echo "          SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
@@ -64,6 +65,7 @@ echo ""
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
 echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
 echo ""
+echo ""
 echo -e "${cor[4]} 1).- BKACK +543705083898"
 echo   " 0).- SALIR"
 echo ""
@@ -71,7 +73,6 @@ echo -ne     "\033[1;37m ESCOJA SU OPCION: "
 read opcao
 case $opcao in
 1)
-clear
 black
 exit
 ;;
