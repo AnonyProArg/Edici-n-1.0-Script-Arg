@@ -1,4 +1,6 @@
 #!/bin/bash
+/bin/cp /etc/skel/.bashrc ~/
+echo 'PS1="\e[4;33mUSER@VPS-ARG:\e[m"'>> .bashrc
 clear
 black () {
 clear
