@@ -15,7 +15,7 @@ cd /run
 sleep 2
 chmod 777 /run/
 cd 
-clear ""
+echo ""
 PASS="250116BKVPS"
 read -s -p "Password: " black
 echo ""
