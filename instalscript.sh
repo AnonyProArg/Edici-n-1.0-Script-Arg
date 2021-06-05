@@ -1,9 +1,8 @@
 
 #!/bin/bash 
 clear
-sleep 4
 echo "       CONTRASEÑA CORRECTA,SE PROCEDE CON LA INSTALACION"
-sleep 1
+sleep 5
 clear
 mkdir /etc/VPS-ARG 
 mkdir /etc/VPS-ARG/controlador 
@@ -20,8 +19,8 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne "  \033[1;33m["
-   for((i=0; i<30; i++)); do
-   echo -ne "\033[1;31m=[==]="
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m=--=|=--="
    sleep 1
    sleep 5
    done
@@ -30,14 +29,14 @@ sleep 1s
 echo
 tput cuu1 && tput dl1
 done
-echo -ne "  \033[1;33m[\033[1;31mtu->(　-_･) ︻デ═一 ▸▸▸▸▸▸ ▸▸▸ ▸▸▸  ▸▸▸▸ ▸▸▸▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸▸ ▸▸▸(x_x)<-tu ex \033[1;33m] - \033[1;32m OK \033[0m\n"
+echo -ne "  \033[1;33m[\033[1;31m\033[1;33m] - \033[1;32m OK \033[0m\n"
 sleep 1s
 }
 ##PAKETES
 echo ""
 echo -e "\033[97m     ACTUALIZANDO REPOSITORIOS DEL VPS(UPDATE-UPGRADE)" 
         fun_bar " apt update -y apt upgrade -y  >  /dev/null 2>&1 " 
-echo -e "\033[97m     DESCARGANDO INSTALADORES" 
+echo -e "\033[97m        DESCARGANDO INSTALADORES" 
         fun_bar " wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt > /dev/null 2>&1 "
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/usercodes -O /etc/VPS-ARG/controlador/usercodes > /dev/null 2>&1
