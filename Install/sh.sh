@@ -51,10 +51,10 @@ echo -e "\033[97m CONECTANDO CON EL REPOSITORIO VIRTUAL(INCRIPTADO)"
 echo ""
 clear
 echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
-sleep 3
+sleep 5
 clear
 echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
-sleep 3
+sleep 5
 echo ""
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
 echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
