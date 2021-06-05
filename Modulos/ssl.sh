@@ -201,6 +201,8 @@ msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m INICIAR O PARAR SSL "
 echo -e "${cor[4]} 2).-\033[1;37m AGREGAR PUERTOS SSL   "
 echo -e "${cor[4]} 3).-\033[1;37m Instalar PDirect + SSL(AUTOMATICO) "
+echo " NOTA: PARA TEXTO PERSONALIZADO, INSTALAR MANUALMENTE PYTHON DIRECTO CON PUERTA 80, ESCUCHANDO AL 22"
+echo " LUEGO PUEDE PROCEDER A INSTLAR LA OPCION 3"
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
