@@ -2,7 +2,7 @@
 clear
 black () {
 sleep 5
-echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
+echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 echo ""
 echo "               A CONTINUACION INGRESA LA CONTRASEÑA"
 echo "          SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
@@ -47,16 +47,16 @@ done
 echo -ne "  [##############################]\e[m"
 sleep 1s
 }
-echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
+echo -ne "status:\e[1;41mOFFLINE\e[1;0;31m x\e[m"
 sleep 2
 echo -e "\033[97m CONECTANDO CON EL REPOSITORIO VIRTUAL(INCRIPTADO)" 
         fun_bar "cd /root > /dev/null 2>&1 "
 echo ""
 clear
-echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
+echo -ne "status:\e[1;41mOFFLINE\e[1;0;31m x\e[m"
 sleep 5
 clear
-echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
+echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 sleep 5
 echo ""
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
