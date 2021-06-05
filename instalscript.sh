@@ -20,9 +20,8 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne "  \033[1;33m["
-   for((i=0; i<20; i++)); do
-   echo -ne "\033[1;31M#  #"
-   echo -ne "\033[1;31M## ##"
+   for((i=0; i<30; i++)); do
+   echo -ne "\033[1;31m=[==]="
    sleep 1
    sleep 5
    done
