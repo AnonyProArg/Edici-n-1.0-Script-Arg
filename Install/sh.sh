@@ -32,15 +32,14 @@ echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
 echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
 echo ""
-echo -ne "${cor[4]} 1).- BKACK(+543705083898)\e[1;0;32m#OFICIAL\e[m" "
+echo -ne "${cor[4]} 1).- BKACK(+543705083898)"
 echo   " 0).- SALIR"
-msg -bar
+echo ""
 echo -ne     "\033[1;37m ESCOJA SU OPCION: "
 read opcao
 case $opcao in
 1)
-msg -bar
-bkack
+black
 exit
 ;;
 esac
