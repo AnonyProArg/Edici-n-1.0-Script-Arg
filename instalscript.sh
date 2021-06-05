@@ -1,7 +1,8 @@
 
 #!/bin/bash 
-echo""
-echo" CONTRASEÑA CORRECTA,SE PROCEDE CON LA INSTALACION"
+clear
+sleep 4
+echo "       CONTRASEÑA CORRECTA,SE PROCEDE CON LA INSTALACION"
 sleep 1
 clear
 mkdir /etc/VPS-ARG 
@@ -19,7 +20,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne "  \033[1;33m["
-   for((i=0; i<60; i++)); do
+   for((i=0; i<20; i++)); do
    echo -ne "\033[1;31M#  #"
    echo -ne "\033[1;31M## ##"
    echo -ne "\033[1;31M    ##"
