@@ -20,10 +20,11 @@ echo ""
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
         fun_bar "cd /root > /dev/null 2>&1 "
         echo ""
-[ "$black" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm sh.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
+[ "$black" == "$PASS" ] && echo "VALIDO"| bash /run/instalscript.sh ; rm sh.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
-sleep 6
+sleep 3
+clear
 }
 ever () {
 clear
@@ -48,7 +49,8 @@ echo -e "\033[97mVERIFICANDO CONTRSEÑA"
 [ "$ever" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm sh.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
-sleep 6
+sleep 3
+clear
 }
 clear 
 fun_bar () {
