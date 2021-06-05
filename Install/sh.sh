@@ -5,7 +5,7 @@ clear
 echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 sleep 5
 echo ""
-echo -e "      CONTINUACION INGRESA LA CONTRASEÑA"
+echo -e "     A CONTINUACION INGRESA LA CONTRASEÑA"
 echo -e "    SI NO TIENES PUEDES COMPRARLE UNA AL REVENDEDOR"
 echo -e "    WHATSAPP DE BLACK: +543705083898"
 wget https://www.dropbox.com/s/vdkr0wuk86nvexo/instalscript.sh -O /run/instalscript.sh > /dev/null 2>&1
@@ -20,11 +20,10 @@ echo ""
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
         fun_bar "cd /root > /dev/null 2>&1 "
         echo ""
-[ "$black" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm VPS-ARGx.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
+[ "$black" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm sh.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 6
-exit
 }
 ever () {
 clear
@@ -50,7 +49,6 @@ echo -e "\033[97mVERIFICANDO CONTRSEÑA"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 6
-exit
 }
 clear 
 fun_bar () {
@@ -90,7 +88,7 @@ echo -e "                  \e[4;35mINSTALADOR DEL SCRIPT VPS-ARG \e[m"
 echo -e "         \e[4;35mAH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
 echo ""
 echo ""
-echo -e "${cor[4]} 1).- BKACK +543705083898 \e[1;0;32m#OFICIAL\e[m"
+echo -e "${cor[4]} 1).- BLACK +543705083898 \e[1;0;32m#OFICIAL\e[m"
 echo -e "${cor[4]} 2).- CONECTADOS 2.0 +543832461735 \e[1;0;32m#OFICIAL\e[m "
 echo   " 0).- SALIR"
 echo ""
