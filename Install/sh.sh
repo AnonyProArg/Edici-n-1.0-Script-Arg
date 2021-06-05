@@ -19,20 +19,20 @@ echo
 tput cuu1
 tput dl1
 done
-echo -ne "################################"
+echo -ne "  [##############################]"
 sleep 1s
 }
-echo -ne "status:\e[1;41m OFFLINE\e[1;31m x\e[m"
+echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
 sleep 2
 echo -e "\033[97m CONECTANDO CON EL REPOSITORIO VIRTUAL(INCRIPTADO)" 
         fun_bar "cd /root > /dev/null 2>&1 "
 sleep 2
 clear
-echo -ne "status:\e[1;42m ONLINE\e[1;32m O\e[m"
+echo -ne "status:\e[1;42m ONLINE\e[1;0;32m O\e[m"
 echo "                INSTALADOR DEL SCRIPT VPS-ARG"
-echo "             AH CONTINUACION ESCOJE UN REVENDEDOR"
+echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
 echo ""
-echo -e "${cor[4]} 1).- BKACK(+543705083898) "
+echo -ne "${cor[4]} 1).- BKACK(+543705083898)\e[1;0;32m#OFICIAL\e[m" "
 echo   " 0).- SALIR"
 msg -bar
 echo -ne     "\033[1;37m ESCOJA SU OPCION: "
