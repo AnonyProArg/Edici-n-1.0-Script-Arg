@@ -49,6 +49,7 @@ sleep 2
 echo -e "\033[97m CONECTANDO CON EL REPOSITORIO VIRTUAL(INCRIPTADO)" 
         fun_bar "cd /root > /dev/null 2>&1 "
 echo ""
+clear
 echo -ne "status:\e[1;41m OFFLINE\e[1;0;31m x\e[m"
 sleep 3
 clear
