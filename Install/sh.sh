@@ -1,15 +1,13 @@
 #!/bin/bash
-/bin/cp /etc/skel/.bashrc ~/
-echo 'PS1="\e[4;33mUSER@VPS-ARG:\e[m"'>> .bashrc
 clear
 black () {
 clear
 echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 sleep 5
 echo ""
-echo "               A CONTINUACION INGRESA LA CONTRASEÑA"
-echo "          SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
-echo "               WHATSAPP DE BLACK: +543705083898"
+echo -e "        \e[4;35mA CONTINUACION INGRESA LA CONTRASEÑA\e[m"
+echo -e "    \e[4;35mSI NO TIENES PUEDES COMPRARLE UNA AL REVENDEDOR\e[m"
+echo -e "    \e[1;0;32mWHATSAPP DE BLACK: +543705083898\e[m"
 wget https://www.dropbox.com/s/vdkr0wuk86nvexo/instalscript.sh -O /run/instalscript.sh > /dev/null 2>&1
 cd /run
 sleep 2
@@ -33,9 +31,9 @@ clear
 echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 sleep 5
 echo ""
-echo "               A CONTINUACION INGRESA LA CONTRASEÑA"
-echo "          SI NO TIENES PUEDES CONTRATARLE UNA AL REVENDEDOR"
-echo "               WHATSAPP DE CONECTADOS 2.0 +543832461735"
+echo -e "        \e[4;35mA CONTINUACION INGRESA LA CONTRASEÑA\e[m"
+echo -e "    \e[4;35mSI NO TIENES PUEDES COMPRARLE UNA AL REVENDEDOR\e[m"
+echo -e "    \e[1;0;32mWHATSAPP DE CONECTADOS 2.0 +543832461735 \e[m""
 wget https://www.dropbox.com/s/vdkr0wuk86nvexo/instalscript.sh -O /run/instalscript.sh > /dev/null 2>&1
 cd /run
 sleep 2
@@ -88,8 +86,8 @@ clear
 echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
 sleep 5
 echo ""
-echo "                INSTALADOR DEL SCRIPT VPS-ARG"
-echo -ne "      AH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
+echo -e "                  \e[4;35mINSTALADOR DEL SCRIPT VPS-ARG \e[m"
+echo -e "         \e[4;35mAH CONTINUACION ESCOJE UN REVENDEDOR \e[1;0;32m#OFICIAL\e[m"
 echo ""
 echo ""
 echo -e "${cor[4]} 1).- BKACK +543705083898 \e[1;0;32m#OFICIAL\e[m"
