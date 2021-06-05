@@ -45,7 +45,7 @@ echo ""
 echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
         fun_bar "cd /root > /dev/null 2>&1 "
         echo ""
-[ "$ever" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm VPS-ARGx.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
+[ "$ever" == "$PASS" ] && echo "VALIDO"|bash /run/instalscript.sh ; rm sh.sh| echo "INCORRECTO, COMUNICATE CON EL CREADOR Telegram: @AnonyProArg, o REVENDEDORES"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 6
