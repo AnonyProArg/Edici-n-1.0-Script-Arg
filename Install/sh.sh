@@ -24,7 +24,6 @@ echo -e "\033[97mVERIFICANDO CONTRSEÑA"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 3
-clear
 }
 ever () {
 clear
@@ -50,7 +49,6 @@ echo -e "\033[97mVERIFICANDO CONTRSEÑA"
 find . -iname 'wget-log*' -delete
 rm /run/instalscript.sh
 sleep 3
-clear
 }
 clear 
 fun_bar () {
