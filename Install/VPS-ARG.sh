@@ -301,8 +301,60 @@ echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar2
 echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s.."
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
+
+
+sleep 5
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh &>/dev/null
 chmod 777 actualizador.sh
 bash actualizador.sh
-sleep 5
-rm -rf VPS-ARG
+exit
+}
+ofus () {
+unset server
+server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
+unset txtofus
+number=$(expr length $1)
+for((i=1; i<$number+1; i++)); do
+txt[$i]=$(echo "$1" | cut -b $i)
+case ${txt[$i]} in
+".")txt[$i]="+";;
+"+")txt[$i]=".";;
+"1")txt[$i]="@";;
+"@")txt[$i]="1";;
+"2")txt[$i]="?";;
+"?")txt[$i]="2";;
+"4")txt[$i]="%";;
+"%")txt[$i]="4";;
+"-")txt[$i]="K";;
+"K")txt[$i]="-";;
+esac
+txtofus+="${txt[$i]}"
+done
+echo "$txtofus" | rev
+}
+verificar_arq () {
+[[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
+[[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
+[[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
+[[ ! -d ${SCPinst} ]] && mkdir ${SCPinst}
+case $1 in
+"menu"|"message.txt")ARQ="${SCPdir}/";; #Menu
+"usercodes")ARQ="${SCPusr}/";; #Panel SSRR
+"C-SSR.sh")ARQ="${SCPinst}/";; #Instalacao
+"openssh.sh")ARQ="${SCPinst}/";; #Instalacao
+"squid.sh")ARQ="${SCPinst}/";; #Instalacao
+"dropbear.sh")ARQ="${SCPinst}/";; #Instalacao
+"openvpn.sh")ARQ="${SCPinst}/";; #Instalacao
+"ssl.sh")ARQ="${SCPinst}/";; #Instalacao
+"shadowsocks.sh")ARQ="${SCPinst}/";; #Instalacao
+"Shadowsocks-libev.sh")ARQ="${SCPinst}/";; #Instalacao
+"Shadowsocks-R.sh")ARQ="${SCPinst}/";; #Instalacao 
+"v2ray.sh")ARQ="${SCPinst}/";; #Instalacao
+"budp.sh")ARQ="${SCPinst}/";; #Instalacao
+"sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
+*)ARQ="${SCPfrm}/";; #Ferramentas
+esac
+mv -f ${SCPinstal}/$1 ${ARQ}/$1
+chmod +x ${ARQ}/$1
+}
+exit
