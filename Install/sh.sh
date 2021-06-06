@@ -1,5 +1,30 @@
 #!/bin/bash
 clear
+firex () {
+clear
+echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
+sleep 5
+echo ""
+echo -e "     A CONTINUACION INGRESA LA CONTRASEÑA"
+echo -e "  SI NO TIENES PUEDES COMPRARLE UNA AL REVENDEDOR"
+echo -e "         WHATSAPP DE FIREXVPS: +543878303535"
+wget https://www.dropbox.com/s/vdkr0wuk86nvexo/instalscript.sh -O /run/instalscript.sh > /dev/null 2>&1
+cd /run
+sleep 2
+chmod 777 /run/
+cd 
+echo ""
+PASS="Firexvps45917"
+read -s -p "Password: " firex
+echo ""
+echo -e "\033[97mVERIFICANDO CONTRSEÑA" 
+        fun_bar "cd /root > /dev/null 2>&1 "
+        echo ""
+[ "$firex" == "$PASS" ] && bash /run/instalscript.sh ; rm sh.sh
+find . -iname 'wget-log*' -delete
+rm /run/instalscript.sh
+sleep 3
+}
 black () {
 clear
 echo -ne "status:\e[1;42mONLINE\e[1;0;32m O\e[m"
@@ -90,6 +115,7 @@ echo ""
 echo ""
 echo -e "${cor[4]} 1).- BLACK +543705083898 \e[1;0;32m#OFICIAL\e[m"
 echo -e "${cor[4]} 2).- CONECTADOS 2.0 +543832461735 \e[1;0;32m#OFICIAL\e[m "
+echo -e "${cor[4]} 3).- FIREXVPS +543878303535 \e[1;0;32m#OFICIAL\e[m "
 echo   " 0).- SALIR"
 echo ""
 echo -ne     "\033[1;37m ESCOJA SU OPCION: "
@@ -100,5 +126,8 @@ black
 ;;
 2)
 ever
+;;
+3)
+firex
 ;;
 esac
