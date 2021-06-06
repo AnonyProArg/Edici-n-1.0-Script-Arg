@@ -512,6 +512,7 @@ case $1 in
 "PPriv.py")return 1;;
 "PPub.py")return 1;;
 "SMS.sh")return 1;;
+"ssl1.sh")return 1;;
 "aumentar.sh")return 1;;
 "speedtest.py")return 1;;
 "xray.sh")return 1;;
