@@ -311,9 +311,6 @@ echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar
 echo ""
 echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s.."
 echo ""
-cd /etc/VPS-ARG/
-chmod 777 actualizador.sh
-bash actualizador.sh
 
 read -p "  REBOOT SISTEMA  [ s | n ]: " -e -i s rebt
 [[ "$rebt" = "s" || "$rebt" = "S" ]] && reboot_fun
@@ -374,9 +371,9 @@ NOTIFY () {
 clear
 clear
 msg -bar
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m VPS-ARG By@AnonyProArg \033[1;33m ]"
 msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)| VPS-MX By @Kalix1 "
+msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By @AnonyProArg "
 msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
@@ -388,15 +385,15 @@ echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @USA1_BOT"
 echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564"
 msg -bar
 echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
-echo "${nombr}" > /etc/VPS-MX/controlador/nombre.log
+echo "${nombr}" > /etc/VPS-ARG/controlador/nombre.log
 echo -e "\033[1;93mIgrese su ID 👤:\033[0;37m"; read -p " " idbot
-echo "${idbot}" > /etc/VPS-MX/controlador/IDT.log 
+echo "${idbot}" > /etc/VPS-ARG/controlador/IDT.log 
 msg -bar
 echo -e "\033[1;32m              ID AGREGADO CON EXITO"
 msg -bar
-NOM="$(less /etc/VPS-MX/controlador/nombre.log)"
+NOM="$(less /etc/VPS-ARG/controlador/nombre.log)"
 NOM1="$(echo $NOM)"
-IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
+IDB1=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
 
 KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
@@ -417,7 +414,7 @@ chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX/main/VPS-MX_Oficial/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
 msg -bar2
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ❌ By @AnonyProArg ❌\033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 20 a 64 De Preferencia🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
@@ -436,7 +433,7 @@ updatedb
 function_verify
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-MX #MOD by @Kalix1\e[97m]"
+   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-ARG By @AnonyProArg \e[97m]"
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="."
    stopping="$(source trans -b es:${id} "Configurando Directorios"|sed -e 's/[^a-z -]//ig')"
@@ -452,14 +449,14 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
    echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
    mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
-   echo "${SCPdir}/menu" > /usr/bin/vps-mx && chmod +x /usr/bin/vps-mx
-   echo "${SCPdir}/menu" > /usr/bin/VPS-MX && chmod +x /usr/bin/VPS-MX
+   echo "${SCPdir}/menu" > /usr/bin/vps-mx && chmod +x /usr/bin/vps-arg
+   echo "${SCPdir}/menu" > /usr/bin/VPS-MX && chmod +x /usr/bin/VPS-ARG
    echo "${SCPdir}/menu" > /bin/h && chmod +x /bin/h
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
    echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
-   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
+   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSARG_Bot)"
    msg -bar2
    ## read -p " [ s | n ]: " NOTIFY 
    read -p " default (n)  [ s | n ]: " -e -i n NOTIFY
@@ -469,4 +466,4 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
 else
 invalid_key
 fi
-rm -rf VPS-MX
+rm -rf VPS-ARG
