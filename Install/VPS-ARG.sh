@@ -364,8 +364,6 @@ clear
 msg -bar
 msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ♕ By AnonyProArg ♕ \033[1;33m ]"
 msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By AnonyProArg "
-msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
 echo -e "\033[1;94m >> Usuario Eliminado"
