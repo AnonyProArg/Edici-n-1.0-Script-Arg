@@ -293,20 +293,29 @@ echo 'echo -e "\t\033[91m  ░╚██╔╝░░██║░░░░░█�
 echo 'echo "" '>> .bashrc
 echo 'mess1="$(less /etc/VPS-ARG/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
-echo 'echo -e "\t\033[92mRESELLER : $mess1 "'>> .bashrc
-echo 'echo "" '>> .bashrc                                               
-echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: VPS-ARG  "'>> .bashrc
+echo 'echo -e "\t\033[92mCREADOR : $mess1 "'>> .bashrc
+echo 'echo "" '>> .bashrc  
+echo 'mess2="$(less /etc/VPS-ARG/bienvenido.txt)" ' >> .bashrc
+echo 'echo "" '>> .bashrc
+echo 'echo -e "\t\033[92mBIENVENIDO : $mess2 "'>> .bashrc
+echo 'mess3="$(less /etc/VPS-ARG/revendedores.txt)" ' >> .bashrc
+echo 'echo "" '>> .bashrc
+echo 'echo -e "\t\033[92mREVENDEDORES OFICIALES : $mess3 "'>> .bashrc
+echo 'echo "" '>> .bashrc
+echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG  "'>> .bashrc
 echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version &>/dev/null'>> .bashrc
+echo 'PS1="\e[4;34mUSER\e[4;33m@\e[4;34mVPS-ARG:\e[m"'>> .bashrc
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar2
 echo ""
 echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s.."
 echo ""
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh &>/dev/null
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
 sleep 5
-chmod 777 /etc/VPS-ARG/actualizador.sh
-bash /etc/VPS-ARG/actualizador.sh
+cd /etc/VPS-ARG/
+chmod 777 actualizador.sh
+bash actualizador.sh
 
 read -p "  REBOOT SISTEMA  [ s | n ]: " -e -i s rebt
 [[ "$rebt" = "s" || "$rebt" = "S" ]] && reboot_fun
