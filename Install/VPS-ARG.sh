@@ -300,11 +300,11 @@ echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/AnonyProA
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar2
-echo -e " IMPORTANTE! ANTES QUE NADA, BIENEVENDI@ A VPS-ARG, AL ENTRAR AL PANEL, DEBES ACTUALIZAR EL SCRIPT SI O SI " 
-echo " SE RECOMIENDA REINICIAR LA DROP (sudo reboot) (NO OBLIGATORIO)"
-
-
+echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s..
 sleep 5
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh &>/dev/null
+chmod 777 actualizador.sh
+bash actualizador.sh
 exit
 }
 ofus () {
