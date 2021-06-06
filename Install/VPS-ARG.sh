@@ -459,7 +459,5 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
    msg -bar2
 [[ ${byinst} = "true" ]] && install_fim
-else
-invalid_key
 fi
 rm -rf VPS-ARG
