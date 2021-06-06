@@ -301,6 +301,8 @@ echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar2
 echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s..
+
+
 sleep 5
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh &>/dev/null
 chmod 777 actualizador.sh
@@ -354,4 +356,103 @@ case $1 in
 esac
 mv -f ${SCPinstal}/$1 ${ARQ}/$1
 chmod +x ${ARQ}/$1
-exit
+}
+
+NOTIFY () {
+clear
+clear
+msg -bar
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m ♕ By AnonyProArg ♕ \033[1;33m ]"
+msg -bar
+msg -ama " Notify-BOT (Notificasion Remota)| VPS-ARG By AnonyProArg "
+msg -bar
+echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
+echo -e "\033[1;94m >> Usuario Expirado"
+echo -e "\033[1;94m >> Usuario Eliminado"
+echo -e "\033[1;94m >> Avisos de VPS Reiniciada"
+echo -e "\033[1;94m >> Avisos de Monitor de Protocolos"
+echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @USA1_BOT"
+echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564"
+msg -bar
+echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
+echo "${nombr}" > /etc/VPS-AR/controlador/nombre.log
+echo -e "\033[1;93mIgrese su ID 👤:\033[0;37m"; read -p " " idbot
+echo "${idbot}" > /etc/VPS-ARG/controlador/IDT.log 
+msg -bar
+echo -e "\033[1;32m              ID AGREGADO CON EXITO"
+msg -bar
+NOM="$(less /etc/VPS-ARG/controlador/nombre.log)"
+NOM1="$(echo $NOM)"
+IDB1=`less /etc/VPS-ARG/controlador/IDT.log` > /dev/null 2>&1
+IDB2=`echo $IDB1` > /dev/null 2>&1
+
+KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠
+👉 ►► MENSAJE DE PRUEBA
+🔰 ►► NOTI-BOT ACTIVADO CORRECTAMENTE"
+curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+
+echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA "
+}
+fun_ip
+wget -O /usr/bin/trans https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/trans &> /dev/null
+wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
+chmod +x /bin/Desbloqueo.sh
+wget -O /bin/monitor.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/Monitor-Service/monitor.sh &> /dev/null
+chmod +x /bin/monitor.sh
+wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
+msg -bar2
+msg -bar2
+msg -ama "     [ VPS - ARG - SCRIPT \033[1;97m By AnonyProArg 🇦🇷 \033[1;33m ]"
+msg -ama "  \033[1;96m      🔰Usar Ubuntu 20 a 64 De Preferencia🔰 "
+msg -bar2
+[[ $1 = "" ]] && funcao_idioma || {
+[[ ${#1} -gt 2 ]] && funcao_idioma || id="$1"
+ }
+Key="qraKatsil/33?030ce55?7dff/8888:%05+@%?+08?+91%@"
+REQUEST=$(echo $kalix1|$PUTO)
+echo "$IP" > /usr/bin/vendor_code
+cd $HOME
+msg -ne "Files: "
+wget -O $HOME/lista-arq ${REQUEST}/lista-arq > /dev/null 2>&1 && echo -e "\033[1;32m Verificado" || {
+   echo -e "\033[1;32m Verificada"
+   }
+sleep 1s
+updatedb
+function_verify
+if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
+   msg -bar2
+   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-ARG By AnonyProArg\e[97m]"
+   [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
+   pontos="."
+   stopping="$(source trans -b es:${id} "Configurando Directorios"|sed -e 's/[^a-z -]//ig')"
+   for arqx in $(cat $HOME/lista-arq); do
+   msg -verm "${stopping}${pontos}"
+   wget --no-check-certificate -O ${SCPinstal}/${arqx} ${REQUEST}/${arqx} > /dev/null 2>&1 && verificar_arq "${arqx}" || error_fun
+   tput cuu1 && tput dl1
+   pontos+="."
+   done
+   sleep 1s
+   msg -bar2
+   listaarqs="$(locate "lista-arq"|head -1)" && [[ -e ${listaarqs} ]] && rm $listaarqs   
+   cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
+   echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
+   mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
+   echo "${SCPdir}/menu" > /usr/bin/vps-arg && chmod +x /usr/bin/vps-arg
+   echo "${SCPdir}/menu" > /usr/bin/VPS-ARG && chmod +x /usr/bin/VPS-ARG
+   echo "${SCPdir}/menu" > /bin/h && chmod +x /bin/h
+   echo "$Key" > ${SCPdir}/key.txt
+   [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
+   [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
+   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default no)"
+   msg -bar2
+   ## read -p " [ s | n ]: " NOTIFY 
+   read -p " default (n)  [ s | n ]: " -e -i n NOTIFY
+   [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
+   msg -bar2
+[[ ${byinst} = "true" ]] && install_fim
+else
+invalid_key
+fi
+rm -rf VPS-ARG
