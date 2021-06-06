@@ -307,4 +307,4 @@ sleep 5
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh &>/dev/null
 chmod 777 actualizador.sh
 bash actualizador.sh
-rm -rf VPS-ARG
+exit
