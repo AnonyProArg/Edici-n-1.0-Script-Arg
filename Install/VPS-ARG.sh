@@ -300,9 +300,11 @@ echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/AnonyProA
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar2
+echo ""
 echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s.."
-sleep 5
+echo ""
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh &>/dev/null
+sleep 5
 chmod 777 /etc/VPS-ARG/actualizador.sh
 bash /etc/VPS-ARG/actualizador.sh
 
