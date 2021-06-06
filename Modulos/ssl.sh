@@ -154,14 +154,12 @@ ssl_multi () {
 echo "     INSTALADOR (PYTHON+SSL) CON PUERTOS PERSONALIZADOS"
 echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA PYTHON: "
 read python
-echo "ENCANTADO DE CONOCERTE, $nombre"
 perl -pi -e "s[80][$PYTHON]g" /etc/VPS-ARG/protocolos/ssl.sh
 echo -e ""
 echo -e "PERFECTO"
 echo -e ""
 echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA SSL: "
 read ssl
-echo "ENCANTADO DE CONOCERTE, $nombre"
 perl -pi -e "s[naccept = 443][naccept = $ssl]g" /etc/VPS-ARG/protocolos/ssl.sh
 echo -e ""
 sleep 3
