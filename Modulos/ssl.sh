@@ -151,14 +151,23 @@ return 0
 }
 clear
 ssl_multi () {
+echo "     INSTALADOR (PYTHON+SSL) CON PUERTOS PERSONALIZADOS"
+echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA PYTHON: "
+read python
+echo "ENCANTADO DE CONOCERTE, $nombre"
+perl -pi -e "s[80][$PYTHON]g" /etc/VPS-ARG/protocolos/ssl.sh
 echo -e ""
+echo -e "PERFECTO"
+echo -e ""
+echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA SSL: "
+read ssl
+echo "ENCANTADO DE CONOCERTE, $nombre"
+perl -pi -e "s[naccept = 443][naccept = $ssl]g" /etc/VPS-ARG/protocolos/ssl.sh
+echo -e ""
+sleep 3
 printf "${RED}INSTANDO PYTHON DIRECT MODIFICADO..."
 echo -e ""
-printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 80
-printf "${RED}Se instalará SSL en puerto 443 redirecionado a python 80"
-echo -e ""
-printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
 echo -e ""
 printf "${RED}Instalando SSL"
 echo -e ""
@@ -176,11 +185,9 @@ mv stunnel.pem /etc/stunnel/
 ######-------
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 service stunnel4 restart > /dev/null 2>&1
-printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
-echo -e ""
-printf "${RED}INSTALADO STUNNEL4 CON EXITO"
 echo -e ""
 printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
+echo -e ""
 rm -rf /etc/ger-frm/stunnel.crt > /dev/null 2>&1
 rm -rf /etc/ger-frm/stunnel.key > /dev/null 2>&1
 rm -rf /root/stunnel.crt > /dev/null 2>&1
@@ -200,9 +207,7 @@ echo -e "${cor[1]}            Escoja la opcion deseada."
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m INICIAR O PARAR SSL "
 echo -e "${cor[4]} 2).-\033[1;37m AGREGAR PUERTOS SSL   "
-echo -e "${cor[4]} 3).-\033[1;37m Instalar PDirect + SSL(AUTOMATICO) "
-echo " NOTA: PARA TEXTO PERSONALIZADO, INSTALAR MANUALMENTE PYTHON DIRECTO CON PUERTA 80, ESCUCHANDO AL 22"
-echo " LUEGO PUEDE PROCEDER A INSTLAR LA OPCION 3"
+echo -e "${cor[4]} 3).-\033[1;37m INSTALADOR PDirect + SSL (semi)"
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
