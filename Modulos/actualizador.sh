@@ -84,8 +84,10 @@ echo -ne ""
 sleep 1s
 }
 lista () {
-echo "     LISTA DE REVENDEDORES ( PROXIMAMENTE ) "
+clear
+echo "       LISTA DE REVENDEDORES ( PROXIMAMENTE ) "
 echo ""
+echo " VOLVIENDO AL MENU..."
 sleep 5
 VPS-ARG
 }
