@@ -154,17 +154,17 @@ ssl_multi () {
 echo "     INSTALADOR (PYTHON+SSL) CON PUERTOS PERSONALIZADOS"
 echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA PYTHON (88): "
 read python
-perl -pi -e "s[PDirect.py 88][PDirect.py $python]g" /etc/VPS-ARG/protocolos/ssl1.sh
+perl -pi -e "s[PDirect.py 88][PDirect.py $python]g" /etc/VPS-ARG/protocolos/ssl1.py
 echo -e ""
 echo -e "REPETIR PUERTO PYTHON: "
 read py
-perl -pi -e "s[127.0.0.1:88][127.0.0.1:$py]g" /etc/VPS-ARG/protocolos/ssl1.sh
+perl -pi -e "s[127.0.0.1:88][127.0.0.1:$py]g" /etc/VPS-ARG/protocolos/ssl1.py
 echo ""
 echo -e "PERFECTO"
 echo -e ""
 echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA SSL (444): "
 read ssl
-perl -pi -e "s[444][$ssl]g" /etc/VPS-ARG/protocolos/ssl1.sh
+perl -pi -e "s[444][$ssl]g" /etc/VPS-ARG/protocolos/ssl1.py
 echo -e ""
 bash /etc/VPS-ARG/protocolos/ssl1.sh
 return 0
