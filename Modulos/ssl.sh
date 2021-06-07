@@ -154,14 +154,14 @@ ssl_multi () {
 #!/bin/bash
 printf "${RED}INSTANDO PYTHON DIRECT MODIFICADO..."
 echo -e ""
-screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 88
+screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 80
 echo -e ""
 printf "${RED}Instalando SSL"
 echo -e ""
 printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
 apt-get install stunnel4 -y
 apt-get install stunnel4 -y > /dev/null 2>&1
-echo -e "client = no\n[SSL]\ncert = /etc/stunnel/stunnel.pem\naccept = 444\nconnect = 127.0.0.1:88" > /etc/stunnel/stunnel.conf
+echo -e "client = no\n[SSL]\ncert = /etc/stunnel/stunnel.pem\naccept = 443\nconnect = 127.0.0.1:80" > /etc/stunnel/stunnel.conf
 openssl genrsa -out stunnel.key 2048 > /dev/null 2>&1
 
 (echo "US" ; echo "California" ; echo "San Francisco" ; echo "Cloudflare, inc." ; echo "" ; echo "sni.cloudflaressl.com" ; echo "" )|openssl req -new -key stunnel.key -x509 -days 1000 -out stunnel.crt > /dev/null 2>&1
