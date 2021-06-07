@@ -83,6 +83,24 @@ done
 echo -ne ""
 sleep 1s
 }
+vps () {
+clear
+echo "   VPS DIARIA POR 1 DIA (PARA PRUEBAS) RESET 00:00 ARG"
+echo ""
+echo "se permite el cambio de contraseña"
+echo ""
+echo "IP: 194.113.74.41"
+echo "CONTRASEÑA: 22fr6z78"
+echo ""
+echo " 2da VPS"
+echo ""
+echo "IP: 152.44.42.185"
+echo "CONTRASEÑA: 956jk7k6"
+echo
+echo "REDIRIGIENDO AL INICIO EN 10s"
+sleep 10s
+VPS-ARG
+}
 lista () {
 clear
 echo "       LISTA DE REVENDEDORES ( PROXIMAMENTE ) "
@@ -138,6 +156,7 @@ msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m DIARIO DEL DESARROLLADOR "
 echo -e "${cor[4]} 2).-\033[1;37m ACTUALIZAR SCRIPT   "
 echo -e "${cor[4]} 3).-\033[1;37m LIST REVENDEDORES   "
+echo -e "${cor[4]} 4).-\033[1;37m VPS NUEVA PARA PRUEBAS "
 echo -e "${cor[4]} 0).-\033[1;37m SALIR "
 msg -bar
 echo -ne "\033[1;37m DIGITE LA OPCIÓN: "
@@ -153,5 +172,8 @@ ssl_multi
 ;;
 3)
 lista
+;;
+4)
+vps
 ;;
 esac
