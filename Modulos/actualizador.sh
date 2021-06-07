@@ -83,7 +83,8 @@ done
 echo -ne ""
 sleep 1s
 }
-VPS-ARG () {
+vps_2 () {
+clear
 VPS-ARG
 }
 vps () {
@@ -180,6 +181,6 @@ lista
 vps
 ;;
 0)
-VPS-ARG
+vps_2
 ;;
 esac
