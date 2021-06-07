@@ -151,22 +151,37 @@ return 0
 }
 clear
 ssl_multi () {
-echo "     INSTALADOR (PYTHON+SSL) CON PUERTOS PERSONALIZADOS"
-echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA PYTHON (88): "
-read python
-perl -pi -e "s[PDirect.py 88][PDirect.py $python]g" /etc/VPS-ARG/protocolos/ssl1.py
+#!/bin/bash
+printf "${RED}INSTANDO PYTHON DIRECT MODIFICADO..."
 echo -e ""
-echo -e "REPETIR PUERTO PYTHON: "
-read py
-perl -pi -e "s[127.0.0.1:88][127.0.0.1:$py]g" /etc/VPS-ARG/protocolos/ssl1.py
-echo ""
-echo -e "PERFECTO"
+screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 88
 echo -e ""
-echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA SSL (444): "
-read ssl
-perl -pi -e "s[444][$ssl]g" /etc/VPS-ARG/protocolos/ssl1.py
+printf "${RED}Instalando SSL"
 echo -e ""
-bash /etc/VPS-ARG/protocolos/ssl1.py
+printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
+apt-get install stunnel4 -y
+apt-get install stunnel4 -y > /dev/null 2>&1
+echo -e "client = no\n[SSL]\ncert = /etc/stunnel/stunnel.pem\naccept = 444\nconnect = 127.0.0.1:88" > /etc/stunnel/stunnel.conf
+openssl genrsa -out stunnel.key 2048 > /dev/null 2>&1
+
+(echo "US" ; echo "California" ; echo "San Francisco" ; echo "Cloudflare, inc." ; echo "" ; echo "sni.cloudflaressl.com" ; echo "" )|openssl req -new -key stunnel.key -x509 -days 1000 -out stunnel.crt > /dev/null 2>&1
+
+cat stunnel.crt stunnel.key > stunnel.pem 
+
+mv stunnel.pem /etc/stunnel/
+######-------
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+service stunnel4 restart > /dev/null 2>&1
+echo -e ""
+printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
+echo -e ""
+rm -rf /etc/ger-frm/stunnel.crt > /dev/null 2>&1
+rm -rf /etc/ger-frm/stunnel.key > /dev/null 2>&1
+rm -rf /root/stunnel.crt > /dev/null 2>&1
+rm -rf /root/stunnel.key > /dev/null 2>&1
+printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
+echo -e ""
+printf "${RED}INSTALACION FINALIZADA"
 return 0
 }
 clear
