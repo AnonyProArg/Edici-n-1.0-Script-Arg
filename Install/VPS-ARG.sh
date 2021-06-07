@@ -252,13 +252,12 @@ pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
 byinst="true"
 }
-reboot_fun () {
-	msg -bar2
-	echo -e "\033[92m       ❗️ SU VPS SE REINICIARA EN 5 SEGUNDOS ❗️            "
-	msg -bar2
-	sleep 5s
-	reboot
-	exit
+actualizar () {
+	wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/actualizador.sh -O /etc/VPS-ARG/actualizador.sh
+	sleep 3
+	cd /etc/VPS-ARG/
+	chmod 777 actualizador.sh
+	bash actualizador.sh
 }
 install_fim () {
 clear
@@ -309,11 +308,11 @@ echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "  \033[1;45m                VPS-ARG             \033[0;37m" && msg -bar2
 echo ""
-echo -e " ACTUALIZACION AUTOMATICA (OBLIGATORIA) EN 5s.."
+echo -e " ACTUALIZAR SCRIPT SI O SI(OBLIGATORIO) .."
 echo ""
 
-read -p "  REBOOT SISTEMA  [ s | n ]: " -e -i s rebt
-[[ "$rebt" = "s" || "$rebt" = "S" ]] && reboot_fun
+read -p "  ACTUALIZAR LINKS DE SCRIPT?  [ s | n ]: " -e -i s rebt
+[[ "$rebt" = "s" || "$rebt" = "S" ]] && actualizar
 
 sleep 5
 exit
