@@ -297,9 +297,6 @@ echo 'echo "" '>> .bashrc
 echo 'mess2="$(less /etc/VPS-ARG/bienvenido.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\t\033[92mBIENVENIDO : $mess2 "'>> .bashrc
-echo 'mess3="$(less /etc/VPS-ARG/revendedores.txt)" ' >> .bashrc
-echo 'echo "" '>> .bashrc
-echo 'echo -e "\t\033[92mREVENDEDORES OFICIALES : $mess3 "'>> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPS-ARG  "'>> .bashrc
 echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/Version &>/dev/null'>> .bashrc
