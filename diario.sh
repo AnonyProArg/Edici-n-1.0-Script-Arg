@@ -23,6 +23,7 @@ date "+FECHA: %D%nHORA: %T"
 msg -bar                                                                                                
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
 msg -bar 
+echo -ne " -   SE ACABA DE INCORPORAR VPS DE PRUEBAS(GRATIS Y DIARIAS)\n"
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
 echo -ne " -   YA CONTAMOS CON TELEGRAM PARA CONSULTAS @AnonyProArg\n"
 echo -ne " -   TAMBIEN AUMENTANDO LA COMPATIBILIDAD\n"
