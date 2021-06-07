@@ -85,7 +85,8 @@ sleep 1s
 }
 lista () {
 echo "     LISTA DE REVENDEDORES ( PROXIMAMENTE ) "
-msg -ne "Enter Para Continuar"
+echo ""
+sleep 5
 VPS-ARG
 }
 ssl_stunel () {
