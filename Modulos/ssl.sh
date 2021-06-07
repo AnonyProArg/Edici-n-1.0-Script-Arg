@@ -152,7 +152,7 @@ return 0
 clear
 ssl_multi () {
 #!/bin/bash
-printf "${RED}INSTANDO PYTHON DIRECT MODIFICADO..."
+printf "${RED}INSTANDO PYTHON DIRECT MODIFICADO.. 80-443 libres."
 echo -e ""
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 80
 echo -e ""
