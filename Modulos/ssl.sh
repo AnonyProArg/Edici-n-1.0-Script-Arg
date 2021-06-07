@@ -166,7 +166,7 @@ echo -e "ESCRIBA EL PUERTO QUE ESCUCHARA SSL (444): "
 read ssl
 perl -pi -e "s[444][$ssl]g" /etc/VPS-ARG/protocolos/ssl1.py
 echo -e ""
-bash /etc/VPS-ARG/protocolos/ssl1.sh
+bash /etc/VPS-ARG/protocolos/ssl1.py
 return 0
 }
 clear
