@@ -83,6 +83,9 @@ done
 echo -ne ""
 sleep 1s
 }
+VPS-ARG () {
+VPS-ARG
+}
 vps () {
 clear
 echo "   VPS DIARIA POR 1 DIA (PARA PRUEBAS) RESET 00:00 ARG"
@@ -175,5 +178,8 @@ lista
 ;;
 4)
 vps
+;;
+0)
+VPS-ARG
 ;;
 esac
