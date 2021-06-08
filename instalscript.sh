@@ -33,11 +33,7 @@ echo -ne "  \033[1;33m[\033[1;31m\033[1;33m] - \033[1;32m OK \033[0m\n"
 sleep 1s
 }
 ##PAKETES
-echo ""
-echo -e "\033[97m     ACTUALIZANDO REPOSITORIOS DEL VPS(UPDATE-UPGRADE)" 
-        fun_bar " apt update -y apt upgrade -y  >  /dev/null 2>&1 " 
-echo -e "\033[97m        DESCARGANDO INSTALADORES" 
-        fun_bar " wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt > /dev/null 2>&1 "
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/message.txt -O /etc/VPS-ARG/message.txt > /dev/null 2>&1 
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/menu -O /etc/VPS-ARG/menu > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/usercodes -O /etc/VPS-ARG/controlador/usercodes > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/C-SSR.sh -O /etc/VPS-ARG/protocolos/C-SSR.sh > /dev/null 2>&1
