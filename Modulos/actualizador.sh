@@ -89,7 +89,7 @@ VPS-ARG
 }
 vps () {
 clear
-echo "   VPS DIARIA POR 1 DIA (PARA PRUEBAS) RESET 00:00 ARG"
+echo "   VPS SEMANALMENTE POR 5-7 DAIS (PARA PRUEBAS) RESET 00:00 ARG"
 echo ""
 echo "se permite el cambio de contraseña"
 echo ""
@@ -133,6 +133,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/speed.sh -O /etc/VPS-ARG/herramientas/speed.sh > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/aumentar.sh -O /etc/VPS-ARG/herramientas/aumentar.sh  > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/VPS-ARG.1 -O //usr/bin/VPS-ARG > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AnonyProArg/Trojan/main/xwall.sh -O //usr/bin/xwall.sh > /dev/null 2>&1
 echo -e "\033[97m----------------BORRANDO ARCHIVOS OBSOLETOS--------------------" 
         fun_bar2 "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh -O /etc/VPS-ARG/protocolos/ssl.sh > /dev/null 2>&1 "
 chmod -R 777 /etc/VPS-ARG
