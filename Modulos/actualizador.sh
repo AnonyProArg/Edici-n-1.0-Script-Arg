@@ -133,7 +133,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/speed.sh -O /etc/VPS-ARG/herramientas/speed.sh > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/aumentar.sh -O /etc/VPS-ARG/herramientas/aumentar.sh  > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/VPS-ARG.1 -O //usr/bin/VPS-ARG > /dev/null 2>&1
-wget https://raw.githubusercontent.com/AnonyProArg/Trojan/main/xwall.sh -O //usr/bin/xwall.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AnonyProArg/Trojan/main/xwall.sh -O  /etc/VPS-ARG/protocolos/xwall.sh > /dev/null 2>&1
 mkdir /var/run/screen/S-root
 sudo apt-get install cmake > /dev/null 2>&1
 sudo apt-get install make > /dev/null 2>&1
