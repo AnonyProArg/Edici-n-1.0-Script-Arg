@@ -509,6 +509,7 @@ case $1 in
 "PGet.py")return 1;;
 "POpen.py")return 1;;
 "hora.sh")return 1;;
+"xwall.sh")return 1;;
 "PPriv.py")return 1;;
 "PPub.py")return 1;;
 "SMS.sh")return 1;;
@@ -871,31 +872,32 @@ msg -bar
 }
 msg -bar
 msg -bar3
-menu_func "ADMINISTRADOR DE CUENTAS | SSH/SSL/DROPBEAR" "ADMINISTRADOR DE CUENTAS | SS/SSRR"     "ADMINISTRADOR DE CUENTAS | V2RAY "   "ADMINISTRADOR DE CUENTAS | XRAY "   "\033[1;100mINSTALADOR DE PROTOCOLOS "    " PUERTOS ACTIVOS "    " HERRAMIENTAS Y EXTRAS"   " CAMBIAR COLOR DEL PANEL"   " MONITOR DE PROTOCOLOS  ------>${monitorservi} " " AUTO-INICAR SCRIPT   -------->$AutoRun "
+menu_func "ADMINISTRADOR DE CUENTAS | SSH/SSL/DROPBEAR" "ADMINISTRADOR DE CUENTAS | SS/SSRR"     "ADMINISTRADOR DE CUENTAS | V2RAY "   "ADMINISTRADOR DE CUENTAS | XRAY " "ADMINISTRADOR DE CUENTAS | TROAJN-GO+"   "\033[1;100mINSTALADOR DE PROTOCOLOS "    " PUERTOS ACTIVOS "    " HERRAMIENTAS Y EXTRAS"   " CAMBIAR COLOR DEL PANEL"   " MONITOR DE PROTOCOLOS  ------>${monitorservi} " " AUTO-INICAR SCRIPT   -------->$AutoRun "
 msg -bar
-echo -ne " $(msg -verd " [11]") $(msg -verm2 "=>>") \e[36m MONITOR DE PROCESOS \e[97m \n"  
+echo -ne " $(msg -verd " [12]") $(msg -verm2 "=>>") \e[36m MONITOR DE PROCESOS \e[97m \n"  
 msg -bar
-echo -ne "\e[93m  [12]\e[97m $(msg -verm2 "=>>") " && msg -verd "\032 ACTUALIZACIONES "  
+echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -verd "\032 ACTUALIZACIONES "  
 msg -bar
-echo -ne "\e[93m  [13]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m DESINSTALAR " 
+echo -ne "\e[93m  [14]\e[97m $(msg -verm2 "=>>") " && msg -bra "\033[1;31m DESINSTALAR " 
 msg -bar
 echo -ne "$(msg -verd "  [0]") $(msg -verm2  "=>>") " && msg -bra  "\033[1;41m❗ SALIR DEL SCRIPT  ❗️ "
 msg -bar
-selection=$(selection_fun 13)
+selection=$(selection_fun 15)
 case ${selection} in
 1)${SCPusr}/usercodes "${idioma}" ;;
 2)${SCPinst}/C-SSR.sh ;;
 3)${SCPinst}/v2ray.sh ;;
 4)${SCPinst}/xray.sh ;;
-5)menu_inst;;
-6)mine_port;;
-7)ferramentas_fun;;
-8)canbio_color;;
-9)monservi_fun;;
-10)fun_autorun;;
-11)monhtop;;
-12)atualiza_fun;;
-13)remove_script;;
+5)${SCPinst}/xwall.sh ;;
+6)menu_inst;;
+7)mine_port;;
+8)ferramentas_fun;;
+9)canbio_color;;
+10)monservi_fun;;
+11)fun_autorun;;
+12)monhtop;;
+13)atualiza_fun;;
+14)remove_script;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "Enter Para Continuar" && read enter
