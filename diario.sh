@@ -23,16 +23,14 @@ date "+FECHA: %D%nHORA: %T"
 msg -bar                                                                                                
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
 msg -bar
-echo -ne " -   ADELANTO DE LA V1.6. ENTRE HOY Y MAÑANA ENTARE IMPLEMENTANDO TROJAN-GO\n"
-echo -ne " -   SE ACABA DE INCORPORAR VPS DE PRUEBAS(GRATIS Y DIARIAS)\n"
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
-echo -ne " -   YA CONTAMOS CON TELEGRAM PARA CONSULTAS @AnonyProArg\n"
+echo -ne " -   CONSULTAS EN NUESTRO TELEGRAM @AnonyProArg\n"
 echo -ne " -   TAMBIEN AUMENTANDO LA COMPATIBILIDAD\n"
-echo -ne " -   EN ESTOS DIAS ESTARE AGREGANDO ALGO NUEVO, MANTENTE ATENT@\n"
 echo ""
 msg -bar 
 echo -e "  \033[100m      DATOS DE LAS ACTUALIZACIONES " 
 msg -bar 
+echo -ne " -   DATA DE LA V-1.6= METODO TROJAN-GO INPLEMENTADO (FACIL DE INSTALAR) \n"
 echo -ne " -   DATA DE LA V-1.5= MEJORAS DE INTERFAZ Y NUEVA HERRAMIENTA :) \n"
 echo -ne " -   DATA DE LA V-1.4= MEJORAS Y UNA NUEVA FUNCIÓN EN HERRAMIENTAS\n"
 echo -ne " -   DATA DE LA V-1.3= TERMINE DE MODIFICAR EL ACTUALIZADOR (POR EL MOMENTO)\n"
