@@ -22,7 +22,8 @@ msg -tit
 date "+FECHA: %D%nHORA: %T"   
 msg -bar                                                                                                
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
-msg -bar 
+msg -bar
+echo -ne " -   ADELANTO DE LA V1.6. ENTRE HOY Y MAÑANA ENTARE IMPLEMENTANDO TROJAN-GO\n"
 echo -ne " -   SE ACABA DE INCORPORAR VPS DE PRUEBAS(GRATIS Y DIARIAS)\n"
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
 echo -ne " -   YA CONTAMOS CON TELEGRAM PARA CONSULTAS @AnonyProArg\n"
