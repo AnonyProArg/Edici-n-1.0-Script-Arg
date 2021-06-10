@@ -134,9 +134,12 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/aumentar.sh -O /etc/VPS-ARG/herramientas/aumentar.sh  > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/VPS-ARG.1 -O //usr/bin/VPS-ARG > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Trojan/main/xwall.sh -O  /etc/VPS-ARG/protocolos/xwall.sh > /dev/null 2>&1
-mkdir /var/run/screen/S-root > /dev/null 2>&1
-sudo apt-get install cmake > /dev/null 2>&1
-sudo apt-get install make > /dev/null 2>&1
+cd /var/run
+mkdir screen > /dev/null 2>&1
+chmod -R 777 screen
+cd screen
+mkdir S-root > /dev/null 2>&1
+chmod -R 700 S-root
 echo -e "\033[97m----------------BORRANDO ARCHIVOS OBSOLETOS--------------------" 
         fun_bar2 "wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh -O /etc/VPS-ARG/protocolos/ssl.sh > /dev/null 2>&1 "
 chmod -R 777 /etc/VPS-ARG
