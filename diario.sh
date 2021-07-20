@@ -23,6 +23,7 @@ date "+FECHA: %D%nHORA: %T"
 msg -bar                                                                                                
 echo -e "  \033[100m     DIARIO DEL DESARROLADOR " 
 msg -bar
+echo -ne " -   Websocket+ssh, cloudflare: OPCIÓN Desincriptacion (ON), TLS/SSL(ON)\n"
 echo -ne " -   ACTUALMENTE ESTOY ARREGLANDO ERRORES\n"
 echo -ne " -   CONSULTAS EN NUESTRO TELEGRAM @AnonyProArg\n"
 echo -ne " -   TAMBIEN AUMENTANDO LA COMPATIBILIDAD\n"
