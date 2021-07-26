@@ -194,6 +194,7 @@ return 0
 PY_py () {
 echo " New Met PY SIF Puert Defi 80"
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
+chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "Escribe el Texto Banner"
 read banner
 perl -pi -e "s[VPS-ARG][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
