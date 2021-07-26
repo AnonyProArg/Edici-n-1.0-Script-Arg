@@ -190,6 +190,22 @@ echo -e ""
 printf "${RED}INSTALACION FINALIZADA"
 return 0
 }
+
+PY_py () {
+echo " New Met PY SIF"
+echo -e "Puerto Python New: "
+read Puerto
+echo "Instalando PY SIF"
+sleep 2 
+perl -pi -e "s[80][$Puerto]g" /etc/VPS-ARG/protocolos/PDirect.py
+echo -e "Texto Banner"
+read banner
+perl -pi -e "s[VPS-ARG][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
+sleep 4
+screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
+echo "Exitoso"
+echo "Enter para continuar" && read VPS-ARG
+}
 clear
 msg -bar
 msg -bar3
@@ -219,5 +235,9 @@ exit
 3)
 msg -bar
 ssl_multi
+;;
+4)
+msg -bar
+PY_py
 ;;
 esac
