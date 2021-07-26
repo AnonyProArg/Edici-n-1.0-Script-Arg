@@ -192,7 +192,11 @@ return 0
 }
 
 PY_py () {
+pidproxy3=$(ps x | grep "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && pid_kill $pidproxy3
+rm -rf /etc/VPS-ARG/PortPD.log
+echo "" > /etc/VPS-ARG/PortPD.log
 echo " New Met PY SIF Puert Defi 80"
+echo ""
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "Escribe el Texto Banner"
@@ -213,7 +217,7 @@ msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m INICIAR O PARAR SSL "
 echo -e "${cor[4]} 2).-\033[1;37m AGREGAR PUERTOS SSL   "
 echo -e "${cor[4]} 3).-\033[1;37m INSTALADOR PDirect + SSL EditalPort "
-echo -e "${cor[4]} 4).-\033[1;37m INSTALADOR New Met PY SIF "
+echo -e "${cor[4]} 4).-\033[1;37m INSTALAR/ACTUALIZAR TEX-New Met PY SIF "
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
