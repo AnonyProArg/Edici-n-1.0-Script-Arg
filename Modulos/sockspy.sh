@@ -39,7 +39,7 @@ chmod +x  /usr/sbin/sckt
 rm -rf $HOME/socks
 cd $HOME
 msg="$2"
-[[ $msg = "" ]] && msg="@Kalix1"
+[[ $msg = "" ]] && msg="@VPS-ARG"
 portxz="$1"
 [[ $portxz = "" ]] && portxz="8080"
 screen -dmS sokz scktcheck "$portxz" "$msg" > /dev/null 2>&1
@@ -59,6 +59,19 @@ screen -dmS getpy python ${SCPinst}/PGet.py -b "0.0.0.0:$1" -p "${SCPinst}/pwd.p
  msg -bar
  } || echo -e "$(fun_trans  "Gettunel nao foi iniciado")"
  msg -bar
+}
+
+PythonDi_fun () {
+echo -e "\033[1;33m    Puerto Python new"
+msg -bar
+    while true; do
+	echo -e "\033[1;37m"
+    read -p " Listen-Python: " pythonport
+echo -e ""
+screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $pythonport
+echo -e "Instalado. Redirigiendo al inicio"
+sleep 2
+VPS-ARG 
 }
 
 PythonDic_fun () {
@@ -376,6 +389,7 @@ pidproxy3=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print
 pidproxy4=$(ps x | grep -w  "POpen.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy4 ]] && P4="\033[1;32m[ON]" || P4="\033[1;31m[OFF]"
 pidproxy5=$(ps x | grep "PGet.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy5 ]] && P5="\033[1;32m[ON]" || P5="\033[1;31m[OFF]"
 pidproxy6=$(ps x | grep "scktcheck" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy6 ]] && P6="\033[1;32m[ON]" || P6="\033[1;31m[OFF]"
+pidproxy7=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy7 ]] && P7="\033[1;32m[ON]" || P7="\033[1;31m[OFF]"
 msg -bar 
 msg -tit
 msg -ama "   INSTALADOR DE PROXY'S VPS-ARG By AnonyProArg"
@@ -386,6 +400,7 @@ echo -e "${cor[4]} [3] $(msg -verm2 "==>>") \033[1;97m$(fun_trans  "Proxy Python
 echo -e "${cor[4]} [4] $(msg -verm2 "==>>") \033[1;97m$(fun_trans  "Proxy Python OPENVPN")\033[1;97m ------------ $P4"
 echo -e "${cor[4]} [5] $(msg -verm2 "==>>") \033[1;97m$(fun_trans  "Proxy Python GETTUNEL")\033[1;97m ----------- $P5"
 echo -e "${cor[4]} [6] $(msg -verm2 "==>>") \033[1;97m$(fun_trans  "Proxy Python TCP BYPASS")\033[1;97m --------- $P6"
+echo -e "${cor[4]} [6] $(msg -verm2 "==>>") \033[1;97m$(fun_trans  "Proxy Python DIRECT NEW")\033[1;97m --------- $P7"
 echo -e "${cor[4]} [7] $(msg -verm2 "==>>") \033[1;97m$(fun_trans  " ¡¡ PARAR TODOS LOS PROXY'S !!")"
 echo -e "$(msg -bar)\n${cor[4]} [0] $(msg -verm2 "==>>")  \e[97m\033[1;41m VOLVER \033[1;37m"
 msg -bar
@@ -395,7 +410,7 @@ echo -ne "$(fun_trans  "Digite Una Opcion"): \033[1;37m" && read portproxy
 tput cuu1 && tput dl1
 done
  case $portproxy in
-    7)remove_fun;;
+     7)remove_fun;;
     0)return;;
  esac
 echo -e "Selecciona Puerto Principal del Proxy"
@@ -417,6 +432,7 @@ echo -ne "Introduzca el texto de estado plano o en HTML:\n \033[1;37m" && read t
     5)gettunel_fun "$porta_socket";;
     6)tcpbypass_fun "$porta_socket" "$texto_soket";;
     esac
+    7)PythonDi_fun;;
 echo -e "\033[1;92m$(fun_trans "Procedimiento COMPLETO")"
 msg -bar
 }
