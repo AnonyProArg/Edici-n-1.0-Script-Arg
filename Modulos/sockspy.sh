@@ -423,7 +423,7 @@ echo -ne "Introduzca el texto de estado plano o en HTML:\n \033[1;37m" && read t
     5)gettunel_fun "$porta_socket";;
     6)tcpbypass_fun "$porta_socket" "$texto_soket";;
     esac
-3)PythonDc_fun;;
+    7)PythonDi_fun;;
 echo -e "\033[1;92m$(fun_trans "Procedimiento COMPLETO")"
 msg -bar
 }
