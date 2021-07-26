@@ -219,7 +219,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "Escribe el Texto Banner"
 read banner
-perl -pi -e "s[VPS-ARG][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
+perl -pi -e "s[VPS-ARG-2021][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 4
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 80
 echo "Exitoso"
