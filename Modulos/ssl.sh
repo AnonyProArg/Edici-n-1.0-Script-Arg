@@ -191,7 +191,6 @@ printf "${RED}INSTALACION FINALIZADA"
 return 0
 }
 
-PY_py () {
 pid_kill () {
 [[ -z $1 ]] && refurn 1
 pids="$@"
@@ -199,7 +198,8 @@ for pid in $(echo $pids); do
 kill -9 $pid &>/dev/null
 done
 }
-remove_fun () {
+
+PY_py () {
 echo -e "$(fun_trans  "Parando New Met PY SIF ")"
 msg -bar
 pidproxy=$(ps x | grep "PPub.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy ]] && pid_kill $pidproxy
