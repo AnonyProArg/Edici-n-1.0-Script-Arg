@@ -192,17 +192,13 @@ return 0
 }
 
 PY_py () {
-echo " New Met PY SIF"
-echo -e "Puerto Python New: "
-read Puerto
-echo "Instalando PY SIF"
-sleep 2 
-perl -pi -e "s[80][$Puerto]g" /etc/VPS-ARG/protocolos/PDirect.py
-echo -e "Texto Banner"
+echo " New Met PY SIF Puert Defi 80"
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
+echo -e "Escribe el Texto Banner"
 read banner
 perl -pi -e "s[VPS-ARG][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 4
-screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
+screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 80
 echo "Exitoso"
 }
 clear
