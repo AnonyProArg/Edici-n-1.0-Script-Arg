@@ -217,6 +217,7 @@ msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m INICIAR O PARAR SSL "
 echo -e "${cor[4]} 2).-\033[1;37m AGREGAR PUERTOS SSL   "
 echo -e "${cor[4]} 3).-\033[1;37m INSTALADOR PDirect + SSL EditalPort "
+echo -e "${cor[4]} 4).-\033[1;37m INSTALADOR New Met PY SIF "
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
