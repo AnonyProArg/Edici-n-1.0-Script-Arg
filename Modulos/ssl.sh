@@ -154,14 +154,10 @@ ssl_multi () {
 #!/bin/bash
 echo -e "\033[1;33m   Ahora Que Puerto sera Python"
 msg -bar
-    while true; do
-	echo -e "\033[1;37m"
     read -p " Listen-Python: " pythonport
 echo -e ""
 echo -e "\033[1;33m   Ahora Que Puerto sera SSL"
 msg -bar
-    while true; do
-	echo -e "\033[1;37m"
     read -p " Listen-SSL: " sslpoti
 echo -e ""
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $pythonport
