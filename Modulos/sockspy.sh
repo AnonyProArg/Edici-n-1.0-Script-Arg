@@ -61,15 +61,14 @@ screen -dmS getpy python ${SCPinst}/PGet.py -b "0.0.0.0:$1" -p "${SCPinst}/pwd.p
  msg -bar
 }
 
-PythonDi_fun () {
+pythonDi_fun () {
 echo -e "\033[1;33m    Puerto Python new"
 msg -bar
     read -p " Puerto Python: " pythonpo
 echo -e ""
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $pythonpo
-echo -e "Instalado. Redirigiendo al inicio"
-sleep 2
-VPS-ARG 
+echo -e ""
+echo "Enter para continuar" && read VPS-ARG
 }
 
 PythonDic_fun () {
@@ -430,7 +429,7 @@ echo -ne "Introduzca el texto de estado plano o en HTML:\n \033[1;37m" && read t
     5)gettunel_fun "$porta_socket";;
     6)tcpbypass_fun "$porta_socket" "$texto_soket";;
     esac
-    7)PythonDi_fun;;
+    7)pythonDi_fun;;
 echo -e "\033[1;92m$(fun_trans "Procedimiento COMPLETO")"
 msg -bar
 }
