@@ -204,7 +204,6 @@ perl -pi -e "s[VPS-ARG][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 4
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
 echo "Exitoso"
-echo "Enter para continuar" && read VPS-ARG
 }
 clear
 msg -bar
