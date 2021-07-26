@@ -30,7 +30,8 @@ echo -ne " -   TAMBIEN AUMENTANDO LA COMPATIBILIDAD\n"
 echo ""
 msg -bar 
 echo -e "  \033[100m      DATOS DE LAS ACTUALIZACIONES " 
-msg -bar 
+msg -bar
+echo -ne " -   DATA DE LA V-1.7= PEQUEÑA IMPLEMENTACIÓN CON EL NEW MET(lo verás en ssl) \n"
 echo -ne " -   DATA DE LA V-1.6= METODO TROJAN-GO INPLEMENTADO (FACIL DE INSTALAR) \n"
 echo -ne " -   DATA DE LA V-1.5= MEJORAS DE INTERFAZ Y NUEVA HERRAMIENTA :) \n"
 echo -ne " -   DATA DE LA V-1.4= MEJORAS Y UNA NUEVA FUNCIÓN EN HERRAMIENTAS\n"
