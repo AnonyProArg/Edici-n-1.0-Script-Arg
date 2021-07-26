@@ -154,11 +154,11 @@ ssl_multi () {
 #!/bin/bash
 echo -e "\033[1;33m   Ahora Que Puerto sera Python"
 msg -bar
-    read -p " Listen-Python: " pythonport
+    read -p " Puerto Python: " pythonport
 echo -e ""
 echo -e "\033[1;33m   Ahora Que Puerto sera SSL"
 msg -bar
-    read -p " Listen-SSL: " sslpoti
+    read -p " Puerto SSL: " sslpoti
 echo -e ""
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $pythonport
 echo -e ""
@@ -200,7 +200,7 @@ echo -e "${cor[1]}            Escoja la opcion deseada."
 msg -bar
 echo -e "${cor[4]} 1).-\033[1;37m INICIAR O PARAR SSL "
 echo -e "${cor[4]} 2).-\033[1;37m AGREGAR PUERTOS SSL   "
-echo -e "${cor[4]} 3).-\033[1;37m INSTALADOR PDirect + SSL (semi)"
+echo -e "${cor[4]} 3).-\033[1;37m INSTALADOR PDirect + SSL EditalPort "
 echo -e "${cor[4]} 0).-\033[1;37m MENU - INICIO "
 msg -bar
 echo -ne "\033[1;37mDigite solo el numero segun su respuesta: "
