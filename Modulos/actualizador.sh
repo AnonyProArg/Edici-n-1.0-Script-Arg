@@ -26,7 +26,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<20; i++)); do
+   for((i=0; i<15; i++)); do
    echo -ne "\033[1;34m ☆         ✩          ✼          ⚝          ⍟         ✪          ۞       ✹"
    sleep 0.5
    done
@@ -47,7 +47,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<25; i++)); do
+   for((i=0; i<20; i++)); do
    sleep 2             
    echo -ne "\e[1;37m████    ████    ████    ████"
    sleep 0
@@ -69,7 +69,7 @@ $comando > /dev/null 2>&1
 pid=$!
 while [[ -d /proc/$pid ]]; do
 echo -ne " \033[1;33m["
-   for((i=0; i<25; i++)); do
+   for((i=0; i<20; i++)); do
    sleep 2
    echo -ne "\033[1;31m████------████------████------████------████------████-----████------████"
    sleep 0
@@ -89,17 +89,17 @@ VPS-ARG
 }
 vps () {
 clear
-echo "   VPS SEMANALMENTE POR 5-7 DAIS (PARA PRUEBAS) RESET 00:00 ARG"
+echo "   VPS SEMANALMENTE POR 5-7 DAIS (PARA PRUEBAS) En Mantenimiento"
 echo ""
 echo "se permite el cambio de contraseña"
 echo ""
-echo "IP: 209.151.146.205"
-echo "CONTRASEÑA: 6r5624dg"
+echo "IP: ####"
+echo "CONTRASEÑA: ####"
 echo ""
 echo " 2da VPS"
 echo ""
-echo "IP: 209.151.150.231"
-echo "CONTRASEÑA: 9h324kg4"
+echo "IP: #####"
+echo "CONTRASEÑA: #####"
 echo
 echo "REDIRIGIENDO AL INICIO EN 10s"
 sleep 10s
@@ -134,6 +134,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/aumentar.sh -O /etc/VPS-ARG/herramientas/aumentar.sh  > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/VPS-ARG.1 -O //usr/bin/VPS-ARG > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Trojan/main/xwall.sh -O  /etc/VPS-ARG/protocolos/xwall.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/ssl.sh -O  /etc/VPS-ARG/protocolos/ssl.sh > /dev/null 2>&1
 cd /var/run
 mkdir screen > /dev/null 2>&1
 chmod -R 777 screen
