@@ -152,6 +152,15 @@ return 0
 clear
 ssl_multi () {
 #!/bin/bash
+kill -9 $(lsof -t -i:80)
+kill $(lsof -t -i:80)
+clear
+echo ""
+wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
+chmod -x /etc/VPS-ARG/protocolos/PDirect.py
+echo -e "Escribe el Texto Banner"
+read banner
+perl -pi -e "s[@AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "\033[1;33m   Ahora Que Puerto sera Python"
 msg -bar
     read -p " Puerto Python: " pythonport
@@ -191,39 +200,6 @@ printf "${RED}INSTALACION FINALIZADA"
 return 0
 }
 
-pid_kill () {
-[[ -z $1 ]] && refurn 1
-pids="$@"
-for pid in $(echo $pids); do
-kill -9 $pid &>/dev/null
-done
-}
-
-PY_py () {
-echo -e "$(fun_trans  "Parando New Met PY SIF ")"
-msg -bar
-pidproxy=$(ps x | grep "PPub.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy ]] && pid_kill $pidproxy
-pidproxy2=$(ps x | grep "PPriv.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy2 ]] && pid_kill $pidproxy2
-pidproxy3=$(ps x | grep "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && pid_kill $pidproxy3
-pidproxy4=$(ps x | grep "POpen.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy4 ]] && pid_kill $pidproxy4
-pidproxy5=$(ps x | grep "PGet.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy5 ]] && pid_kill $pidproxy5
-pidproxy6=$(ps x | grep "scktcheck" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy6 ]] && pid_kill $pidproxy6
-echo -e "\033[1;91m  $(fun_trans  "New Met PY SIF DETENIDO")"
-msg -bar
-rm -rf /etc/VPS-ARG/PortPD.log
-echo "" > /etc/VPS-ARG/PortPD.log
-clear
-echo " New Met PY SIF Puert Defi 80"
-echo ""
-wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
-chmod -x /etc/VPS-ARG/protocolos/PDirect.py
-echo -e "Escribe el Texto Banner"
-read banner
-perl -pi -e "s[@AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
-sleep 4
-screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py 80
-echo "Exitoso"
-}
 clear
 msg -bar
 msg -bar3
