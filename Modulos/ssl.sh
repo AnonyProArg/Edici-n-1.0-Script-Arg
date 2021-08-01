@@ -162,12 +162,13 @@ msg -bar
 echo -e "\033[1;33m Escriba el color del banner en inglés y en minúsculas"
 msg -bar
 echo ""
- read -p " Escriba : " colour
+    read -p " Escriba : " colour
 echo ""
 msg -bar
 echo -e "\033[1;33m  Texto Banner"
 msg -bar
-read -p " Escriba : " banner
+echo ""
+    read -p " Escriba : " banner
 echo ""
 perl -pi -e "s[AnonyProArg][<title><head><h1><font color="$colour">$banner<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
@@ -175,7 +176,8 @@ echo ""
 msg -bar
 echo -e "\033[1;33m Puerto Python "
 msg -bar
-read -p "Puerto : "
+echo ""
+   read -p "Puerto : " Puerto
 echo ""
 sleep 2 
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
