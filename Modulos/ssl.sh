@@ -154,14 +154,18 @@ clear
 ssl_multi () {
 #!/bin/bash
 clear
+kill -9 $(lsof -t -i:80)
+kill -9 $(lsof -t -i:443)
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
-echo -e "Texto Banner"
+echo -e "\033[1;33m  Texto Banner"
+msg -bar
 read banner
 perl -pi -e "s[AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
-echo -e "Puerto Python : "
+echo -e "\033[1;33m Puerto Python : "
+msg -bar
 read Puerto
 echo "Instalando"
 sleep 2 
@@ -196,6 +200,7 @@ rm -rf /root/stunnel.key > /dev/null 2>&1
 printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
 echo -e ""
 printf "${RED}INSTALACION FINALIZADA"
+echo ""
 return 0
 }
 
