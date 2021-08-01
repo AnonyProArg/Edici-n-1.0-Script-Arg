@@ -177,7 +177,6 @@ echo -e "\033[1;33m Puerto Python "
 msg -bar
 read -p "Puerto : "
 echo ""
-echo "Instalando"
 sleep 2 
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
 msg -bar
@@ -187,7 +186,7 @@ echo ""
     read -p " Puerto SSL: " sslpoti
 msg -bar
 echo -e "" 
-printf "${RED}Instalando SSL"
+printf "${RED}Instalando....."
 echo -e ""
 printf "${NC}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
 apt-get install stunnel4 -y
