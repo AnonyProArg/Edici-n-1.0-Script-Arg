@@ -155,17 +155,16 @@ ssl_multi () {
 #!/bin/bash
 clear
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
-echo " SSL + PYTHON"
-echo -e "Puerto Python : "
-read Puerto
-echo "Instalando"
-sleep 2 
-screen -dmS pydic-$Puerto python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
 echo -e "Texto Banner"
 read banner
 perl -pi -e "s[@AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
+echo -e "Puerto Python : "
+read Puerto
+echo "Instalando"
+sleep 2 
+screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
 echo -e "\033[1;33m   Ahora Que Puerto sera SSL"
 msg -bar
     read -p " Puerto SSL: " sslpoti
