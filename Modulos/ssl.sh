@@ -160,27 +160,29 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 msg -bar
 echo -e "\033[1;33m Escriba el color del banner en inglés y en minúsculas"
+msg -bar
 echo ""
-echo "ejem: red, pink,orange, yellow, violet, etc"
  read -p " Escriba : " colour
-msg -bar
-perl -pi -e "s[lime][$colour]g" /etc/VPS-ARG/protocolos/ssl.sh
 echo ""
+msg -bar
 echo -e "\033[1;33m  Texto Banner"
-read banner
 msg -bar
+read -p " Escriba : " banner
 echo ""
-perl -pi -e "s[AnonyProArg][<title><head><h1><font color="lime">$banner<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
+perl -pi -e "s[AnonyProArg][<title><head><h1><font color="$colour">$banner<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
-echo -e "\033[1;33m Puerto Python : "
-read Puerto
+msg -bar
+echo -e "\033[1;33m Puerto Python "
+msg -bar
+read -p "Puerto : "
 echo ""
 echo "Instalando"
-msg -bar
 sleep 2 
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
+msg -bar
 echo -e "\033[1;33m   Ahora Que Puerto sera SSL"
+msg -bar
 echo ""
     read -p " Puerto SSL: " sslpoti
 msg -bar
