@@ -177,7 +177,7 @@ msg -bar
 echo -e "\033[1;33m  Puerto Python "
 msg -bar
 echo ""
-   read -p "Puerto : " Puerto
+   read -p "  Puerto : " Puerto
 echo ""
 sleep 2 
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
