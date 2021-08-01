@@ -39,6 +39,19 @@ done
 echo -e " \033[1;33m[\033[1;31m########################################\033[1;33m] - \033[1;32m100%\033[0m"
 sleep 1s
 }
+iniciarsocks () {
+pidproxy=$(ps x | grep -w "PPub.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy ]] && P1="\033[1;32m[ON]" || P1="\033[1;31m[OFF]"
+pidproxy2=$(ps x | grep -w  "PPriv.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy2 ]] && P2="\033[1;32m[ON]" || P2="\033[1;31m[OFF]"
+pidproxy3=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P3="\033[1;32m[ON]" || P3="\033[1;31m[OFF]"
+pidproxy4=$(ps x | grep -w  "POpen.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy4 ]] && P4="\033[1;32m[ON]" || P4="\033[1;31m[OFF]"
+pidproxy5=$(ps x | grep "PGet.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy5 ]] && P5="\033[1;32m[ON]" || P5="\033[1;31m[OFF]"
+pidproxy6=$(ps x | grep "scktcheck" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy6 ]] && P6="\033[1;32m[ON]" || P6="\033[1;31m[OFF]"
+while [[ -z $portproxy || $portproxy != @(0|[1-7]) ]]; do
+echo -ne "$(fun_trans  "Digite Una Opcion"): \033[1;37m" && read portproxy
+tput cuu1 && tput dl1
+done
+}
+
 ssl_stunel () {
 [[ $(mportas|grep stunnel4|head -1) ]] && {
 echo -e "\033[1;33m $(fun_trans  "Deteniendo Stunnel")"
@@ -425,4 +438,22 @@ exit
 msg -bar
 ssl_multi
 ;;
-esac
+ case $portproxy in
+ esac
+echo -e "Selecciona Puerto Principal del Proxy"
+msg -bar
+porta_socket=
+while [[ -z $porta_socket || ! -z $(mportas|grep -w $porta_socket) ]]; do
+echo -ne "Digite el Puerto: \033[1;37m" && read porta_socket
+tput cuu1 && tput dl1
+done
+echo -e "$(fun_trans  "Introdusca su Mini-Banner")"
+msg -bar
+echo -ne "Introduzca el texto de estado plano o en HTML:\n \033[1;37m" && read texto_soket
+    msg -bar
+    case $portproxy in
+
+echo -e "\033[1;92m$(fun_trans "Procedimiento COMPLETO")"
+msg -bar
+}
+iniciarsocks
