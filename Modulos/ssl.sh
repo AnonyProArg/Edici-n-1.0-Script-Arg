@@ -161,7 +161,7 @@ chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "\033[1;33m  Texto Banner"
 msg -bar
 read banner
-perl -pi -e "s[AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
+perl -pi -e "s[AnonyProArg][<title><head><h1><font color="red">$banner!!<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
 echo -e "\033[1;33m Puerto Python : "
