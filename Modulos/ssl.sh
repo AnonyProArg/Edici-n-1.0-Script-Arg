@@ -158,10 +158,14 @@ kill -9 $(lsof -t -i:80)
 kill -9 $(lsof -t -i:443)
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
+echo -e "\033[1;33m Escriba el color del banner en inglés y minúsculas"
+echo "ejem, red, pink,orange, yellow, violet, etc"
+read colour
+perl -pi -e "s[lime][$colour]g" /etc/VPS-ARG/protocolos/ssl.sh
 echo -e "\033[1;33m  Texto Banner"
 msg -bar
 read banner
-perl -pi -e "s[AnonyProArg][<title><head><h1><font color="red">$banner<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
+perl -pi -e "s[AnonyProArg][<title><head><h1><font color="lime">$banner<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
 echo -e "\033[1;33m Puerto Python : "
