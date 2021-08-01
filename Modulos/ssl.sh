@@ -154,10 +154,11 @@ clear
 ssl_multi () {
 #!/bin/bash
 clear
-kill -9 $(lsof -t -i:80)
-kill -9 $(lsof -t -i:443)
+kill -9 $(lsof -t -i:80) > /dev/null 2>&1
+kill -9 $(lsof -t -i:443) > /dev/null 2>&1
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
+msg -bar
 echo -e "\033[1;33m Escriba el color del banner en inglés y en minúsculas"
 echo ""
 echo "ejem: red, pink,orange, yellow, violet, etc"
@@ -166,22 +167,23 @@ msg -bar
 perl -pi -e "s[lime][$colour]g" /etc/VPS-ARG/protocolos/ssl.sh
 echo ""
 echo -e "\033[1;33m  Texto Banner"
-msg -bar
 read banner
+msg -bar
 echo ""
 perl -pi -e "s[AnonyProArg][<title><head><h1><font color="lime">$banner<head>]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
 echo -e "\033[1;33m Puerto Python : "
-msg -bar
 read Puerto
 echo ""
 echo "Instalando"
+msg -bar
 sleep 2 
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
 echo -e "\033[1;33m   Ahora Que Puerto sera SSL"
-msg -bar
+echo ""
     read -p " Puerto SSL: " sslpoti
+msg -bar
 echo -e "" 
 printf "${RED}Instalando SSL"
 echo -e ""
