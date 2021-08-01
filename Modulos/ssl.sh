@@ -155,6 +155,7 @@ ssl_multi () {
 #!/bin/bash
 clear
 wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Modulos/PDirect.py -O /etc/VPS-ARG/protocolos/PDirect.py > /dev/null 2>&1
+chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "Texto Banner"
 read banner
 perl -pi -e "s[@AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
