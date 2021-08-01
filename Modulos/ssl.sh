@@ -174,7 +174,7 @@ perl -pi -e "s[AnonyProArg][<title><head><h1><font color="$colour">$banner<head>
 sleep 2
 echo ""
 msg -bar
-echo -e "\033[1;33m Puerto Python "
+echo -e "\033[1;33m  Puerto Python "
 msg -bar
 echo ""
    read -p "Puerto : " Puerto
@@ -182,10 +182,10 @@ echo ""
 sleep 2 
 screen -dmS Pydirect python /etc/VPS-ARG/protocolos/PDirect.py $Puerto
 msg -bar
-echo -e "\033[1;33m   Ahora Que Puerto sera SSL"
+echo -e "\033[1;33m Ahora Que Puerto sera SSL"
 msg -bar
 echo ""
-    read -p " Puerto SSL: " sslpoti
+  read -p "  Puerto SSL: " sslpoti
 msg -bar
 echo -e "" 
 printf "${RED}Instalando....."
