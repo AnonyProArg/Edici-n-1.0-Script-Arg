@@ -158,7 +158,7 @@ wget https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/M
 chmod -x /etc/VPS-ARG/protocolos/PDirect.py
 echo -e "Texto Banner"
 read banner
-perl -pi -e "s[@AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
+perl -pi -e "s[AnonyProArg][$banner]g" /etc/VPS-ARG/protocolos/PDirect.py
 sleep 2
 echo ""
 echo -e "Puerto Python : "
