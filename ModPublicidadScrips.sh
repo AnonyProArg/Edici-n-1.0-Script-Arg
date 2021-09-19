@@ -2,7 +2,7 @@ echo -e "Texto #0 (tu texto): "
 
 read Textooo
 
-echo "Se a modificado a: $Texto"
+echo "Se a modificado a: $Textooo"
 
 perl -pi -e "s[Texto0][$Textooo]g" /etc/dropbear/banner
 
@@ -26,6 +26,6 @@ echo "Se a modificado a: $Textoo"
 
 perl -pi -e "s[Texto2][$Textoo]g" /etc/dropbear/banner
 
-echo " Finalizado von éxito"
+echo " Modificado con éxito"
 
 exit
