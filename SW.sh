@@ -6,13 +6,15 @@ clear
 
 apt-get install software-properties-common -y
 add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
-sudo apt install shadowsocks-libev
+sudo apt install shadowsocks-libev -y
 
 wget https://raw.githubusercontent.com/AnonyProArg/allscritps/main/config.json -O /etc/shadowsocks-libev/config.json
 wget https://raw.githubusercontent.com/AnonyProArg/allscritps/main/shadowsocks-libev.json -O /usr/local/etc/shadowsocks-libev.json
 
 systemctl enable shadowsocks-libev.service
 systemctl start shadowsocks-libev.service
+echo "Exito"
+echo "Exitp"
 echo  "Instaldo... auto reboot en 10s"
 sleep 15
 reboot
