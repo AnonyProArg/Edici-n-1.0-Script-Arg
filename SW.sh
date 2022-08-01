@@ -45,7 +45,8 @@ echo " 2).-Editor Servidor   "
 echo " 3).-Editor Server   "
 echo " 4).-Iniciar la nueva config "
 echo
-echo " DIGITAR...: " read opcao
+echo " DIGITAR...: " 
+read opcao
 case $opcao in
 1)
 install_ssh
