@@ -29,22 +29,23 @@ nano /usr/local/etc/shadowsocks-libev.json
 }
 estado_sv () {
 clear
-systemctl status shadowsocks-libev.service
+echo " Reiniciando con la nueva configuracion.."
+systemctl restart shadowsocks-libev
+echo ""
 echo "Rediriguiendo al Menu 10s"
 sleep 10
 bash SW.sh
 }
 
 clear
-echo "              MENU DE ACTUALIZACIONES"
+echo "              MENU DE SHADOWSOCK BETA"
 echo
 echo " 1).-Instalar e Iniciar "
 echo " 2).-Editor Servidor   "
 echo " 3).-Editor Server   "
-echo " 4).-Estado del Shadowsock "
+echo " 4).-Iniciar la nueva config "
 echo
-echo " Elegui Black gei: "
-read opcao
+echo " DIGITAR...: " read opcao
 case $opcao in
 1)
 install_ssh
