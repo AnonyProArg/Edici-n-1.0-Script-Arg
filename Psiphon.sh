@@ -28,7 +28,11 @@ show_menu() {
 
     echo "3. Mostrar configuración de Psiphon"
 
-    echo "4. Salir"
+    echo "4. Mostrar código Psiphon en formato hexadecimal"
+
+    echo "5. Detener servicios de Psiphon y eliminar archivos"
+
+    echo "6. Salir"
 
     echo
 
@@ -38,7 +42,7 @@ show_menu() {
 
 wait_for_option() {
 
-    local valid_options="1 2 3 4"
+    local valid_options="1 2 3 4 5 6"
 
     read -p "Ingrese una opción: " option
 
@@ -120,6 +124,42 @@ show_psiphon_config() {
 
 }
 
+# Función para mostrar el código Psiphon en formato hexadecimal
+
+show_psiphon_hex() {
+
+    show_title
+
+    echo "Mostrando código Psiphon en formato hexadecimal..."
+
+    echo
+
+    xxd psiphond
+
+    wait_for_enter
+
+}
+
+# Función para detener los servicios de Psiphon y eliminar archivos
+
+stop_and_remove_psiphon() {
+
+    show_title
+
+    echo "Deteniendo servicios de Psiphon y eliminando archivos..."
+
+    echo
+
+    screen -X -S psiserver quit
+
+    rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
+
+    echo "Servicios de Psiphon detenidos y archivos eliminados."
+
+    wait_for_enter
+
+}
+
 # Función principal para mostrar el menú y procesar las opciones
 
 main() {
@@ -155,6 +195,18 @@ main() {
                 ;;
 
             4)
+
+                show_psiphon_hex
+
+                ;;
+
+            5)
+
+                stop_and_remove_psiphon
+
+                ;;
+
+            6)
 
                 show_title
 
