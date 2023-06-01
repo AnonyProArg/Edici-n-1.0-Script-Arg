@@ -66,8 +66,9 @@ clear
   echo "1. Instalar Psiphon"
   echo "2. Instalar BadVpn"
   echo "3. Desinstalar PP"
-  echo "4. Extras"
-  echo "5. Salir"
+  echo "4. Ver archivo en Hexadecimal"
+  echo "5. Extras"
+  echo "6. Salir"
   echo "==============================="
 }
 
@@ -79,7 +80,6 @@ clear
   echo "1. Convertir a .json"
   echo "2. Ver archivo .json"
   echo "3. Save .json con nuevo nombre.dat"
-  echo "4. Ver archivo en Hexadecimal"
   echo "5. Volver al menú principal"
   echo "==============================="
 }
@@ -99,7 +99,10 @@ while true; do
     3)
       uninstall
       ;;
-    4)
+      4)
+      view_saved_file
+      ;;
+    5)
       while true; do
         show_extras_menu
         read -p "Selecciona una opción: " extras_choice
@@ -116,9 +119,6 @@ while true; do
             save_new_json
             ;;
           4)
-            view_saved_file
-            ;;
-          5)
             break
             ;;
           *)
