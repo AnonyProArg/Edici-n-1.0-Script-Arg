@@ -1,4 +1,5 @@
 #!/bin/bash
+rm /etc/PsiphonFF.sh
 
 # Función para mostrar el título
 
@@ -19,7 +20,7 @@ show_title() {
 # Función para descargar el archivo PsiphonFF.sh
 
 download_psiphon_script() {
-rm /etc/PsiphonFF.sh
+
 
     wget -O /etc/PsiphonFF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonFF.sh
 
