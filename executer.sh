@@ -19,10 +19,13 @@ show_title() {
 # Función para descargar el archivo PsiphonFF.sh
 
 download_psiphon_script() {
+rm /etc/PsiphonFF.sh
 
     wget -O /etc/PsiphonFF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonFF.sh
 
     chmod +x /etc/PsiphonFF.sh
+    
+    clear
 
     echo "El archivo PsiphonFF.sh se ha descargado correctamente en /etc/PsiphonFF.sh y se le han dado permisos de ejecución."
 
