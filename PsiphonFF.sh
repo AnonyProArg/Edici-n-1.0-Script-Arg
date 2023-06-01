@@ -54,9 +54,7 @@ clear
 
 view_saved_file() {
 clear
-  read -p "Ingrese el nombre del archivo que desea mostrar: " file_name
-  echo "Mostrando archivo $file_name..."
-  cat /root/psi/$file_name
+  cat /root/psi/server-entry.dat
   echo
 }
 
@@ -81,7 +79,7 @@ clear
   echo "1. Convertir a .json"
   echo "2. Ver archivo .json"
   echo "3. Save .json con nuevo nombre.dat"
-  echo "4. Ver archivo guardado"
+  echo "4. Ver archivo en Hexadecimal"
   echo "5. Volver al menú principal"
   echo "==============================="
 }
