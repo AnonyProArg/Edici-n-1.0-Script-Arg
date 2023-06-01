@@ -16,7 +16,7 @@ show_title() {
 
 }
 
-# Función para descargar el archivo PsiphonF.sh
+# Función para descargar el archivo PsiphonFF.sh
 
 download_psiphon_script() {
 
@@ -24,7 +24,7 @@ download_psiphon_script() {
 
     chmod +x /etc/PsiphonFF.sh
 
-    echo "El archivo PsiphonF.sh se ha descargado correctamente en /etc/PsiphonF.sh y se le han dado permisos de ejecución."
+    echo "El archivo PsiphonFF.sh se ha descargado correctamente en /etc/PsiphonFF.sh y se le han dado permisos de ejecución."
 
 }
 
@@ -78,11 +78,6 @@ execute() {
 
 }
 
-# Dar permisos de ejecución al archivo executer.sh
-
-chmod +x executer.sh
-
 # Ejecutar la función principal
 
 execute
-
