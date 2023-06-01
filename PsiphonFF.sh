@@ -61,11 +61,11 @@ clear
 show_menu() {
 clear
   echo "==============================="
-  echo "      Lite Menú Psiphon"
+  echo "Lite Menú Psiphon exclusivo H.C"
   echo "==============================="
   echo "1. Instalar Psiphon"
   echo "2. Instalar BadVpn"
-  echo "3. Desinstalar PP"
+  echo "3. Desinstalar Psiphon"
   echo "4. Ver archivo en Hexadecimal"
   echo "5. Extras"
   echo "6. Salir"
@@ -129,7 +129,7 @@ while true; do
         echo
       done
       ;;
-    5)
+    6)
       echo "Saliendo del script..."
       break
       ;;
