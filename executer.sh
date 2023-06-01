@@ -20,9 +20,9 @@ show_title() {
 
 download_psiphon_script() {
 
-    wget -O /etc/PsiphonF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonF.sh
+    wget -O /etc/PsiphonFF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonFF.sh
 
-    chmod +x /etc/PsiphonF.sh
+    chmod +x /etc/PsiphonFF.sh
 
     echo "El archivo PsiphonF.sh se ha descargado correctamente en /etc/PsiphonF.sh y se le han dado permisos de ejecución."
 
@@ -32,7 +32,7 @@ download_psiphon_script() {
 
 add_alias_to_bashrc() {
 
-    echo "alias black='bash /etc/PsiphonF.sh'" >> ~/.bashrc
+    echo "alias black='bash /etc/PsiphonFF.sh'" >> ~/.bashrc
 
     echo "Se ha agregado el alias 'black' al archivo .bashrc."
 
