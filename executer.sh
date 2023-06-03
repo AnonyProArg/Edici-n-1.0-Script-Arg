@@ -56,6 +56,8 @@ reload_bashrc() {
 
 execute_black() {
 
+    rm executer.sh
+
     black
 
     echo "Se ha ejecutado el alias 'black'."
@@ -76,7 +78,6 @@ execute() {
 
     execute_black
 
-    rm executer.sh
 
     echo "El archivo executer.sh ha sido eliminado."
 
