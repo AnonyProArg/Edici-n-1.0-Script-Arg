@@ -1,4 +1,3 @@
-#!/bin/bash
 clear
 rm executer.sh
 rm /etc/PsiphonFF.sh
