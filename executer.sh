@@ -22,7 +22,7 @@ show_title() {
 download_psiphon_script() {
 
 
-    wget -O /etc/PsiphonFF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonFF.sh
+    wget -O /etc/PsiphonFF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonF.sh
 
     chmod +x /etc/PsiphonFF.sh
     
