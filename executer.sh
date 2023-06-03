@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+rm executer.sh
 rm /etc/PsiphonFF.sh
 
 wget -O /etc/PsiphonFF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/PsiphonF.sh
