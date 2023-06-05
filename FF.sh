@@ -7,11 +7,16 @@ cleanup() {
     echo "Archivo del script eliminado."
 }
 
+install_dependencies() {
+    echo "Instalando dependencias..."
+    apt update
+    apt install screen jq -y
+    echo "Dependencias instaladas."
+}
+
 install_psiphon() {
     clear
     echo "Instalando Psiphon..."
-    apt update
-    apt install screen -y
     wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
     chmod 775 psiphond
     ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
@@ -44,11 +49,6 @@ uninstall() {
     screen -X -S psiserver quit
     rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     echo "Psiphon desinstalado."
-
-    echo "Eliminando regla del firewall para el puerto 7300..."
-    iptables -D INPUT -p udp --dport 7300 -j ACCEPT
-    iptables-save > /etc/iptables/rules.v4
-    echo "Regla del firewall eliminada para el puerto 7300."
 }
 
 convert_json() {
@@ -98,6 +98,9 @@ show_menu() {
 # Ejecutar la función de limpieza al salir
 trap cleanup EXIT
 
+# Instalar dependencias
+install_dependencies
+
 # Bucle principal
 while true; do
     show_menu
@@ -121,7 +124,7 @@ while true; do
             save_new_json
             ;;
         6)
-           install_badvpn
+            install_badvpn
             ;; 
         7)
             uninstall
