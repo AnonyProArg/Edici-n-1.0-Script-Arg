@@ -1,5 +1,12 @@
 #!/bin/bash
-clear
+
+cleanup() {
+  # Eliminar el archivo executer.sh
+  rm executer.sh
+}
+
+# Registrar la función de limpieza para que se ejecute al salir
+trap cleanup EXIT
 
 # Actualizar repositorios
 sudo apt update
@@ -24,7 +31,6 @@ echo "source ~/.myalias" >> ~/.bashrc
 
 # Cargar la línea en la sesión actual
 source ~/.myalias
-
 
 # Limpiar pantalla
 clear
