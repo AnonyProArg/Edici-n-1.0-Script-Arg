@@ -5,13 +5,14 @@ clear
 sudo apt update
 
 # Instalar fbsetbg
-sudo apt install -y fbsetbg
+sudo apt-get install fbi
+
 
 # Descargar imagen de fondo
 wget -O /usr/local/share/backgrounds/tu_imagen.png https://github.com/AnonyProArg/ScriptsRobloz/raw/main/53471c95341c1d613c65d846ff39b3e5.png > /dev/null 2>&1
 
 # Establecer imagen de fondo
-sudo fbsetbg -f /usr/local/share/backgrounds/53471c95341c1d613c65d846ff39b3e5.png > /dev/null 2>&1
+fbi -d /dev/fb0 -T 1 -noverbose -a /usr/local/share/backgrounds/tu_imagen.png
 
 # Eliminar archivos innecesarios
 rm executer.sh
@@ -24,7 +25,7 @@ wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/newt/main/Psiph
 chmod +x /etc/FF.sh
 
 # Agregar alias al archivo .bashrc
-echo "alias black='bash /etc/FF.sh'" >> ~/.bashrc > /dev/null 2>&1
+echo "alias Black='bash /etc/FF.sh'" >> ~/.bashrc > /dev/null 2>&1
 
 # Recargar el archivo .bashrc
 source ~/.bashrc > /dev/null 2>&1
