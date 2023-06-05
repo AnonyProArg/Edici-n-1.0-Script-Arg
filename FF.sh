@@ -1,142 +1,135 @@
 #!/bin/bash
+clear
 
 install_psiphon() {
-clear
-  echo "Instalando Psiphon..."
-  apt update
-  apt install screen -y
-  wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
-  chmod 775 psiphond
-  ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
-  chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-  screen -dmS psiserver ./psiphond run
-  echo "Psiphon instalado y en ejecución."
+    clear
+    echo "Instalando Psiphon..."
+    apt update
+    apt install screen -y
+    wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
+    chmod 775 psiphond
+    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
+    chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
+    screen -dmS psiserver ./psiphond run
+    echo "Psiphon instalado y en ejecución."
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 install_badvpn() {
-clear
-  echo "Instalando BadVpn..."
-  apt update
-  apt install badvpn -y
-  screen -dmS badvpn badvpn-udpgw --listen-addr 0.0.0.0:7300
-  echo "BadVpn instalado y en ejecución en el puerto 7300."
+    clear
+    echo "Instalando BadVpn..."
+    apt update
+    apt install badvpn -y
+    screen -dmS badvpn badvpn-udpgw --listen-addr 0.0.0.0:7300
+    echo "BadVpn instalado y en ejecución en el puerto 7300."
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 uninstall() {
-clear
-  echo "Desinstalando Psiphon..."
-  screen -X -S psiserver quit
-  rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-  echo "Psiphon desinstalado."
+    clear
+    echo "Desinstalando Psiphon..."
+    screen -X -S psiserver quit
+    rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
+    echo "Psiphon desinstalado."
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 convert_json() {
-clear
-  echo "Convirtiendo a .json..."
-  cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
-  echo "Archivo convertido a server-entry.json."
+    clear
+    echo "Convirtiendo a .json..."
+    cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
+    echo "Archivo convertido a server-entry.json."
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 view_json() {
-clear
-  echo "Mostrando server-entry.json..."
-  nano /root/psi/server-entry.json
-  echo
+    clear
+    echo "Mostrando server-entry.json..."
+    cat /root/psi/server-entry.json
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 save_new_json() {
-clear
-  read -p "Ingrese el nuevo nombre para el archivo .dat (sin extensión .dat): " new_name
-  echo "Guardando nuevo archivo como $new_name.dat..."
-  echo 0 $(jq -c . < /root/psi/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
-  echo "Archivo guardado como $new_name.dat."
+    clear
+    read -p "Ingrese el nuevo nombre para el archivo .dat (sin extensión .dat): " new_name
+    if [[ -z "$new_name" ]]; then
+        echo "Error: Debes ingresar un nombre válido."
+        echo
+        read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
+        return
+    fi
+
+    echo "Guardando nuevo archivo como $new_name.dat..."
+    echo 0 $(jq -c . < /root/psi/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
+    echo "Archivo guardado como $new_name.dat."
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 view_saved_file() {
-clear
-  cat /root/psi/server-entry.dat
-  echo
+    clear
+    cat /root/psi/server-entry.dat
+    echo
+    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 show_menu() {
-clear
-  echo "==============================="
-  echo "Lite Menú Psiphon exclusivo H.C"
-  echo "==============================="
-  echo "1. Instalar Psiphon"
-  echo "2. Instalar BadVpn"
-  echo "3. Desinstalar Psiphon"
-  echo "4. Ver archivo en Hexadecimal"
-  echo "5. Extras"
-  echo "6. Salir"
-  echo "==============================="
-}
-
-show_extras_menu() {
-clear
-  echo "==============================="
-  echo "           Extras"
-  echo "==============================="
-  echo "1. Convertir a .json"
-  echo "2. Ver archivo .json"
-  echo "3. Save .json con nuevo nombre.dat"
-  echo "5. Volver al menú principal"
-  echo "==============================="
+    clear
+    echo "==============================="
+    echo "      Lite Menú Psiphon H.C"
+    echo "==============================="
+    echo "1. Instalar Servicio Psiphon (H.C)"
+    echo "2. Ver archivo Hexadecimal"
+    echo "3. Convertir a .json"
+    echo "4. Mostrar archivo .json"
+    echo "5. Guardar .json con nuevo nombre.dat"
+    echo "6. Instalar Servicio Bad VPN 7300"
+    echo "7. Desinstalar Servicio Psiphon (H.C)"
+    echo "9. Salir"
+    echo "==============================="
 }
 
 while true; do
-  show_menu
-  read -p "Selecciona una opción: " choice
-  echo
+    show_menu
+    read -p "Selecciona una opción: " choice
+    echo
 
-  case $choice in
-    1)
-      install_psiphon
-      ;;
-    2)
-      install_badvpn
-      ;;
-    3)
-      uninstall
-      ;;
-      4)
-      view_saved_file
-      ;;
-    5)
-      while true; do
-        show_extras_menu
-        read -p "Selecciona una opción: " extras_choice
-        echo
-
-        case $extras_choice in
-          1)
+    case $choice in
+        1)
+            install_psiphon
+            ;;
+        2)
+            view_saved_file
+            ;;
+        3)
             convert_json
             ;;
-          2)
+        4)
             view_json
             ;;
-          3)
+        5)
             save_new_json
             ;;
-          4)
+        6)
+            install_badvpn
+            ;;
+        7)
+            uninstall
+            ;;
+        9)
+            echo "Saliendo del script..."
             break
             ;;
-          *)
+        *)
             echo "Opción inválida. Por favor, selecciona una opción válida."
             ;;
-        esac
+    esac
 
-        echo
-      done
-      ;;
-    6)
-      echo "Saliendo del script..."
-      break
-      ;;
-    *)
-      echo "Opción inválida. Por favor, selecciona una opción válida."
-      ;;
-  esac
-
-  echo
+    echo
 done
+clear
