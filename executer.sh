@@ -22,16 +22,15 @@ wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/newt/main/Psiph
 chmod +x /etc/FF.sh
 
 # Crear el archivo .myalias
-echo "alias Black='wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh >/dev/null 2>&1 && chmod +x /etc/FF.sh >/dev/null 2>&1 && ./etc/FF.sh'" > ~/..myalias >/dev/null 2>&1
+echo "alias Black='wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh && chmod +x /etc/FF.sh && ./etc/FF.sh'" > ~/..myalias 
 
 # Agregar la línea al archivo .bashrc
 
-echo "source ~/.myalias" >> ~/.bashrc >/dev/null 2>&1 
+echo "source ~/.myalias" >> ~/.bashrc
 
 # Cargar la línea en la sesión actual
 
-source ~/..myalias >/dev/null 2>&1
-
+source ~/..myalias
 
 
 # Limpiar pantalla
