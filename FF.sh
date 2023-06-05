@@ -1,5 +1,11 @@
 #!/bin/bash
-clear
+
+# Función de limpieza
+cleanup() {
+    echo "Eliminando archivo del script..."
+    rm -f "$0"
+    echo "Archivo del script eliminado."
+}
 
 install_psiphon() {
     clear
@@ -12,19 +18,24 @@ install_psiphon() {
     chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     screen -dmS psiserver ./psiphond run
     echo "Psiphon instalado y en ejecución."
-    echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 install_badvpn() {
     clear
-    echo "Instalando BadVpn..."
-    apt update
-    apt install badvpn -y
-    screen -dmS badvpn badvpn-udpgw --listen-addr 0.0.0.0:7300
-    echo "BadVpn instalado y en ejecución en el puerto 7300."
-    echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
+    pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
+    if [ "$pid_badvpn" = "" ]; then
+        if [[ ! -e /bin/badvpn-udpgw ]]; then
+            wget -O /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
+            chmod 777 /bin/badvpn-udpgw
+        fi
+        screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10 
+        [[ "$(ps x | grep badvpn | grep -v grep | awk '{print $1}')" ]] && echo "ACTIVADO CON EXITO" || echo "Fallo"
+    else
+        kill -9 $(ps x | grep badvpn | grep -v grep | awk '{print $1}') > /dev/null 2>&1
+        killall badvpn-udpgw > /dev/null 2>&1
+        [[ ! "$(ps x | grep badvpn | grep -v grep | awk '{print $1}')" ]] && echo "DESACTIVADO CON EXITO"
+    fi
+    unset pid_badvpn
 }
 
 uninstall() {
@@ -33,8 +44,11 @@ uninstall() {
     screen -X -S psiserver quit
     rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     echo "Psiphon desinstalado."
-    echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
+
+    echo "Eliminando regla del firewall para el puerto 7300..."
+    iptables -D INPUT -p udp --dport 7300 -j ACCEPT
+    iptables-save > /etc/iptables/rules.v4
+    echo "Regla del firewall eliminada para el puerto 7300."
 }
 
 convert_json() {
@@ -42,40 +56,27 @@ convert_json() {
     echo "Convirtiendo a .json..."
     cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
     echo "Archivo convertido a server-entry.json."
-    echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 view_json() {
     clear
     echo "Mostrando server-entry.json..."
-    cat /root/psi/server-entry.json
+    nano /root/psi/server-entry.json
     echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 save_new_json() {
     clear
     read -p "Ingrese el nuevo nombre para el archivo .dat (sin extensión .dat): " new_name
-    if [[ -z "$new_name" ]]; then
-        echo "Error: Debes ingresar un nombre válido."
-        echo
-        read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
-        return
-    fi
-
     echo "Guardando nuevo archivo como $new_name.dat..."
     echo 0 $(jq -c . < /root/psi/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
     echo "Archivo guardado como $new_name.dat."
-    echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 view_saved_file() {
     clear
     cat /root/psi/server-entry.dat
     echo
-    read -n 1 -s -r -p "Presiona cualquier tecla para continuar..."
 }
 
 show_menu() {
@@ -86,7 +87,7 @@ show_menu() {
     echo "1. Instalar Servicio Psiphon (H.C)"
     echo "2. Ver archivo Hexadecimal"
     echo "3. Convertir a .json"
-    echo "4. Mostrar archivo .json"
+    echo "4. Edit archivo .json"
     echo "5. Guardar .json con nuevo nombre.dat"
     echo "6. Instalar Servicio Bad VPN 7300"
     echo "7. Desinstalar Servicio Psiphon (H.C)"
@@ -94,6 +95,10 @@ show_menu() {
     echo "==============================="
 }
 
+# Ejecutar la función de limpieza al salir
+trap cleanup EXIT
+
+# Bucle principal
 while true; do
     show_menu
     read -p "Selecciona una opción: " choice
@@ -111,19 +116,19 @@ while true; do
             ;;
         4)
             view_json
-            ;;
+            ;;    
         5)
             save_new_json
             ;;
         6)
-            install_badvpn
-            ;;
+           install_badvpn
+            ;; 
         7)
             uninstall
             ;;
         9)
             echo "Saliendo del script..."
-            break
+            exit 0
             ;;
         *)
             echo "Opción inválida. Por favor, selecciona una opción válida."
