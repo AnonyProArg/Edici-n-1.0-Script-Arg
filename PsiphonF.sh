@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Función de limpieza
+cleanup() {
+    echo "Eliminando archivo del script..."
+    rm -f "$0"
+    echo "Archivo del script eliminado."
+}
+
 install_psiphon() {
     clear
     echo "Instalando Psiphon..."
@@ -15,7 +22,7 @@ install_psiphon() {
 
 install_badvpn() {
     clear
-pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
+    pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
     if [ "$pid_badvpn" = "" ]; then
         if [[ ! -e /bin/badvpn-udpgw ]]; then
             wget -O /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
@@ -88,6 +95,10 @@ show_menu() {
     echo "==============================="
 }
 
+# Ejecutar la función de limpieza al salir
+trap cleanup EXIT
+
+# Bucle principal
 while true; do
     show_menu
     read -p "Selecciona una opción: " choice
@@ -117,7 +128,7 @@ while true; do
             ;;
         9)
             echo "Saliendo del script..."
-            break
+            exit 0
             ;;
         *)
             echo "Opción inválida. Por favor, selecciona una opción válida."
