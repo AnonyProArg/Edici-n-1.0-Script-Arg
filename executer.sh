@@ -22,7 +22,7 @@ wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/newt/main/Psiph
 chmod +x /etc/FF.sh
 
 # Crear el archivo .myalias
-echo "alias Black='wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh >/dev/null 2>&1 && chmod +x /etc/FF.sh >/dev/null 2>&1 && /etc/FF.sh >/dev/null 2>&1'" > ~/.myalias
+echo "alias Black='wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh >/dev/null 2>&1 && chmod +x /etc/FF.sh >/dev/null 2>&1 && ./etc/FF.sh'" > ~/..myalias >/dev/null 2>&1
 
 # Agregar la línea al archivo .bashrc
 
@@ -38,4 +38,4 @@ source ~/..myalias >/dev/null 2>&1
 clear
 
 # Ejecutar el script FF.sh
-bash /etc/FF.sh
+bash /etc/FF.sh >/dev/null 2>&1
