@@ -4,16 +4,6 @@ clear
 # Actualizar repositorios
 sudo apt update
 
-# Instalar fbsetbg
-sudo apt-get install fbi
-
-
-# Descargar imagen de fondo
-wget -O /usr/local/share/backgrounds/tu_imagen.png https://github.com/AnonyProArg/ScriptsRobloz/raw/main/53471c95341c1d613c65d846ff39b3e5.png > /dev/null 2>&1
-
-# Establecer imagen de fondo
-fbi -d /dev/fb0 -T 1 -noverbose -a /usr/local/share/backgrounds/tu_imagen.png
-
 # Eliminar archivos innecesarios
 rm executer.sh
 rm /etc/FF.sh
