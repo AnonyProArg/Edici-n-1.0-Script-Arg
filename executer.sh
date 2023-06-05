@@ -13,4 +13,4 @@ echo "alias black='bash /etc/FF.sh'" >> ~/.bashrc
 source ~/.bashrc
 rm executer.sh
 clear
-black
+bash /etc/FF.sh
