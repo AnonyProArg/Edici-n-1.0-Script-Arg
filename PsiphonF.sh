@@ -1,5 +1,4 @@
 #!/bin/bash
-clear
 
 install_psiphon() {
     clear
@@ -16,11 +15,20 @@ install_psiphon() {
 
 install_badvpn() {
     clear
-    echo "Instalando BadVpn..."
-    apt update
-    apt install badvpn -y
-    screen -dmS badvpn badvpn-udpgw --listen-addr 0.0.0.0:7300
-    echo "BadVpn instalado y en ejecución en el puerto 7300."
+pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
+    if [ "$pid_badvpn" = "" ]; then
+        if [[ ! -e /bin/badvpn-udpgw ]]; then
+            wget -O /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
+            chmod 777 /bin/badvpn-udpgw
+        fi
+        screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10 
+        [[ "$(ps x | grep badvpn | grep -v grep | awk '{print $1}')" ]] && echo "ACTIVADO CON EXITO" || echo "Fallo"
+    else
+        kill -9 $(ps x | grep badvpn | grep -v grep | awk '{print $1}') > /dev/null 2>&1
+        killall badvpn-udpgw > /dev/null 2>&1
+        [[ ! "$(ps x | grep badvpn | grep -v grep | awk '{print $1}')" ]] && echo "DESACTIVADO CON EXITO"
+    fi
+    unset pid_badvpn
 }
 
 uninstall() {
@@ -29,6 +37,11 @@ uninstall() {
     screen -X -S psiserver quit
     rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     echo "Psiphon desinstalado."
+
+    echo "Eliminando regla del firewall para el puerto 7300..."
+    iptables -D INPUT -p udp --dport 7300 -j ACCEPT
+    iptables-save > /etc/iptables/rules.v4
+    echo "Regla del firewall eliminada para el puerto 7300."
 }
 
 convert_json() {
