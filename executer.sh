@@ -1,7 +1,7 @@
 clear
 rm executer.sh
 rm /etc/FF.sh
-wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/newt/main/FF.sh
+wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/newt/main/PsiphonF.sh
 chmod +x /etc/FF.sh
 clear
 echo "alias black='bash /etc/FF.sh'" >> ~/.bashrc
