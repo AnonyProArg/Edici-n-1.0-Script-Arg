@@ -117,68 +117,80 @@ view_saved_file() {
 
 show_menu() {
     clear
+    echo -e "\e[92m===================================="
+    echo -e "\e[91mPuertos activos:\e[0m"
+    echo -e "\e[92m===================================="
+    netstat -tuln | awk 'NR>2 && $4 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:/ {print $4}' | while read -r port; do
+        protocol=$(echo "$port" | awk -F':' '{print $NF}')
+        port=$(echo "$port" | awk -F':' '{print $NF-1}')
+        transfer_data=$(netstat -s | awk -v port="$port" -F':' '$1 == "    '$protocol'" && $2 == " "'$port'" " {print $3}')
+        transfer_data_mb=$(echo "scale=2; $transfer_data / (1024 * 1024)" | bc -l)
+        echo "$port $protocol ($transfer_data_mb MB)"
+    done
+
     echo -e "\e[92m==============================="
-    echo "      Lite Menú Psiphon H.C"
-    echo -e "===============================\e[0m"
-    echo -e "\e[93m1. Instalar Servicio Psiphon (H.C)"
+    titles=("ADM: BLACK" "INSTALADOR PSIPHON H. C" "@usernamematy")
+    echo -e "\e[92m==============================="
+    for i in "${!titles[@]}"; do
+        echo -e "[$((i+1))] ${titles[$i]}"
+    done  
+} 
+
+Menu() {
+    echo -e "==============================="
+    echo -e "1. Instalar Servicio Psiphon (H.C)"
     echo "2. Ver archivo Hexadecimal"
     echo "3. Convertir a .json"
     echo "4. Editar archivo .json"
     echo "5. Guardar .json con nuevo nombre.dat"
     echo "6. Instalar Servicio Bad VPN 7300"
     echo "7. Desinstalar Servicio Psiphon (H.C)"
-    echo -e "0. Salir\e[0m"
-    echo -e "\e[92m===============================\e[0m"
+    echo -e "0. Salir"
+    echo -e "====================================="
 }
 
-# Ajustar el tamaño del panel al ancho de la terminal
-adjust_panel() {
-    local term_width
-    term_width=$(tput cols)
-    printf -v panel_width "%-${term_width}s" ""
-    echo -e "\e[92m${panel_width// /=}\e[0m"
+main() {
+    trap cleanup EXIT
+    install_dependencies
+    Menu
+
+    while true; do
+        show_menu
+
+        read -p "Seleccione una opción: " option
+        case $option in
+            1)
+                install_psiphon
+                ;;
+            2)
+                uninstall
+                ;;
+            3)
+                convert_json
+                ;;
+            4)
+                view_json
+                ;;
+            5)
+                save_new_json
+                ;;
+            6)
+                view_saved_file
+                ;;
+            7)
+                install_badvpn
+                ;;
+            8)
+                echo -e "\e[92mSaliendo...\e[0m"
+                exit
+                ;;
+            *)
+                echo -e "\e[91mOpción inválida. Por favor, seleccione una opción válida.\e[0m"
+                ;;
+        esac
+
+        read -p "Presione Enter para continuar..." enter
+    done
 }
 
-# Ejecutar la función de limpieza al salir
-trap cleanup EXIT
-
-# Bucle principal
-while true; do
-    adjust_panel
-    show_menu
-    read -p "Selecciona una opción: " choice
-    echo
-
-    case $choice in
-        1)
-            install_dependencies
-            install_psiphon
-            ;;
-        2)
-            view_saved_file
-            ;;
-        3)
-            convert_json
-            ;;
-        4)
-            view_json
-            ;;
-        5)
-            save_new_json
-            ;;
-        6)
-            install_badvpn
-            ;;
-        7)
-            uninstall
-            ;;
-        0)
-            break
-            ;;
-        *)
-            echo -e "\e[91mOpción inválida. Por favor, selecciona una opción válida.\e[0m"
-            ;;
-    esac
-
-    read -p "Presiona Enter para continuar..."
-done
+main
