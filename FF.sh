@@ -134,7 +134,6 @@ show_menu() {
     for i in "${!titles[@]}"; do
         echo -e "[$((i+1))] ${titles[$i]}"
     done  
-} 
 
 Menu() {
     echo -e "==============================="
