@@ -25,9 +25,11 @@ install_psiphon() {
     apt install screen -y
     wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
     chmod 775 psiphond
+     clear
     ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
     chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     screen -dmS psiserver ./psiphond run
+   clear
     echo "Psiphon instalado y en ejecución."
 }
 
@@ -55,11 +57,6 @@ uninstall() {
     screen -X -S psiserver quit
     rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     echo "Psiphon desinstalado."
-
-    echo "Eliminando regla del firewall para el puerto 7300..."
-    iptables -D INPUT -p udp --dport 7300 -j ACCEPT
-    iptables-save > /etc/iptables/rules.v4
-    echo "Regla del firewall eliminada para el puerto 7300."
 }
 
 convert_json() {
