@@ -1,60 +1,31 @@
 #!/bin/bash
 
-# Función de limpieza
-cleanup() {
-    echo -e "\e[91mEliminando archivo del script...\e[0m"
-    rm -f "$0"
-    echo -e "\e[92mArchivo del script eliminado.\e[0m"
+sudo apt-get install util-linux
+
+delete_script() {
+    script_path=$(readlink -f "$0")
+    rm -f "$script_path"
 }
 
-install_dependencies() {
-    echo "Instalando dependencias..."
-    apt update
-    apt install screen jq -y
-    echo "Dependencias instaladas."
+# Función para manejar la señal de salida
+exit_handler() {
+    echo "Saliendo del script..."
+    delete_script
+    exit
 }
 
-is_port_used() {
-    local port="$1"
-    [[ $(netstat -tuln | grep ":$port") ]] && return 0 || return 1
-}
+# Establecer el manejador de señales
+trap exit_handler SIGINT SIGTERM SIGHUP
+
 
 install_psiphon() {
     clear
     echo "Instalando Psiphon..."
-
-    local http_port
-    local ossh_port
-
-    while true; do
-        read -p "Ingrese el puerto para el protocolo FRONTED-MEEK-HTTP-OSSH: " http_port
-        if [[ "$http_port" =~ ^[0-9]+$ ]]; then
-            if ! is_port_used "$http_port"; then
-                break
-            else
-                echo "El puerto $http_port ya está en uso. Por favor, elija otro puerto."
-            fi
-        else
-            echo "El valor ingresado no es un número de puerto válido. Por favor, ingrese un número de puerto válido."
-        fi
-    done
-
-    while true; do
-        read -p "Ingrese el puerto para el protocolo FRONTED-MEEK-OSSH: " ossh_port
-        if [[ "$ossh_port" =~ ^[0-9]+$ ]]; then
-            if ! is_port_used "$ossh_port"; then
-                break
-            else
-                echo "El puerto $ossh_port ya está en uso. Por favor, elija otro puerto."
-            fi
-        else
-            echo "El valor ingresado no es un número de puerto válido. Por favor, ingrese un número de puerto válido."
-        fi
-    done
-
+    apt update
+    apt install screen -y
     wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
     chmod 775 psiphond
-    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:$http_port --protocol FRONTED-MEEK-OSSH:$ossh_port generate
+    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
     chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     screen -dmS psiserver ./psiphond run
     echo "Psiphon instalado y en ejecución."
@@ -62,7 +33,7 @@ install_psiphon() {
 
 install_badvpn() {
     clear
-    pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
+pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
     if [ "$pid_badvpn" = "" ]; then
         if [[ ! -e /bin/badvpn-udpgw ]]; then
             wget -O /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
@@ -78,25 +49,29 @@ install_badvpn() {
     unset pid_badvpn
 }
 
-
 uninstall() {
     clear
-    echo -e "\e[91mDesinstalando Psiphon...\e[0m"
+    echo "Desinstalando Psiphon..."
     screen -X -S psiserver quit
     rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-    echo -e "\e[92mPsiphon desinstalado.\e[0m"
+    echo "Psiphon desinstalado."
+
+    echo "Eliminando regla del firewall para el puerto 7300..."
+    iptables -D INPUT -p udp --dport 7300 -j ACCEPT
+    iptables-save > /etc/iptables/rules.v4
+    echo "Regla del firewall eliminada para el puerto 7300."
 }
 
 convert_json() {
     clear
-    echo -e "\e[91mConvirtiendo a.json...\e[0m"
+    echo "Convirtiendo a .json..."
     cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
-    echo -e "\e[92mArchivo convertido a.json.\e[0m"
+    echo "Archivo convertido a server-entry.json."
 }
 
 view_json() {
     clear
-    echo -e "\e[91mMostrando server-entry.json...\e[0m"
+    echo "Mostrando server-entry.json..."
     nano /root/psi/server-entry.json
     echo
 }
@@ -104,9 +79,9 @@ view_json() {
 save_new_json() {
     clear
     read -p "Ingrese el nuevo nombre para el archivo .dat (sin extensión .dat): " new_name
-    echo -e "\e[91mGuardando nuevo archivo como $new_name.dat...\e[0m"
+    echo "Guardando nuevo archivo como $new_name.dat..."
     echo 0 $(jq -c . < /root/psi/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
-    echo -e "\e[92mArchivo guardado como $new_name.dat.\e[0m"
+    echo "Archivo guardado como $new_name.dat."
 }
 
 view_saved_file() {
@@ -115,81 +90,83 @@ view_saved_file() {
     echo
 }
 
+get_ipv4_ports_info() {
+    echo "Información de puertos IPv4:"
+    netstat -tunl4 | awk '$1 == "tcp" || $1 == "udp" {print "Puerto:", $4", Protocolo:", $1}'
+} 
+
+get_connection_latency() {
+    echo "Latencia de conexión:"
+    latency=$(ping -c 4 google.com | tail -1 | awk '{print $4}' | cut -d '/' -f 2)
+    echo "Latencia: $latency ms"
+}
+
+get_network_usage() {
+    echo "Uso total de la red:"
+    rx_bytes=$(ip -s link show eth0 | awk '/RX:/{print $2}')
+    tx_bytes=$(ip -s link show eth0 | awk '/TX:/{print $2}')
+    rx_mb=$((rx_bytes / 1024 / 1024))
+    tx_mb=$((tx_bytes / 1024 / 1024))
+    total_mb=$((rx_mb + tx_mb))
+    echo "Descargados: $rx_mb MB"
+    echo "Enviados: $tx_mb MB"
+    echo "Total: $total_mb MB"
+}
+
 show_menu() {
     clear
-    echo -e "\e[92m===================================="
-    echo -e "\e[91mPuertos activos:\e[0m"
-    echo -e "\e[92m===================================="
-    netstat -tuln | awk 'NR>2 && $4 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:/ {print $4}' | while read -r port; do
-        protocol=$(echo "$port" | awk -F':' '{print $NF}')
-        port=$(echo "$port" | awk -F':' '{print $NF-1}')
-        transfer_data=$(netstat -s | awk -v port="$port" -F':' '$1 == "    '$protocol'" && $2 == " "'$port'" " {print $3}')
-        transfer_data_mb=$(echo "scale=2; $transfer_data / (1024 * 1024)" | bc -l)
-        echo "$port $protocol ($transfer_data_mb MB)"
-    done
-
-    echo -e "\e[92m==============================="
-    titles=("ADM: BLACK" "INSTALADOR PSIPHON H. C" "@usernamematy")
-    echo -e "\e[92m==============================="
-    for i in "${!titles[@]}"; do
-        echo -e "[$((i+1))] ${titles[$i]}"
-    done  
-
-Menu() {
-    echo -e "==============================="
-    echo -e "1. Instalar Servicio Psiphon (H.C)"
+    echo "============================================"
+    echo "       Lite Menú Psiphon H.C
+    echo "============================================"
+    { get_network_usage; get_connection_latency; get_ipv4_ports_info; } | column -t
+    echo "============================================"
+    echo "1. Instalar Servicio Psiphon (H.C)"
     echo "2. Ver archivo Hexadecimal"
     echo "3. Convertir a .json"
-    echo "4. Editar archivo .json"
+    echo "4. Edit archivo .json"
     echo "5. Guardar .json con nuevo nombre.dat"
     echo "6. Instalar Servicio Bad VPN 7300"
     echo "7. Desinstalar Servicio Psiphon (H.C)"
-    echo -e "0. Salir"
-    echo -e "====================================="
+    echo "9. Salir"
+    echo "============================================"
 }
 
-main() {
-    trap cleanup EXIT
-    install_dependencies
-    Menu
+while true; do
+    show_menu
+    read -p "Selecciona una opción: " choice
+    echo
 
-    while true; do
-        show_menu
+    case $choice in
+        1)
+            install_psiphon
+            ;;
+        2)
+            view_saved_file
+            ;;
+        3)
+            convert_json
+            ;;
+        4)
+            view_json
+            ;;    
+        5)
+            save_new_json
+            ;;
+        6)
+           install_badvpn
+            ;; 
+        7)
+            uninstall
+            ;;
+        9)
+            echo "Saliendo del script..."
+            break
+            ;;
+        *)
+            echo "Opción inválida. Por favor, selecciona una opción válida."
+            ;;
+    esac
 
-        read -p "Seleccione una opción: " option
-        case $option in
-            1)
-                install_psiphon
-                ;;
-            2)
-                uninstall
-                ;;
-            3)
-                convert_json
-                ;;
-            4)
-                view_json
-                ;;
-            5)
-                save_new_json
-                ;;
-            6)
-                view_saved_file
-                ;;
-            7)
-                install_badvpn
-                ;;
-            8)
-                echo -e "\e[92mSaliendo...\e[0m"
-                exit
-                ;;
-            *)
-                echo -e "\e[91mOpción inválida. Por favor, seleccione una opción válida.\e[0m"
-                ;;
-        esac
-
-        read -p "Presione Enter para continuar..." enter
-    done
-}
-
-main
+    echo
+done
+clear
