@@ -187,14 +187,14 @@ save_new_json() {
 }
 
 view_saved_file() {
-
     clear
-
-    cat /root/psi/server-entry.dat
-
+    echo "Ingrese el nombre del archivo que desea ver dentro del directorio /root/psi/:"
+    read file_name
     echo
-
+    cat "/root/psi/$file_name"
+    echo
 }
+
 
 get_ports_info() {
 
