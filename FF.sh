@@ -5,8 +5,6 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-sudo apt-get install -y util-linux
-
 delete_script() {
     script_path=$(readlink -f "$0")
     echo "Eliminando el script: $script_path"
@@ -36,6 +34,14 @@ install_psiphon() {
     echo "Psiphon instalado y en ejecución."
 }
 
+check_psiphon() {
+    if command -v psiphond >/dev/null 2>&1; then
+        echo "Psiphon: ✓ Instalado"
+    else
+        echo "Psiphon: x No instalado"
+    fi
+}
+
 install_badvpn() {
     clear
     pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
@@ -52,6 +58,14 @@ install_badvpn() {
         [[ ! "$(ps x | grep badvpn | grep -v grep | awk '{print $1}')" ]] && echo "DESACTIVADO CON EXITO"
     fi
     unset pid_badvpn
+}
+
+check_badvpn() {
+    if [ -e /bin/badvpn-udpgw ]; then
+        echo "Badvpn: ✓ Instalado"
+    else
+        echo "Badvpn: x No instalado"
+    fi
 }
 
 uninstall() {
@@ -97,83 +111,89 @@ view_saved_file() {
     echo
 }
 
-get_ipv4_ports_info() {
-    echo "Información de puertos IPv4:"
-    netstat -tunl4 | awk '$1 == "tcp" || $1 == "udp" {if ($4 != "0.0.0.0:50211" && $4 != "0.0.0.0:37445" && $4 != "0.0.0.0:58969" && $4 != "0.0.0.0:34400" && $4 != "0.0.0.0:55399" && $4 != "0.0.0.0:43121" && $4 != "0.0.0.0:38560" && $4 != "0.0.0.0:58051" && $4 != "0.0.0.0:58071" && $4 != "0.0.0.0:55017" && $4 != "0.0.0.0:50417" && $4 != "0.0.0.0:49449" && $4 != "0.0.0.0:47932" && $4 != "0.0.0.0:45919" && $4 != "0.0.0.0:43873" && $4 != "0.0.0.0:42358" && $4 != "0.0.0.0:34176" && $4 != "0.0.0.0:44433" && $4 != "0.0.0.0:33721" && $4 != "0.0.0.0:35288" && $4 != "0.0.0.0:36328" && $4 != "0.0.0.0:39919") print "Puerto:", $4", Protocolo:", $1}'
-}
-
-
-get_connection_latency() { echo "Latencia de conexión:" server_latency=$(ping -c 4 google.com | tail -1 | awk '{print $4}' | cut -d '/' -f 2) client_latency=$(ping -c 4 127.0.0.1 | tail -1 | awk '{print $4}' | cut -d '/' -f 2) echo "Latencia del servidor: $server_latency ms" echo "Latencia del cliente: $client_latency ms"
-echo "==================================================="
+get_ports_info() {
+    echo "Información de los puertos:"
+    netstat -tunlp | awk -F'[^0-9]+' '/:[0-9]+/ && $5 ~ /^[0-9]+$/ {
+        port = $5;
+        if ((port >= 0 && port <= 999 && port != 0 && port != 7300) || (port >= 1000 && port == 7300)) {
+            printf "Puerto:\t\t%4s\n", port
+        }
+    }' | awk 'NF'
 }
 
 get_network_usage() {
-    echo "Uso total de la red:"
-    rx_bytes=$(ip -s link show eth0 | awk '/RX:/{print $2}')
-    tx_bytes=$(ip -s link show eth0 | awk '/TX:/{print $2}')
-    rx_mb=$((rx_bytes / 1024 / 1024))
-    tx_mb=$((tx_bytes / 1024 / 1024))
-    total_mb=$((rx_mb + tx_mb))
-    echo "Descargados: $rx_mb MB"
-    echo "Enviados: $tx_mb MB"
-    echo "Total: $total_mb MB"
-echo "==================================================="
+    echo "Uso de red:"
+    RX=$(cat /proc/net/dev | grep $(ip route show default | awk '/default/ {print $5}') | awk '{print $2}')
+    TX=$(cat /proc/net/dev | grep $(ip route show default | awk '/default/ {print $5}') | awk '{print $10}')
+
+    RX_GB=$(echo "scale=2; $RX/1024/1024/1024" | bc)
+    TX_GB=$(echo "scale=2; $TX/1024/1024/1024" | bc)
+    Total_GB=$(echo "scale=2; $RX_GB + $TX_GB" | bc)
+
+    echo "Descargado: $RX_GB GB"
+    echo "Subido: $TX_GB GB"
+    echo "Total: $Total_GB GB"
 }
 
-show_menu() {
-    clear
-    echo "==================================================="
-    echo "       Lite Menú Psiphon H.C"
-    echo "==================================================="
-    { get_network_usage; get_connection_latency; get_ipv4_ports_info; } | column -t
-    echo "==================================================="
-    echo "1. Instalar Servicio Psiphon (H.C)"
-    echo "2. Ver archivo Hexadecimal"
-    echo "3. Convertir a .json"
-    echo "4. Editar archivo .json"
-    echo "5. Guardar .json con nuevo nombre.dat"
-    echo "6. Instalar Servicio Bad VPN 7300"
-    echo "7. Desinstalar Servicio Psiphon (H.C)"
-    echo "0. Salir"
-    echo "==================================================="
+main_menu() {
+    while :
+    do
+        clear
+        echo "==================================================="
+        echo "       Lite Menú Psiphon H.C"
+        echo "==================================================="
+        get_network_usage 
+        check_psiphon
+        check_badvpn
+        echo "==================================================="
+        echo "Menú principal:"
+        echo "1. Instalar Psiphon"
+        echo "2. Instalar BadVPN"
+        echo "3. Desinstalar Psiphon"
+        echo "4. Convertir a .json"
+        echo "5. Ver server-entry.json"
+        echo "6. Guardar nuevo archivo .dat"
+        echo "7. Ver archivo guardado"
+        echo "8. Mostrar información de puertos"
+        echo "0. Salir"
+        echo "==================================================="
+        read -p "Ingrese una opción: " option
+
+        case $option in
+            1)
+                install_psiphon
+                ;;
+            2)
+                install_badvpn
+                ;;
+            3)
+                uninstall
+                ;;
+            4)
+                convert_json
+                ;;
+            5)
+                view_json
+                ;;
+            6)
+                save_new_json
+                ;;
+            7)
+                view_saved_file
+                ;;
+            8)
+                get_ports_info
+                ;;
+            0)
+                exit_handler
+                ;;
+            *)
+                echo "Opción inválida. Intente nuevamente."
+                ;;
+        esac
+
+        read -p "Presione Enter para continuar..."
+    done
 }
 
-while true; do
-    show_menu
-    read -p "Selecciona una opción: " choice
-    echo
-
-    case $choice in
-        1)
-            install_psiphon
-            ;;
-        2)
-            view_saved_file
-            ;;
-        3)
-            convert_json
-            ;;
-        4)
-            view_json
-            ;;
-        5)
-            save_new_json
-            ;;
-        6)
-            install_badvpn
-            ;;
-        7)
-            uninstall
-            ;;
-        0)
-            echo "Saliendo del script..."
-            break
-            ;;
-        *)
-            echo "Opción inválida. Por favor, selecciona una opción válida."
-            ;;
-    esac
-
-    echo
-done
-clear
+main_menu
