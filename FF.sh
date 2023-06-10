@@ -183,7 +183,7 @@ main_menu() {
         echo "==================================================="
         echo "Menú principal:"
         echo "1. Instalar Psiphon"
-        echo "2. Instalar/Desinstalar Badvpn check_badvpn" 
+        echo "2. Instalar/Desinstalar Badvpn" check_badvpn 
         echo "--------opcionales-----------"
         echo "3. Desinstalar Psiphon"
         echo "4. Convertir a .json"
