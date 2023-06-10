@@ -169,20 +169,15 @@ get_ports_info() {
             continue
         fi
         
-        pid=$(lsof -iTCP:"$port_number" -sTCP:LISTEN -t)
-        
-        if [[ -z "$pid" ]]; then
-            echo "No se encontró ningún proceso escuchando en el puerto $port_number."
-        else
-            echo "Matando el proceso en el puerto $port_number..."
-            kill "$pid"
-            echo "Proceso en el puerto $port_number eliminado."
-        fi
+        echo "Matando el proceso en el puerto $port_number..."
+        fuser -k "$port_number"/tcp
+        echo "Proceso en el puerto $port_number eliminado."
         
         read -p "Presione Enter para continuar..."
     done
 }
 
+    
 
 get_network_usage() {
     echo "Uso de red:"
