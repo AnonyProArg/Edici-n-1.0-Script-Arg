@@ -59,11 +59,6 @@ install_psiphon() {
 check_psiphon() {
     if [ -e /root/psi/psiphond ]; then
         echo "Psiphon: ✓ Instalado"
-        if screen -ls | grep psiserver >/dev/null; then
-            echo "Funcionando ✓"
-        else
-            echo "Funcionando x"
-        fi
     else
         echo "Psiphon: x No instalado"
     fi
@@ -104,12 +99,12 @@ check_badvpn() {
     if [ -e /bin/badvpn-udpgw ]; then
         echo "Badvpn: ✓ Instalado"
         if nc -z localhost 7300 >/dev/null 2>&1; then
-            echo "Funcionando ✓"
+            echo "Badvpn: Funcionando ✓"
         else
-            echo "Funcionando x"
+            echo "Funcionando X" 
         fi
     else
-        echo "Badvpn: x No instalado"
+        echo "Badvpn: Instalado X"
     fi
 }
 
