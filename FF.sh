@@ -1,47 +1,50 @@
 #!/bin/bash
 
-sudo apt-get install util-linux
+if [[ $EUID -ne 0 ]]; then
+   echo "Este script debe ejecutarse con privilegios de superusuario."
+   exit 1
+fi
+
+sudo apt-get install -y util-linux
 
 delete_script() {
     script_path=$(readlink -f "$0")
+    echo "Eliminando el script: $script_path"
     rm -f "$script_path"
 }
 
-# Función para manejar la señal de salida
 exit_handler() {
     echo "Saliendo del script..."
     delete_script
     exit
 }
 
-# Establecer el manejador de señales
 trap exit_handler SIGINT SIGTERM SIGHUP
-
 
 install_psiphon() {
     clear
     echo "Instalando Psiphon..."
-    apt update
-    apt install screen -y
+    sudo apt-get update
+    sudo apt-get install -y screen
     wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
     chmod 775 psiphond
-     clear
+    clear
     ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
     chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     screen -dmS psiserver ./psiphond run
-   clear
+    clear
     echo "Psiphon instalado y en ejecución."
 }
 
 install_badvpn() {
     clear
-pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
+    pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
     if [ "$pid_badvpn" = "" ]; then
         if [[ ! -e /bin/badvpn-udpgw ]]; then
-            wget -O /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
+            curl -o /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
             chmod 777 /bin/badvpn-udpgw
         fi
-        screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10 
+        screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
         [[ "$(ps x | grep badvpn | grep -v grep | awk '{print $1}')" ]] && echo "ACTIVADO CON EXITO" || echo "Fallo"
     else
         kill -9 $(ps x | grep badvpn | grep -v grep | awk '{print $1}') > /dev/null 2>&1
@@ -54,7 +57,7 @@ pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
 uninstall() {
     clear
     echo "Desinstalando Psiphon..."
-    screen -X -S psiserver quit
+    screen -X -S psiserver quit 2>/dev/null
     rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
     echo "Psiphon desinstalado."
 }
@@ -62,14 +65,18 @@ uninstall() {
 convert_json() {
     clear
     echo "Convirtiendo a .json..."
-    cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
-    echo "Archivo convertido a server-entry.json."
+    if [ -f "/root/psi/server-entry.dat" ]; then
+        cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
+        echo "Archivo convertido a server-entry.json."
+    else
+        echo "El archivo server-entry.dat no existe."
+    fi
 }
 
 view_json() {
     clear
     echo "Mostrando server-entry.json..."
-    nano /root/psi/server-entry.json
+    cat /root/psi/server-entry.json
     echo
 }
 
@@ -77,6 +84,9 @@ save_new_json() {
     clear
     read -p "Ingrese el nuevo nombre para el archivo .dat (sin extensión .dat): " new_name
     echo "Guardando nuevo archivo como $new_name.dat..."
+    if [ ! -d "/root/psi" ]; then
+        mkdir /root/psi
+    fi
     echo 0 $(jq -c . < /root/psi/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
     echo "Archivo guardado como $new_name.dat."
 }
@@ -89,8 +99,9 @@ view_saved_file() {
 
 get_ipv4_ports_info() {
     echo "Información de puertos IPv4:"
-    netstat -tunl4 | awk '$1 == "tcp" || $1 == "udp" {print "Puerto:", $4", Protocolo:", $1}'
-} 
+    netstat -tunl4 | awk '$1 == "tcp" || $1 == "udp" {if ($4 != "0.0.0.0:50211" && $4 != "0.0.0.0:37445" && $4 != "0.0.0.0:58969" && $4 != "0.0.0.0:34400" && $4 != "0.0.0.0:55399" && $4 != "0.0.0.0:43121" && $4 != "0.0.0.0:38560" && $4 != "0.0.0.0:58051" && $4 != "0.0.0.0:58071" && $4 != "0.0.0.0:55017" && $4 != "0.0.0.0:50417" && $4 != "0.0.0.0:49449" && $4 != "0.0.0.0:47932" && $4 != "0.0.0.0:45919" && $4 != "0.0.0.0:43873" && $4 != "0.0.0.0:42358" && $4 != "0.0.0.0:34176" && $4 != "0.0.0.0:44433" && $4 != "0.0.0.0:33721" && $4 != "0.0.0.0:35288" && $4 != "0.0.0.0:36328" && $4 != "0.0.0.0:39919") print "Puerto:", $4", Protocolo:", $1}'
+}
+
 
 get_connection_latency() {
     echo "Latencia de conexión:"
@@ -113,14 +124,14 @@ get_network_usage() {
 show_menu() {
     clear
     echo "============================================"
-    echo "       Lite Menú Psiphon H.C
+    echo "       Lite Menú Psiphon H.C"
     echo "============================================"
     { get_network_usage; get_connection_latency; get_ipv4_ports_info; } | column -t
     echo "============================================"
     echo "1. Instalar Servicio Psiphon (H.C)"
     echo "2. Ver archivo Hexadecimal"
     echo "3. Convertir a .json"
-    echo "4. Edit archivo .json"
+    echo "4. Editar archivo .json"
     echo "5. Guardar .json con nuevo nombre.dat"
     echo "6. Instalar Servicio Bad VPN 7300"
     echo "7. Desinstalar Servicio Psiphon (H.C)"
@@ -145,13 +156,13 @@ while true; do
             ;;
         4)
             view_json
-            ;;    
+            ;;
         5)
             save_new_json
             ;;
         6)
-           install_badvpn
-            ;; 
+            install_badvpn
+            ;;
         7)
             uninstall
             ;;
