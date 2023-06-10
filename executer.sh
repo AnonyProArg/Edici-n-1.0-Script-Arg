@@ -32,7 +32,7 @@ chmod +x /etc/FF.sh
 clear
 
 alias_name="black"
-alias_command="wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh && chmod +x /etc/FF.sh && bash /etc/FF.sh"
+alias_command="rm /etc/FF.sh && wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh && chmod +x /etc/FF.sh && bash /etc/FF.sh"
 clear
 # Agregar el alias al archivo ~/.bashrc si no existe
 if ! grep -Fxq "source ~/.myalias" ~/.bashrc; then
