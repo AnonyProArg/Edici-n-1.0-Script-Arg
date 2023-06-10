@@ -1,24 +1,5 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-   echo "Este script debe ejecutarse con privilegios de superusuario."
-   exit 1
-fi
-
-delete_script() {
-    script_path=$(readlink -f "$0")
-    echo "Eliminando el script: $script_path"
-    rm -f "$script_path"
-}
-
-exit_handler() {
-    echo "Saliendo del script..."
-    delete_script
-    exit
-}
-
-trap exit_handler SIGINT SIGTERM SIGHUP
-
 install_psiphon() {
     clear
     echo "Instalando Psiphon..."
@@ -134,6 +115,25 @@ get_network_usage() {
     echo "Subido: $TX_GB GB"
     echo "Total: $Total_GB GB"
 }
+
+delete_script() {
+    script_path=$(readlink -f "$0")
+    echo "Eliminando el script: $script_path"
+    rm -f "$script_path"
+}
+
+exit_handler() {
+    echo "Saliendo del script..."
+    delete_script
+    exit
+}
+
+trap exit_handler SIGINT SIGTERM SIGHUP
+
+if [[ $EUID -ne 0 ]]; then
+   echo "Este script debe ejecutarse con privilegios de superusuario."
+   exit 1
+fi
 
 main_menu() {
     while :
