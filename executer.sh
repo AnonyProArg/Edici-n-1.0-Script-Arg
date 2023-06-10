@@ -40,9 +40,10 @@ echo "source ~/.myalias" >> ~/.bashrc >/dev/null 2>&1
 source ~/.myalias >/dev/null 2>&1
 
 # Limpiar pantalla
+clear
+echo "Comando de ejecución: Black"
+
+sleep 5
 
 clear
-
-# Ejecutar el script FF.sh
-
 bash /etc/FF.sh
