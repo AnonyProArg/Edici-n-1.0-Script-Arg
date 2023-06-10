@@ -29,16 +29,37 @@ wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Scr
 chmod +x /etc/FF.sh
 # Crear el archivo .myalias
 
-echo "alias Black='wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh  && chmod +x /etc/FF.sh && bash /etc/FF.sh'" > ~/.myalias >/dev/null 2>&1
+alias_name="Black"
 
-# Agregar la línea al archivo .bashrc
+alias_command="wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh && chmod +x /etc/FF.sh && bash /etc/FF.sh"
 
-echo "source ~/.myalias" >> ~/.bashrc >/dev/null 2>&1
+# Agregar el alias al archivo ~/.bashrc si no existe
+
+if ! grep -Fxq "source ~/.myalias" ~/.bashrc; then
+
+    echo "source ~/.myalias" >> ~/.bashrc
+
+fi
+
+# Crear el archivo ~/.myalias si no existe
+
+if [ ! -f ~/.myalias ]; then
+
+    echo "alias $alias_name='$alias_command'" > ~/.myalias
+
+else
+
+    # Reemplazar el alias existente si ya existe
+
+    sed -i "s/alias $alias_name='.*'/alias $alias_name='$alias_command'/" ~/.myalias
+
+fi
 
 # Cargar la línea en la sesión actual
 
-source ~/.myalias >/dev/null 2>&1
+source ~/.myalias
 
+echo "Comando de ejecución: $alias_name"
 # Limpiar pantalla
 clear
 echo "Comando de ejecución: Black"
