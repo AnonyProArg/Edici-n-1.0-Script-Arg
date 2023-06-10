@@ -103,10 +103,7 @@ get_ipv4_ports_info() {
 }
 
 
-get_connection_latency() {
-    echo "Latencia de conexión:"
-    latency=$(ping -c 4 google.com | tail -1 | awk '{print $4}' | cut -d '/' -f 2)
-    echo "Latencia: $latency ms"
+get_connection_latency() { echo "Latencia de conexión:" server_latency=$(ping -c 4 google.com | tail -1 | awk '{print $4}' | cut -d '/' -f 2) client_latency=$(ping -c 4 127.0.0.1 | tail -1 | awk '{print $4}' | cut -d '/' -f 2) echo "Latencia del servidor: $server_latency ms" echo "Latencia del cliente: $client_latency ms"
 echo "==================================================="
 }
 
