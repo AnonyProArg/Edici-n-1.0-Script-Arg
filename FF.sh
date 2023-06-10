@@ -31,45 +31,49 @@ exit_handler() {
 trap exit_handler SIGINT SIGTERM SIGHUP
 
 install_psiphon() {
-
     clear
-
     echo "Instalando Psiphon..."
-
     sudo apt-get update
-
     sudo apt-get install -y screen
-
     wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
-
     chmod 775 psiphond
-
     clear
 
-    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:80 --protocol FRONTED-MEEK-OSSH:443 generate
+    # Pregunta al usuario por el nuevo puerto para el protocolo FRONTED-MEEK-HTTP-OSSH
+    read -p "Por favor, ingresa el puerto para el protocolo FRONTED-MEEK-HTTP-OSSH (reemplazará el puerto 80, dejar en blanco para usar el puerto predefinido): " nuevo_puerto_80
 
+    # Si no se ingresó ningún puerto, se utiliza el puerto predefinido (80)
+    if [ -z "$nuevo_puerto_80" ]; then
+        nuevo_puerto_80=80
+    fi
+
+    # Pregunta al usuario por el nuevo puerto para el protocolo FRONTED-MEEK-OSSH
+    read -p "Por favor, ingresa el puerto para el protocolo FRONTED-MEEK-OSSH (reemplazará el puerto 443, dejar en blanco para usar el puerto predefinido): " nuevo_puerto_443
+
+    # Si no se ingresó ningún puerto, se utiliza el puerto predefinido (443)
+    if [ -z "$nuevo_puerto_443" ]; then
+        nuevo_puerto_443=443
+    fi
+
+    # Muestra los puertos seleccionados
+    echo "Puerto para FRONTED-MEEK-HTTP-OSSH: $nuevo_puerto_80"
+    echo "Puerto para FRONTED-MEEK-OSSH: $nuevo_puerto_443"
+
+    # Reemplaza los puertos 80 y 443 por los nuevos puertos y muestra los textos descriptivos correspondientes
+    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:$nuevo_puerto_80 --protocol FRONTED-MEEK-OSSH:$nuevo_puerto_443 generate
     chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-
     screen -dmS psiserver ./psiphond run
-
     clear
-
     echo "Psiphon instalado y en ejecución."
-
 }
 
 check_psiphon() {
-
-    if command -v psiphond >/dev/null 2>&1; then
-
-        echo "Psiphon: ✓ Instalado"
-
-    else
-
-        echo "Psiphon: x No instalado"
-
+    if [[ -f "/root/psi/server-entry.json" ]]; then
+        if command -v psiphond >/dev/null 2>&1; then
+            echo "Psiphon: ✓ Instalado"
+        else
+            echo "Psiphon: x No instalado"
     fi
-
 }
 
 install_badvpn() {
@@ -107,18 +111,18 @@ install_badvpn() {
 }
 
 check_badvpn() {
-
     if [ -e /bin/badvpn-udpgw ]; then
-
         echo "Badvpn: ✓ Instalado"
-
+        if nc -z localhost 7300 >/dev/null 2>&1; then
+            echo "Funcionando ✓"
+        else
+            echo "Funcionando x"
+        fi
     else
-
         echo "Badvpn: x No instalado"
-
     fi
-
 }
+
 
 uninstall() {
 
