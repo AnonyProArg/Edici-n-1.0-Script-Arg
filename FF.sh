@@ -107,6 +107,7 @@ get_connection_latency() {
     echo "Latencia de conexión:"
     latency=$(ping -c 4 google.com | tail -1 | awk '{print $4}' | cut -d '/' -f 2)
     echo "Latencia: $latency ms"
+echo "==================================================="
 }
 
 get_network_usage() {
@@ -119,15 +120,16 @@ get_network_usage() {
     echo "Descargados: $rx_mb MB"
     echo "Enviados: $tx_mb MB"
     echo "Total: $total_mb MB"
+echo "==================================================="
 }
 
 show_menu() {
     clear
-    echo "============================================"
+    echo "==================================================="
     echo "       Lite Menú Psiphon H.C"
-    echo "============================================"
+    echo "==================================================="
     { get_network_usage; get_connection_latency; get_ipv4_ports_info; } | column -t
-    echo "============================================"
+    echo "==================================================="
     echo "1. Instalar Servicio Psiphon (H.C)"
     echo "2. Ver archivo Hexadecimal"
     echo "3. Convertir a .json"
@@ -136,7 +138,7 @@ show_menu() {
     echo "6. Instalar Servicio Bad VPN 7300"
     echo "7. Desinstalar Servicio Psiphon (H.C)"
     echo "9. Salir"
-    echo "============================================"
+    echo "==================================================="
 }
 
 while true; do
