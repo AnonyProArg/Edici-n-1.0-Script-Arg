@@ -155,12 +155,7 @@ get_ports_info() {
     do
         clear
         echo "Información de los puertos:"
-        netstat -tunlp | awk -F'[^0-9]+' '/:[0-9]+/ && $5 ~ /^[0-9]+$/ {
-            port = $5;
-            if ((port >= 0 && port <= 999 && port != 0 && port != 7300) || (port >= 1000 && port == 7300)) {
-                printf "Puerto:\t\t%4s\n", port
-            }
-        }' | awk 'NF'
+        lsof -iTCP -sTCP:LISTEN -P -n | awk '$1 == "COMMAND" || $1 == "LISTEN" {print $1"\t"$9}'
         
         read -p "Ingrese el número del puerto que desea matar (presione Enter para volver al menú principal): " port_number
         
@@ -174,14 +169,14 @@ get_ports_info() {
             continue
         fi
         
-        pid=$(netstat -tunlp 2>/dev/null | awk -v port="$port_number" '$5 ~ ":"port"$" && $6 == "LISTEN" { sub("/.+", "", $NF); print $NF; exit }')
+        pid=$(lsof -iTCP:"$port_number" -sTCP:LISTEN -t)
         
         if [[ -z "$pid" ]]; then
             echo "No se encontró ningún proceso escuchando en el puerto $port_number."
         else
-            echo "Matando el proceso y puerto $port_number..."
+            echo "Matando el proceso en el puerto $port_number..."
             kill "$pid"
-            echo "Proceso y puerto $port_number eliminado."
+            echo "Proceso en el puerto $port_number eliminado."
         fi
         
         read -p "Presione Enter para continuar..."
