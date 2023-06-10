@@ -134,7 +134,7 @@ show_menu() {
     echo "5. Guardar .json con nuevo nombre.dat"
     echo "6. Instalar Servicio Bad VPN 7300"
     echo "7. Desinstalar Servicio Psiphon (H.C)"
-    echo "9. Salir"
+    echo "0. Salir"
     echo "==================================================="
 }
 
@@ -165,7 +165,7 @@ while true; do
         7)
             uninstall
             ;;
-        9)
+        0)
             echo "Saliendo del script..."
             break
             ;;
