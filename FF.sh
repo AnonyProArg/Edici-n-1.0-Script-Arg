@@ -57,7 +57,7 @@ install_psiphon() {
 }
 
 check_psiphon() {
-    if [ -e /root/psi/psiphond ]; then
+    if [ -e /root/psiphond ]; then
         echo "Psiphon: ✓ Instalado"
     else
         echo "Psiphon: x No instalado"
@@ -97,9 +97,9 @@ install_badvpn() {
 
 check_badvpn() {
     if [ -e /bin/badvpn-udpgw ]; then
-        echo " ✓ Instalado"
+        echo "Badvpn: Instalado"
     else
-        echo "Desintalado X"
+        echo "Badvpn : Desintalado"
     fi
 }
 
@@ -114,8 +114,8 @@ uninstall() {
 convert_json() {
     clear
     echo "Convirtiendo a .json..."
-    if [ -f "/root/psi/server-entry.dat" ]; then
-        cat /root/psi/server-entry.dat | xxd -p -r | jq . > /root/psi/server-entry.json
+    if [ -f "/root/server-entry.dat" ]; then
+        cat /root/server-entry.dat | xxd -p -r | jq . > /root/server-entry.json
         echo "Archivo convertido a server-entry.json."
     else
         echo "El archivo server-entry.dat no existe."
@@ -125,7 +125,7 @@ convert_json() {
 view_json() {
     clear
     echo "Mostrando server-entry.json..."
-    cat /root/psi/server-entry.json
+    cat /root/pserver-entry.json
     echo
 }
 
@@ -136,12 +136,13 @@ save_new_json() {
     if [ ! -d "/root/psi" ]; then
         mkdir /root/psi
     fi
-    echo 0 $(jq -c . < /root/psi/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
+    echo 0 $(jq -c . < /root/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
     echo "Archivo guardado como $new_name.dat."
 }
 
 view_saved_file() {
     clear
+ls /root/psi
     echo "Ingrese el nombre del archivo que desea ver dentro del directorio /root/psi/:"
     read file_name
     echo
