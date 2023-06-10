@@ -30,8 +30,8 @@ chmod +x /etc/FF.sh
 # Crear el archivo .myalias
 
 clear
-read -p "Ingrese el comando para ejecutar el menú (por defecto: Black): " alias_name
-alias_name=${alias_name:-Black}  # Establecer "Black" como valor predeterminado si no se ingresa ningún comando
+read -p "Ingrese el comando para ejecutar el menú (por defecto: black): " alias_name
+alias_name=${alias_name:-black}  # Establecer "Black" como valor predeterminado si no se ingresa ningún comando
 
 # Crear el archivo ~/.myalias con el alias personalizado
 echo "alias $alias_name='wget -O /etc/FF.sh https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/FF.sh >/dev/null 2>&1 && chmod +x /etc/FF.sh && bash /etc/FF.sh'" > ~/.myalias
@@ -47,7 +47,7 @@ source ~/.myalias
 echo "Comando de ejecución: $alias_name"
 # Limpiar pantalla
 clear
-echo "Comando de ejecución: Black"
+echo "Comando de ejecución: alias_name"
 
 sleep 5
 
