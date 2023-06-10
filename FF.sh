@@ -263,7 +263,7 @@ main_menu() {
         echo "1. Instalar Psiphon"
 
         echo "2. Instalar/Desinstalar BadVPN"
-echo "---------------opcionales----------------"
+        echo "--------opcionales-----------"
 
         echo "3. Desinstalar Psiphon"
 
