@@ -180,10 +180,11 @@ main_menu() {
         echo "==================================================="
         get_network_usage 
         check_psiphon
+        check_badvpn
         echo "==================================================="
         echo "Menú principal:"
         echo "1. Instalar Psiphon"
-        echo "2. Instalar/Desinstalar Badvpn" check_badvpn 
+        echo "2. Instalar/Desinstalar Badvpn" 
         echo "--------opcionales-----------"
         echo "3. Desinstalar Psiphon"
         echo "4. Convertir a .json"
