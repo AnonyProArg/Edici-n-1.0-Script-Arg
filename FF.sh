@@ -97,14 +97,9 @@ install_badvpn() {
 
 check_badvpn() {
     if [ -e /bin/badvpn-udpgw ]; then
-        echo "Badvpn: ✓ Instalado"
-        if nc -z localhost 7300 >/dev/null 2>&1; then
-            echo "Badvpn: Funcionando ✓"
-        else
-            echo "Funcionando X" 
-        fi
+        echo " ✓ Instalado"
     else
-        echo "Badvpn: Instalado X"
+        echo "Desintalado X"
     fi
 }
 
