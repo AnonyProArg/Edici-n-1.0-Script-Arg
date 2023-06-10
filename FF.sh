@@ -262,7 +262,8 @@ main_menu() {
 
         echo "1. Instalar Psiphon"
 
-        echo "2. Instalar BadVPN"
+        echo "2. Instalar/Desinstalar BadVPN"
+echo "---------------opcionales----------------"
 
         echo "3. Desinstalar Psiphon"
 
@@ -272,9 +273,9 @@ main_menu() {
 
         echo "6. Guardar nuevo archivo .dat"
 
-        echo "7. Ver archivo guardado"
+        echo "7. Ver archivo hexa guardado"
 
-        echo "8. Mostrar información de puertos"
+        echo "8. Mostrar información de puertos activos"
 
         echo "0. Salir"
 
