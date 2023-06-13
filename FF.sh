@@ -133,20 +133,20 @@ save_new_json() {
     clear
     read -p "Ingrese el nuevo nombre para el archivo .dat (sin extensión .dat): " new_name
     echo "Guardando nuevo archivo como $new_name.dat..."
-    if [ ! -d "/root/psi" ]; then
-        mkdir /root/psi
+    if [ ! -d "/root/EditPsi" ]; then
+        mkdir /root/EditPsi
     fi
-    echo 0 $(jq -c . < /root/server-entry.json) | xxd -ps | tr -d '\n' > /root/psi/$new_name.dat
+    echo 0 $(jq -c . < /root/server-entry.json) | xxd -ps | tr -d '\n' > /root/EditPsi/$new_name.dat
     echo "Archivo guardado como $new_name.dat."
 }
 
 view_saved_file() {
     clear
-ls /root/psi
-    echo "Ingrese el nombre del archivo que desea ver dentro del directorio /root/psi/:"
+ls /root/EditPsi
+    echo "Ingrese el nombre del archivo que desea ver dentro del directorio /root/EditPsi/:"
     read file_name
     echo
-    cat "/root/psi/$file_name"
+    cat "/root/EditPsi/$file_name"
     echo
 }
 
