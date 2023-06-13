@@ -1,120 +1,73 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-   echo "Este script debe ejecutarse con privilegios de superusuario."
-   exit 1
-fi
-
-delete_script() {
-    script_path=$(readlink -f "$0")
-    echo "Eliminando el script: $script_path"
-    rm -f "$script_path"
-}
-
-exit_handler() {
-    echo "Saliendo del script..."
-    delete_script
-    exit
-}
-
-trap exit_handler SIGINT SIGTERM SIGHUP
-
-install_psiphon() {
-    clear
-    echo "Instalando Psiphon..."
-    sudo apt-get update
-    sudo apt-get install -y screen
-    wget 'https://docs.google.com/uc?export=download&id=1Cg_YsTDt_aqK_EXbnzP9tRFSyFe_7N-m' -O 'psiphond'
-    chmod 775 psiphond
-    clear
-
-    # Pregunta al usuario por el nuevo puerto para el protocolo FRONTED-MEEK-HTTP-OSSH
-    read -p "Por favor, ingresa el puerto para el protocolo FRONTED-MEEK-HTTP-OSSH (reemplazará el puerto 80, dejar en blanco para usar el puerto predefinido): " nuevo_puerto_80
-
-    # Si no se ingresó ningún puerto, se utiliza el puerto predefinido (80)
-    if [ -z "$nuevo_puerto_80" ]; then
-        nuevo_puerto_80=80
-    fi
-
-    # Pregunta al usuario por el nuevo puerto para el protocolo FRONTED-MEEK-OSSH
-    read -p "Por favor, ingresa el puerto para el protocolo FRONTED-MEEK-OSSH (reemplazará el puerto 443, dejar en blanco para usar el puerto predefinido): " nuevo_puerto_443
-
-    # Si no se ingresó ningún puerto, se utiliza el puerto predefinido (443)
-    if [ -z "$nuevo_puerto_443" ]; then
-        nuevo_puerto_443=443
-    fi
-
-    # Muestra los puertos seleccionados
-    echo "Puerto para FRONTED-MEEK-HTTP-OSSH: $nuevo_puerto_80"
-    echo "Puerto para FRONTED-MEEK-OSSH: $nuevo_puerto_443"
-
-    # Reemplaza los puertos 80 y 443 por los nuevos puertos y muestra los textos descriptivos correspondientes
-    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-HTTP-OSSH:$nuevo_puerto_80 --protocol FRONTED-MEEK-OSSH:$nuevo_puerto_443 generate
-    chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-    screen -dmS psiserver ./psiphond run
-    clear
-    echo "Psiphon instalado y en ejecución."
-}
-
 check_psiphon() {
-    if [ -e /root/psiphond ]; then
-        echo "Psiphon: ✓ Instalado"
+    if dpkg -s "psiphon" >/dev/null 2>&1; then
+        echo "Psiphon está instalado en el sistema."
     else
-        echo "Psiphon: x No instalado"
+        echo "Psiphon no está instalado en el sistema."
     fi
-}
-
-
-install_badvpn() {
-    clear
-    pid_badvpn=$(ps x | grep badvpn | grep -v grep | awk '{print $1}')
-
-    if [ "$pid_badvpn" = "" ]; then
-        if [[ ! -e /bin/badvpn-udpgw ]]; then
-            curl -o /bin/badvpn-udpgw https://raw.githubusercontent.com/AnonyProArg/Edici-n-1.0-Script-Arg/main/Install/ArchivosUtilitarios/badvpn-udpgw &>/dev/null
-            chmod 777 /bin/badvpn-udpgw
-        fi
-
-        screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
-
-        if ps x | grep badvpn | grep -v grep | awk '{print $1}'; then
-            echo "ACTIVADO CON EXITO"
-        else
-            echo "Fallo"
-        fi
-
-    else
-        kill -9 $(ps x | grep badvpn | grep -v grep | awk '{print $1}') > /dev/null 2>&1
-        killall badvpn-udpgw > /dev/null 2>&1
-
-        if ! ps x | grep badvpn | grep -v grep | awk '{print $1}'; then
-            echo "DESACTIVADO CON EXITO"
-        fi
-    fi
-
-    unset pid_badvpn
 }
 
 check_badvpn() {
-    if [ -e /bin/badvpn-udpgw ]; then
-        echo "Badvpn: Instalado"
+    if dpkg -s "badvpn" >/dev/null 2>&1; then
+        echo "Badvpn está instalado en el sistema."
     else
-        echo "Badvpn : Desintalado"
+        echo "Badvpn no está instalado en el sistema."
+    fi
+}
+
+install_psiphon() {
+    clear
+    if dpkg -s "psiphon" >/dev/null 2>&1; then
+        echo "Psiphon ya está instalado en el sistema."
+    else
+        echo "Instalando Psiphon..."
+        apt-get update
+        apt-get install -y psiphon
+        echo "Psiphon ha sido instalado correctamente."
+    fi
+}
+
+install_badvpn() {
+    clear
+    if dpkg -s "badvpn" >/dev/null 2>&1; then
+        echo "Badvpn ya está instalado en el sistema."
+        read -p "¿Desea desinstalar Badvpn? (s/n): " uninstall_choice
+        if [[ $uninstall_choice == "s" || $uninstall_choice == "S" ]]; then
+            uninstall_badvpn
+        fi
+    else
+        echo "Badvpn no está instalado en el sistema."
+        read -p "¿Desea instalar Badvpn? (s/n): " install_choice
+        if [[ $install_choice == "s" || $install_choice == "S" ]]; then
+            echo "Instalando Badvpn..."
+            apt-get update
+            apt-get install -y badvpn
+            echo "Badvpn ha sido instalado correctamente."
+        fi
     fi
 }
 
 uninstall() {
     clear
     echo "Desinstalando Psiphon..."
-    screen -X -S psiserver quit 2>/dev/null
-    rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-    echo "Psiphon desinstalado."
+    apt-get purge -y psiphon
+    apt-get autoremove -y
+    echo "Psiphon ha sido desinstalado correctamente."
+}
+
+uninstall_badvpn() {
+    clear
+    echo "Desinstalando Badvpn..."
+    apt-get purge -y badvpn
+    apt-get autoremove -y
+    echo "Badvpn ha sido desinstalado correctamente."
 }
 
 convert_json() {
     clear
-    echo "Convirtiendo a .json..."
     if [ -f "/root/server-entry.dat" ]; then
+        echo "Convirtiendo server-entry.dat a server-entry.json..."
         cat /root/server-entry.dat | xxd -p -r | jq . > /root/server-entry.json
         echo "Archivo convertido a server-entry.json."
     else
@@ -125,7 +78,7 @@ convert_json() {
 view_json() {
     clear
     echo "Mostrando server-entry.json..."
-    cat /root/pserver-entry.json
+    cat /root/server-entry.json
     echo
 }
 
@@ -142,7 +95,7 @@ save_new_json() {
 
 view_saved_file() {
     clear
-ls /root/EditPsi
+    ls /root/EditPsi
     echo "Ingrese el nombre del archivo que desea ver dentro del directorio /root/EditPsi/:"
     read file_name
     echo
@@ -151,104 +104,81 @@ ls /root/EditPsi
 }
 
 get_ports_info() {
-    while :
-    do
+    while true; do
         clear
         echo "Información de los puertos:"
         lsof -iTCP -sTCP:LISTEN -P -n | awk '$1 == "COMMAND" || $1 == "LISTEN" {print $1"\t"$9}'
-        
+
         read -p "Ingrese el número del puerto que desea matar (presione Enter para volver al menú principal): " port_number
-        
+
         if [[ -z "$port_number" ]]; then
             break
         fi
-        
+
         if ! [[ "$port_number" =~ ^[0-9]+$ ]]; then
             echo "¡Opción inválida! Debe ingresar un número de puerto."
             read -p "Presione Enter para continuar..."
             continue
         fi
-        
+
         echo "Matando el proceso en el puerto $port_number..."
         fuser -k "$port_number"/tcp
         echo "Proceso en el puerto $port_number eliminado."
-        
+
         read -p "Presione Enter para continuar..."
     done
 }
 
-    
-
-get_network_usage() {
-    echo "Uso de red:"
-    RX=$(cat /proc/net/dev | grep $(ip route show default | awk '/default/ {print $5}') | awk '{print $2}')
-    TX=$(cat /proc/net/dev | grep $(ip route show default | awk '/default/ {print $5}') | awk '{print $10}')
-    RX_GB=$(echo "scale=2; $RX/1024/1024/1024" | bc)
-    TX_GB=$(echo "scale=2; $TX/1024/1024/1024" | bc)
-    Total_GB=$(echo "scale=2; $RX_GB + $TX_GB" | bc)
-    echo "Descargado: $RX_GB GB"
-    echo "Subido: $TX_GB GB"
-    echo "Total: $Total_GB GB"
+exit_handler() {
+    echo "Saliendo del script..."
+    exit 0
 }
 
 main_menu() {
-    while :
-    do
+    while true; do
         clear
         echo "==================================================="
-        echo "       Lite Menú Psiphon H.C"
+        echo "        Lite Menú Psiphon H.C"
         echo "==================================================="
-        get_network_usage 
         check_psiphon
         check_badvpn
         echo "==================================================="
         echo "Menú principal:"
-        echo "1. Instalar Psiphon"
-        echo "2. Instalar/Desinstalar Badvpn" 
-        echo "--------opcionales-----------"
+        echo "1. Instalar/Actualizar Psiphon"
+        echo "2. Instalar/Desinstalar Badvpn"
         echo "3. Desinstalar Psiphon"
-        echo "4. Convertir a .json"
+        echo "4. Convertir server-entry.dat a server-entry.json"
         echo "5. Ver server-entry.json"
         echo "6. Guardar nuevo archivo .dat"
-        echo "7. Ver archivo hexa guardado"
-        echo "8. Mostrar información de puertos activos"
+        echo "7. Ver archivos .dat guardados"
+        echo "8. Obtener información de puertos"
         echo "0. Salir"
         echo "==================================================="
-        read -p "Ingrese una opción: " option
+        read -p "Ingrese el número de opción deseada: " option
         case $option in
-            1)
-                install_psiphon
-                ;;
-            2)
-                install_badvpn
-                ;;
-            3)
-                uninstall
-                ;;
-            4)
-                convert_json
-                ;;
-            5)
-                view_json
-                ;;
-            6)
-                save_new_json
-                ;;
-            7)
-                view_saved_file
-                ;;
-            8)
-                get_ports_info
-                ;;
-            0)
-                exit_handler
-                ;;
-            *)
-                echo "Opción inválida. Intente nuevamente."
-                ;;
+            1) install_psiphon ;;
+            2) install_badvpn ;;
+            3) uninstall ;;
+            4) convert_json ;;
+            5) view_json ;;
+            6) save_new_json ;;
+            7) view_saved_file ;;
+            8) get_ports_info ;;
+            0) exit_handler ;;
+            *) echo "¡Opción inválida! Por favor, ingrese un número válido." ;;
         esac
         read -p "Presione Enter para continuar..."
     done
 }
 
+# Verificar si se está ejecutando como superusuario
+if [[ $EUID -ne 0 ]]; then
+   echo "Este script debe ejecutarse con privilegios de superusuario."
+   exit 1
+fi
+
+# Manejador de señales
+trap exit_handler SIGINT SIGTERM SIGHUP
+
+# Ejecutar el menú principal
 main_menu
